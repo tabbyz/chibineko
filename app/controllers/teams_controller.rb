@@ -69,7 +69,7 @@ class TeamsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team
-      @team = Team.find_by(name: params[:team_name])
+      @team = Team.find_by(name: params[:name])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,5 +1,6 @@
 class Team < ActiveRecord::Base
   belongs_to :user
+  has_many :projects
 
   class << self
     def find_by_user(user)

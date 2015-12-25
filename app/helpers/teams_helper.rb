@@ -4,6 +4,8 @@ module TeamsHelper
   end
 
   def current_team
-    Team.find_by(name: params[:team_name])
+    team_name = params[:name]
+    team_name ||= params[:team_name]
+    Team.find_by(name: team_name)
   end
 end

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   
   # resources :teams, param: 'name', except: ['show']
   # get ':team_name' => 'teams#show', as: 'team_home'
-  resources :teams, param: 'team_name', path: '', except: ['index']
+  resources :teams, param: 'name', path: '', except: ['index'] do
+    resources :projects, param: 'project_name', path: '', except: ['index']
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -10,7 +10,7 @@ html
     p.notice = notice
     p.alert = alert
     
-    - if %w"teams".include?(current_controller)
+    - if %w"teams projects".include?(current_controller)
       = render "layouts/root_sidebar"
       = render "layouts/team_sidebar"
 

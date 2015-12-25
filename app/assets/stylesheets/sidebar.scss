@@ -27,7 +27,6 @@ $hilight-color: #63A0C3;
 .root-sidebar {
   left: 0;
   width: $root-sidebar-width;
-  // padding-bottom: 70px;
   background-color: #192637;
 
   a {
@@ -48,6 +47,7 @@ $hilight-color: #63A0C3;
       background-color: #01AB52;
       color: #FFF;
       height: 60px;
+      border-radius: 2px;
 
       .fa { margin-top: 16px; }
     }
@@ -57,6 +57,7 @@ $hilight-color: #63A0C3;
       display: inline-block;
       height: 60px;
       padding-top: 5px;
+      border-radius: 2px;
 
       .hilight-bar {
         display: none;
@@ -154,11 +155,11 @@ $hilight-color: #63A0C3;
         padding: 6px;
         font-size: 12px;
         font-weight: bold;
+      }
 
-        &:hover {
-          background-color: #EEE;
-          border-radius: 2px;
-        }
+      &:hover, &.active {
+        background-color: #EEE;
+        border-radius: 2px;
       }
     }
   }
