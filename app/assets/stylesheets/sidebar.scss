@@ -1,0 +1,165 @@
+$root-sidebar-width: 60px;
+$team-sidebar-width: 200px;
+$hilight-color: #63A0C3;
+
+.content-wrapper {
+  margin-left: $root-sidebar-width + $team-sidebar-width;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  overflow-y: scroll;
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+}
+
+.root-sidebar {
+  left: 0;
+  width: $root-sidebar-width;
+  // padding-bottom: 70px;
+  background-color: #192637;
+
+  a {
+    color: #C5D0DE;
+    display: inline-block;
+    width: 100%;
+
+    &:hover, &:focus {
+      background-color: #364760;
+      color: #FFF;
+    }
+  }
+
+  li {
+    text-align: center;
+
+    .home-btn {
+      background-color: #01AB52;
+      color: #FFF;
+      height: 60px;
+
+      .fa { margin-top: 16px; }
+    }
+
+    .team-btn {
+      position: relative;
+      display: inline-block;
+      height: 60px;
+      padding-top: 5px;
+
+      .hilight-bar {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 4px;
+        background-color: #01AB52;
+      }
+
+      .symbol {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .description {
+        display: inline-block;
+        overflow: hidden;
+        max-width: 50px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  li.active {
+    .team-btn {
+      background-color: #364760;
+      color: #FFF;
+    }
+
+    .hilight-bar {
+      display: inline-block;
+    }
+  }
+
+  .add-team-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: $root-sidebar-width;
+    display: inline-block;
+    padding: 5px 0;
+    background-color: #192637;
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
+.team-sidebar {
+  left: $root-sidebar-width;
+  width: $team-sidebar-width;
+  border-right: 1px solid #DDD;
+
+  .sidebar-title {
+    .dropdown-toggle {
+      display: inline-block;
+      width: 100%;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
+
+      .fa-angle-down {
+        padding: 0 10px;
+        font-size: 85%;
+      }
+
+      &:hover {
+        background-color: #EEE;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .sidebar-list {
+    padding: 0 20px;
+
+    .sidebar-list-header {
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #555;
+
+      .add-project-btn {
+        float: right;
+      }
+    }
+
+    .sidebar-list-item {
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: 6px;
+        font-size: 12px;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #EEE;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}

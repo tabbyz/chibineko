@@ -1,0 +1,26 @@
+.sidebar.team-sidebar
+  .sidebar-title.dropdown
+    a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+      = current_team.try(:name)
+      = fa_icon "angle-down"
+    ul.dropdown-menu style="top: 50px; left: 100px;"
+      / li.dropdown-header Team menu
+      li
+        a href="#" Settings
+      li
+        a href="#" Members
+      li.divider role="separator"
+      li
+        = link_to "Delete", current_team, data: {:confirm => "Are you sure?"}, :method => :delete
+
+  ul.sidebar-list
+    li.sidebar-list-header
+      span PROJECTS
+      = link_to fa_icon("plus-circle"), "", class: "add-project-btn", data: { toggle: "tooltip", placement: "bottom", title: "Create a new project" }, remote: true
+      / = link_to fa_icon("plus-circle"), new_project_path(team_name: current_team.name), class: "add-project-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: "Create a new project" }, remote: true
+    / - current_team.projects.each do |project|
+    /   li class="#{'active' if project == current_project}"
+    / = link_to project.name, project_home_path(team_name: current_team.name, project_name: project.name)
+    - %w(gmail map chrome).each do |project|
+      li.sidebar-list-item
+        = link_to project, ""

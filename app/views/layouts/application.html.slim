@@ -10,4 +10,11 @@ html
     p.notice = notice
     p.alert = alert
     
-    == yield
+    - if %w"teams".include?(current_controller)
+      = render "layouts/root_sidebar"
+      = render "layouts/team_sidebar"
+
+    .content-wrapper
+      == yield
+
+      = debug(params) if Rails.env.development?

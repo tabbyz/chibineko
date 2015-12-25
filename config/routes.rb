@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  # root 'static_pages#home'
+  root 'teams#index'
+
   devise_for :users
-  root 'static_pages#home'
+  
+  # resources :teams, param: 'name', except: ['show']
+  # get ':team_name' => 'teams#show', as: 'team_home'
+  resources :teams, param: 'team_name', path: '', except: ['index']
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

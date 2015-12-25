@@ -1,0 +1,42 @@
+.dropdown-menu {
+  position: fixed;
+}
+
+.tooltip {
+  position: fixed;
+}
+
+.btn, .form-control {
+  border-radius: 2px;
+}
+
+.modal-dialog {
+  margin: 100px auto;
+
+  .modal-content {
+    border-radius: 0;
+
+    .modal-header {
+      border-bottom: none;
+    }
+
+    .modal-body {
+      padding: 20px 30px;
+    }
+
+    .modal-footer {
+      padding: 0;
+
+      .col-xs-6 {
+        padding: 0;
+      }
+
+      .btn {
+        border-radius: 0;
+        border: none;
+        font-size: 16px;
+        padding: 14px;
+      }
+    }
+  }
+}
