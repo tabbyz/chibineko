@@ -13,3 +13,7 @@ p
 = link_to 'Edit', edit_team_project_path(team_name: current_team.name, project_name: @project.name)
 '|
 / = link_to 'Back', projects_path
+= link_to "Delete", team_project_path(team_name: current_team.name, project_name: @project.name), data: {:confirm => "Are you sure?"}, :method => :delete
+
+- (1..50).each do |i|
+  p = i

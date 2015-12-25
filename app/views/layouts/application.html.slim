@@ -9,12 +9,13 @@ html
   body
     p.notice = notice
     p.alert = alert
-    
-    - if %w"teams projects".include?(current_controller)
-      = render "layouts/root_sidebar"
-      = render "layouts/team_sidebar"
 
     .content-wrapper
       == yield
 
       = debug(params) if Rails.env.development?
+
+    - if %w"teams projects".include?(current_controller)
+      = render "layouts/root_sidebar"
+      = render "layouts/team_sidebar"
+      = render "layouts/navbar"

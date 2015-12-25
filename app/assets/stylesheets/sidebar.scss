@@ -12,6 +12,7 @@ $hilight-color: #63A0C3;
   bottom: 0;
   height: 100%;
   overflow-y: scroll;
+  z-index: 1031;
 
   a {
     text-decoration: none;
@@ -112,6 +113,7 @@ $hilight-color: #63A0C3;
   left: $root-sidebar-width;
   width: $team-sidebar-width;
   border-right: 1px solid #DDD;
+  background-color: #FFF;
 
   .sidebar-title {
     .dropdown-toggle {

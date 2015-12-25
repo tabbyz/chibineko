@@ -1,0 +1,31 @@
+nav.navbar.navbar-fixed-top.navbar-with-sidebar
+  .container-fluid
+    .header-content
+      / .dropdown
+      /   a data-target="#" href="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+      /     Dropdown trigger
+      /     span.caret
+      /   ul.dropdown-menu
+      /     hoge
+
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+            = fa_icon "cog"
+          / a.dropdown-toggle.btn data-target="#" href="#" data-toggle="tooltip" data-placement="bottom" data-title="Settings" role="button" aria-haspopup="true" aria-expanded="false"
+          ul.dropdown-menu
+            li.dropdown-header Test settings
+            / li
+            /   a href="#" Settings
+            li
+              a href="#" Lock test result
+            li.divider role="separator"
+            li
+              = link_to "Delete test", "", data: {:confirm => "Are you sure?"}, :method => :delete
+        li = link_to fa_icon("line-chart"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Progress" }, remote: true
+        li = link_to fa_icon("download"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Export CSV" }, remote: true
+        li = link_to fa_icon("copy"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Duplicate test" }, remote: true
+        = link_to fa_icon("plus", text: "New test"), "", class: "btn btn-success new-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }, remote: true
+
+      / .pull-right
+      /   = link_to "New test", "#", class: "btn btn-success", remote: true

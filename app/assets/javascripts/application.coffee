@@ -5,7 +5,7 @@
 
 jQuery ->
   # $("a[rel~=popover], .has-popover").popover()
-  $("[data-toggle='tooltip']").tooltip()
+  $("[data-toggle='tooltip']").tooltip({ container: 'body' })
   $(".dropdown-toggle").dropdown()
 
   $(document).on 'shown.bs.modal', (e) ->

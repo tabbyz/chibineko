@@ -3,7 +3,7 @@
     a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
       = current_team.try(:name)
       = fa_icon "angle-down"
-    ul.dropdown-menu style="top: 50px; left: 100px;"
+    ul.dropdown-menu style="top: 50px; left: 20px;"
       / li.dropdown-header Team menu
       li
         a href="#" Settings
@@ -16,7 +16,7 @@
   ul.sidebar-list
     li.sidebar-list-header
       span PROJECTS
-      = link_to fa_icon("plus-circle"), new_team_project_path(current_team), class: "add-project-btn", data: { toggle: "tooltip", placement: "bottom", title: "Create a new project" }, remote: true
+      = link_to fa_icon("plus-circle"), new_team_project_path(current_team), class: "add-project-btn", data: { toggle: "tooltip", placement: "top", title: "Create a new project" }, remote: true
     - current_team.projects.each do |project|
       li class="sidebar-list-item #{'active' if project == current_project}"
         = link_to project.name, team_project_path(team_name: current_team.name, project_name: project.name)
