@@ -15,5 +15,15 @@ p
 / = link_to 'Back', projects_path
 = link_to "Delete", team_project_path(team_name: current_team.name, project_name: @project.name), data: {:confirm => "Are you sure?"}, :method => :delete
 
-- (1..50).each do |i|
-  p = i
+table.table
+  - @tests.try(:each) do |test|
+    tr
+      td = link_to test.slug, test
+      td = test.title
+      td = test.description
+      td = test.user_id
+      / td = link_to 'Edit', edit_test_path(test)
+      td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+/ - (1..50).each do |i|
+/   p = i

@@ -1,0 +1,28 @@
+- case current_action
+- when "new"
+  - provide :modal_title, "New Test"
+  - provide :submit_title, "Create a new test"
+- when "edit"
+  - provide :modal_title, "Edit Test"
+  - provide :submit_title, "Update Test"
+
+.new-test-modal.modal-dialog.modal-lg.modal-fullscreen
+  .modal-content
+    = form_for @test, remote: true do |f|
+      = f.hidden_field :team_name, value: params[:team_name]
+      = f.hidden_field :project_name, value: params[:project_name]
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+        h4.modal-title = yield :modal_title
+      .modal-body
+        .test-title.row
+          = f.text_field :title, class: "form-control input-lg", placeholder: "Enter test title", autofocus: true, required: true
+        .test-body.row
+          .test-markdown.col-xs-6
+            = f.text_area :markdown, class: "form-control", placeholder: "Enter markdown text", required: true
+          .test-preview.col-xs-6
+            
+      .modal-footer
+        = f.submit yield(:submit_title), class: "btn btn-lg btn-primary"
+        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Cancel

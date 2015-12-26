@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151225045046) do
+ActiveRecord::Schema.define(version: 20151225141534) do
 
   create_table "projects", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.integer  "user_id"
     t.integer  "team_id"
     t.datetime "created_at", null: false
@@ -22,11 +22,23 @@ ActiveRecord::Schema.define(version: 20151225045046) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "tests", force: :cascade do |t|
+    t.string   "slug",        null: false
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "tests", ["slug"], name: "index_tests_on_slug"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
