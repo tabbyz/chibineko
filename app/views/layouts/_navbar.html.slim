@@ -10,10 +10,13 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
 
       ul.nav.navbar-nav
         - if current_controller_action == "tests#show"
-          = link_to "Edit", edit_test_path(@test), class: "btn btn-success new-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true    
+          = link_to "Edit", edit_test_path(@test), class: "btn color-primary edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true    
 
       ul.nav.navbar-nav.navbar-right
         - if current_controller_action == "tests#show"
+          li = link_to fa_icon("line-chart"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Progress" }, remote: true
+          li = link_to fa_icon("download"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Export CSV" }, remote: true
+          li = link_to fa_icon("copy"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Duplicate test" }, remote: true
           li.dropdown
             a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
               = fa_icon "cog"
@@ -27,9 +30,6 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
               li.divider role="separator"
               li
                 = link_to "Delete test", "", data: {:confirm => "Are you sure?"}, :method => :delete
-          li = link_to fa_icon("line-chart"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Progress" }, remote: true
-          li = link_to fa_icon("download"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Export CSV" }, remote: true
-          li = link_to fa_icon("copy"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Duplicate test" }, remote: true
-
+                
         - if current_controller_action == "projects#show"
           = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn btn-success new-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }, remote: true

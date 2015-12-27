@@ -17,10 +17,10 @@
         h4.modal-title = yield :modal_title
       .modal-body
         .test-title.row
-          = f.text_field :title, class: "form-control input-lg", placeholder: "Enter test title", autofocus: true, required: true
+          = f.text_field :title, class: "form-control input-lg", placeholder: "Enter test title", autofocus: (current_action == "new" ? true : false), required: true
         .test-body.row
           .test-markdown.col-xs-6
-            = f.text_area :markdown, class: "form-control", placeholder: "Enter markdown text", required: true
+            = f.text_area :markdown, class: "form-control", placeholder: "Enter markdown text", autofocus: (current_action == "edit" ? true : false), required: true
           .test-preview.col-xs-6
             
       .modal-footer

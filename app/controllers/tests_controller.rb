@@ -10,6 +10,8 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
+    @test.description = "foo\nbar\nfoo\nbar"
+    @result_texts = %w(未実行 OK NG 保留 対象外)
   end
 
   # GET /tests/new
@@ -19,6 +21,7 @@ class TestsController < ApplicationController
 
   # GET /tests/1/edit
   def edit
+    @test.update_markdown(with_result: true)
   end
 
   # POST /tests
@@ -31,7 +34,9 @@ class TestsController < ApplicationController
     project = team.projects.find_by(name: params[:test][:project_name]) if team
     @test.project_id = project.id if project  # TODO: Authority check
 
-    @test.save
+    if @test.save
+      @test.make_testcase
+    end
 
     # @test = Test.new(test_params)
 
@@ -49,7 +54,9 @@ class TestsController < ApplicationController
   # PATCH/PUT /tests/1
   # PATCH/PUT /tests/1.json
   def update
-    @test.update(test_params)
+    if @test.update(test_params)
+      @test.make_testcase
+    end
     
     # respond_to do |format|
     #   if @test.update(test_params)
@@ -81,6 +88,6 @@ class TestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
       # params.require(:test).permit(:slug, :title, :description, :user_id)
-      params.require(:test).permit(:title, :description)
+      params.require(:test).permit(:title, :description, :markdown)
     end
 end

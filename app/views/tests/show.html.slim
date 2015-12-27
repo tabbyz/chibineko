@@ -1,25 +1,6 @@
 p#notice = notice
 
-p
-  strong Team:
-  = current_team.try(:name)
-p
-  strong Project:
-  = current_project.try(:name)
+h3 = @test.title
+p = @test.description
 
-p
-  strong Slug:
-  = @test.slug
-p
-  strong Title:
-  = @test.title
-p
-  strong Description:
-  = @test.description
-p
-  strong User:
-  = @test.user_id
-
-= link_to 'Edit', edit_test_path(@test)
-'|
-= link_to 'Back', tests_path
+= render "testcases"

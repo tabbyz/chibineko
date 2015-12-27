@@ -1,0 +1,82 @@
+.color-white {
+  background-color: #FFF;
+  color: #333;
+
+  &.btn {
+    border: 1px solid #BDBDBD;
+
+    &:hover {
+      background-color: #EEEEEE;
+    }
+  }
+}
+
+.color-green, .color-primary {
+  background-color: #4CAF50;
+  color: #FFF;
+
+  &.btn {
+    border: 1px solid #388E3C;
+
+    &:hover {
+      background-color: #43A047;
+      color: #FFF;
+    }
+  }
+}
+
+.color-blue {
+  background-color: #2196F3;
+  color: #FFF;
+
+  &.btn {
+    border: 1px solid #1976D2;
+
+    &:hover {
+      background-color: #1E88E5;
+      color: #FFF;
+    }
+  }
+}
+
+.color-red {
+  background-color: #F44336;
+  color: #FFF;
+
+  &.btn {
+    border: 1px solid #D32f2f;
+
+    &:hover {
+      background-color: #E53935;
+      color: #FFF;
+    }
+  }
+}
+
+.color-orange {
+  background-color: #FF9800;
+  color: #FFF;
+
+  &.btn {
+    border: 1px solid #F57C00;
+
+    &:hover {
+      background-color: #FB8C00;
+      color: #FFF;
+    }
+  }
+}
+
+.color-gray {
+  background-color: #9E9E9E;
+  color: #FFF;
+
+  &.btn {
+    border: 1px solid #757575;
+
+    &:hover {
+      background-color: #757575;
+      color: #FFF;
+    }
+  }
+}
