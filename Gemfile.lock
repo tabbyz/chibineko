@@ -41,6 +41,9 @@ GEM
       execjs
       json
     bcrypt (3.1.10)
+    best_in_place (3.1.0)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -182,6 +185,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.0)
+  best_in_place (~> 3.1.0)
   bootstrap-sass (~> 3.3.0)
   bullet
   byebug

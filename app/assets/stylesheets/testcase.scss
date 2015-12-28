@@ -83,7 +83,7 @@
     }
 
     .body {
-      padding: 2px 10px;
+      padding: 4px 10px;
       line-height: 16px;
     }
 
@@ -128,5 +128,34 @@
   .note {
     width: 20%;
     max-width: 200px;
+    padding: 6px 4px;
+
+    .best_in_place {
+      display: block;
+      width: 100%;
+      padding: 4px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+
+      input {
+        width: 100%;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+      }
+
+      &:hover {
+        background-color: #FFFFCC;
+        border-color: #CCC;
+        cursor: text;
+      }
+    }
+
+    .bip-placeholder {
+      color: #CCC;
+    }
   }
 }
