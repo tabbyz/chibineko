@@ -1,6 +1,7 @@
 class CreateTestcases < ActiveRecord::Migration
   def change
     create_table :testcases do |t|
+      t.integer :case_id
       t.integer :heading_level
       t.text :body
       t.string :result

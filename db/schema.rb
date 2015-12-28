@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20151226051709) do
   end
 
   create_table "testcases", force: :cascade do |t|
+    t.integer  "case_id"
     t.integer  "heading_level"
     t.text     "body"
     t.string   "result"

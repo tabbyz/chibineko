@@ -3,10 +3,11 @@ html
   head
     title Chibineko
     = stylesheet_link_tag 'application', media: 'all'
+    = include_gon
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
-  body
+  body class="#{controller_name} #{action_name}"
     p.notice = notice
     p.alert = alert
 

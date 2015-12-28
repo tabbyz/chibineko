@@ -32,4 +32,4 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
                 = link_to "Delete test", "", data: {:confirm => "Are you sure?"}, :method => :delete
                 
         - if current_controller_action == "projects#show"
-          = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn btn-success new-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }, remote: true
+          = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-primary new-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }, remote: true

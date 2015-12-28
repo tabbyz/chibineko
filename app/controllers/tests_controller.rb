@@ -10,8 +10,11 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
+    gon.test = @test
+    gon.resultLabels = @test.result_labels
+    gon.results = @test.results
+    
     @test.description = "foo\nbar\nfoo\nbar"
-    @result_texts = %w(未実行 OK NG 保留 対象外)
   end
 
   # GET /tests/new

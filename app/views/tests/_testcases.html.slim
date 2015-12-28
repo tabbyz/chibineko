@@ -1,36 +1,25 @@
-.testcase-content
-  - num = 0
+.testcase-list
   - @test.testcase_groups.each do |group|
     .testcase-group
-      - group.each do |testcase|
-        - case testcase.type
+      - group.each do |c|
+        - case c.type
         - when :heading
-          div class="tr heading heading-level-#{testcase.heading_level}"
-            .td.body = testcase.body
+          div class="tr heading heading-level-#{c.heading_level}"
+            .td.body = c.body
             .td.result
-              - if testcase.heading_level == 1
-                .btn-group
-                  = link_to "#", class: "result-bulk", data: { toggle: "dropdown" }, title: "Bulk change" do
-                    = fa_icon "caret-down", right: true
-                  ul.dropdown-menu.pull-right role="menu"
-                    - @test.result_labels.each do |label|
-                        li
-                          p.result-bulk-item = label
-                          / = link_to text, "#", class: "result-bulk-item"
             .td.note
         - when :testcase
-          - num += 1
           .tr.testcase
-            .td.number = num
-            .td.body = testcase.body
+            .td.number = c.case_id
+            .td.body = c.body
             .td.result
               .btn-group.result-btn-group
-                = button_tag testcase.result, type: "button", class: "btn result-btn color-#{testcase.result_color}", data: { "case-id" => testcase.id }
-                = button_tag type: "button", class: "btn dropdown-toggle color-#{testcase.result_color}", data: { toggle: "dropdown" } do
+                = button_tag c.result, type: "button", class: "btn result-btn color-#{c.result_color}", data: { "case-id" => c.case_id }
+                = button_tag type: "button", class: "btn dropdown-toggle color-#{c.result_color}", data: { toggle: "dropdown" } do
                   span.caret
                   span.sr-only Toggle Dropdown
                 ul.dropdown-menu.pull-right role="menu"
                   - @test.result_labels.each do |label|
                     li
                       p.result-item = label
-            .td.note = testcase.note
+            .td.note = c.note

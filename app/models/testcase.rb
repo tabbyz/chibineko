@@ -1,6 +1,10 @@
 class Testcase < ActiveRecord::Base
   belongs_to :test
 
+  def to_param
+    case_id
+  end
+
   def type
     case self.heading_level
     when -1

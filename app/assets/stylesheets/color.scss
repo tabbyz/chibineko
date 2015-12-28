@@ -11,7 +11,7 @@
   }
 }
 
-.color-green, .color-primary {
+.color-green {
   background-color: #4CAF50;
   color: #FFF;
 
@@ -25,7 +25,21 @@
   }
 }
 
-.color-blue {
+.color-indigo {
+  background-color: #3F51B5;
+  color: #FFF;
+
+  &.btn {
+    border: 1px solid #303F9F;
+
+    &:hover {
+      background-color: #3949AB;
+      color: #FFF;
+    }
+  }
+}
+
+.color-blue, .color-primary {
   background-color: #2196F3;
   color: #FFF;
 

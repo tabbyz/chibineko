@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :tests, path: 't', param: 'slug', except: ['index']
+  resources :tests, path: 't', param: 'slug', except: ['index'] do
+    resources :testcases, path: '', param: 'case_id', only: ['update']
+  end
   
   # resources :teams, param: 'name', except: ['show']
   # get ':team_name' => 'teams#show', as: 'team_home'
