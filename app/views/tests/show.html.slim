@@ -1,6 +1,13 @@
 p#notice = notice
 
-h3 = @test.title
-p = @test.description
+h3.test-title = @test.title
+
+.test-description
+  - if @test.description.blank?
+    p.placeholder Description
+  - else
+    = auto_link simple_format(html_escape(@test.description)), :html => { target: "_blank" }
+  .tool-menu
+    = link_to fa_icon("pencil"), edit_description_test_path(@test), class: "btn", data: { toggle: "tooltip", placement: "left", title: "Edit description" }, remote: true
 
 = render "testcases"

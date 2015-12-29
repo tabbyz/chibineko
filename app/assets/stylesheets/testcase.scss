@@ -3,6 +3,7 @@
     background-color: #FFF;
     border: 1px solid #DDD;
     border-top-style: none;
+    border-radius: 2px;
     margin-bottom: 16px;
   }
 
@@ -131,31 +132,8 @@
     padding: 6px 4px;
 
     .best_in_place {
-      display: block;
-      width: 100%;
-      padding: 4px;
-      border: 1px solid transparent;
-      border-radius: 2px;
       white-space: nowrap;
       overflow: hidden;
-
-      input {
-        width: 100%;
-        padding: 0;
-        background-color: transparent;
-        border: none;
-        outline: 0;
-      }
-
-      &:hover {
-        background-color: #FFFFCC;
-        border-color: #CCC;
-        cursor: text;
-      }
-    }
-
-    .bip-placeholder {
-      color: #CCC;
     }
   }
 }

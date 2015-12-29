@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :tests, path: 't', param: 'slug', except: ['index'] do
+    member do
+      get 'edit_description'
+    end
+
     resources :testcases, path: '', param: 'case_id', only: ['update']
   end
   

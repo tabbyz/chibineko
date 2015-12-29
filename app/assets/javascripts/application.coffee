@@ -13,3 +13,10 @@ jQuery ->
 
   $(document).on 'shown.bs.modal', (e) ->
     $('[autofocus]', e.target).focus()
+
+# $("#description .editable").editable({ 
+#   mode: 'inline',
+#   rows: 10,
+#   highlight: false,
+#   onblur: 'ignore',
+# });

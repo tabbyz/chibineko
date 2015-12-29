@@ -1,0 +1,15 @@
+.edit-description-modal.modal-dialog.modal-lg
+  .modal-content
+    = form_for @test, remote: true do |f|
+      / = f.hidden_field :team_name, value: params[:team_name]
+      / = f.hidden_field :project_name, value: params[:project_name]
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+        h4.modal-title Edit description
+      .modal-body
+        = f.text_area :description, class: "form-control", placeholder: "Enter description", autofocus: true, rows: 20
+            
+      .modal-footer
+        = f.submit "Update", class: "btn btn-lg btn-primary"
+        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Cancel

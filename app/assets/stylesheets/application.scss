@@ -23,7 +23,90 @@ a {
   text-decoration: none !important;
 }
 
+textarea {
+  resize: none;
+}
+
 .content-wrapper {
   // overflow: hidden;
   padding: 0 20px;  // TODO: 
 }
+
+.best_in_place {
+  display: block;
+  width: 100%;
+  padding: 4px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: #FFFFCC;
+    border-color: #CCC;
+    cursor: text;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+  }
+
+  textarea {
+    resize: none;
+    margin-bottom: -25px;
+    white-space: normal;
+  }
+}
+
+.bip-placeholder {
+  color: #CCC;
+}
+
+// // X-editable
+// .editable {
+//   display: block;
+//   border: none;
+//   padding: 7px 13px;
+//   &:hover { 
+//     background-color: #FFFFCC;
+//     border: 1px solid #CCC;
+//     border-radius: 4px;
+//     padding: 6px 12px;
+//   }
+// }
+// .editable-empty {
+//   // Placeholder
+//   color: #CCC;
+//   font-style: normal;
+// }
+// .editable-inline {
+//   width: 100%;
+//   .editable-input {
+//     width: 100%;
+//   }
+//   .form-group {
+//     margin: 0;
+//     width: 100%;
+//     input[type="text"], textarea { 
+//       width: 100%;
+//       padding-right: 90px !important;
+//     }
+//     textarea { resize: vertical; }
+//     .editable-clear-x { visibility: hidden; }
+//     .editable-buttons {
+//       position: relative;
+//       .editable-cancel {
+//         position: absolute;
+//         top: 6px;
+//         right: 13px;
+//       }
+//       .editable-submit {
+//         position: absolute;
+//         top: 6px;
+//         right: 52px;
+//       }
+//     }
+//   }
+// }

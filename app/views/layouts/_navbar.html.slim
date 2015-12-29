@@ -10,7 +10,7 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
 
       ul.nav.navbar-nav
         - if current_controller_action == "tests#show"
-          = link_to "Edit", edit_test_path(@test), class: "btn color-primary edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true    
+          = link_to "Edit test", edit_test_path(@test), class: "btn color-primary edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true    
 
       ul.nav.navbar-nav.navbar-right
         - if current_controller_action == "tests#show"

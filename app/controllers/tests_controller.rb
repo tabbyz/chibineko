@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_test, only: [:show, :edit, :edit_description, :update, :destroy]
 
   # GET /tests
   # GET /tests.json
@@ -14,7 +14,8 @@ class TestsController < ApplicationController
     gon.resultLabels = @test.result_labels
     gon.results = @test.results
     
-    @test.description = "foo\nbar\nfoo\nbar"
+    # @test.description = "foo\n bar\nfoo\nbar"
+    # puts @test.description
   end
 
   # GET /tests/new
@@ -27,10 +28,12 @@ class TestsController < ApplicationController
     @test.update_markdown(with_result: true)
   end
 
+  def edit_description
+  end
+
   # POST /tests
   # POST /tests.json
   def create
-    puts params
     @test = current_user.tests.build(test_params)
 
     team = Team.find_by(name: params[:test][:team_name])
@@ -58,7 +61,9 @@ class TestsController < ApplicationController
   # PATCH/PUT /tests/1.json
   def update
     if @test.update(test_params)
-      @test.make_testcase
+      @test.make_testcase if @test.markdown
+      # respond_with @test
+      # render json: @test, status: 200
     end
     
     # respond_to do |format|

@@ -8,6 +8,10 @@ class Test < ActiveRecord::Base
     slug
   end
 
+  # def description_format
+  #   self.description.gsub(/\n/, "<br>")
+  # end
+
   def results
     # TODO: From DB
     {

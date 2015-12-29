@@ -1,14 +1,30 @@
-// Place all the styles related to the Tests controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.test-title {
 
-// .modal-full {
-//   height: 100%;
-  
-//   .modal-content {
-//     height: 100%;
-//   }
-// }
+}
+
+.test-description {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 6px 34px 6px 10px;
+  background-color: #EEE;
+  border-radius: 2px;
+
+  p {
+    margin-bottom: 0;
+    word-wrap: break-word;
+  }
+
+  .placeholder {
+    color: #BBB; 
+  }
+
+  .tool-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+  }
+}
 
 .modal-fullscreen {
   width: 100% !important;
