@@ -4,12 +4,18 @@ p#notice = notice
 / '|
 / = link_to "Delete", team_project_path(team_name: current_team.name, project_name: @project.name), data: {:confirm => "Are you sure?"}, :method => :delete
 
-table.table
-  - @tests.try(:each) do |test|
+table.table.table-condensed
+  thead
     tr
-      td = link_to test.slug, test
-      td = test.title
-      td = test.description
-      td = test.user_id
-      / td = link_to 'Edit', edit_test_path(test)
-      td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete
+      th style="width:40%;" Title
+      th style="width:20%; min-width:150px;" Updated at
+      th style="width:20%; min-width:150px;" Created by
+      th style="width:20%; min-width:150px;" Progress
+  tbody
+    - @tests.try(:each) do |test|
+      tr
+        td = link_to test.title, test
+        td = test.updated_at.strftime("%Y/%m/%d %H:%M")
+        td = test.user.email
+        td
+        / td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete

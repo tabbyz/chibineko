@@ -1,4 +1,5 @@
 class Test < ActiveRecord::Base
+  belongs_to :user
   belongs_to :project
   has_many :testcases
   after_initialize :set_slug
