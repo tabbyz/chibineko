@@ -10,6 +10,12 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
+    # puts "===="
+    # puts view_context.current_team
+    # puts view_context.current_project
+    # puts view_context.current_test
+    # puts "===="
+
     gon.test = @test
     gon.resultLabels = @test.result_labels
     gon.results = @test.results
@@ -91,11 +97,16 @@ class TestsController < ApplicationController
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
+    team = view_context.current_team
+    project = view_context.current_project
+
     @test.destroy
-    respond_to do |format|
-      format.html { redirect_to tests_url, notice: 'Test was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to team_project_path(team_name: team.name, project_name: project.name)
+    
+    # respond_to do |format|
+    #   format.html { redirect_to tests_url, notice: 'Test was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
