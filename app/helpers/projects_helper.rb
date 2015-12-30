@@ -4,11 +4,11 @@ module ProjectsHelper
   end
 
   def current_project
-    if current_controller == "tests"
-      test = Test.find_by(slug: params[:slug])
-      test.project if test
+    project_name = params[:project_name]
+    if project_name
+      Project.find_by(name: project_name)
     else
-      current_team.projects.find_by(name: params[:project_name]) if current_team
+      current_test.project if current_test
     end
   end
 end

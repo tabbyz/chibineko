@@ -21,11 +21,22 @@ class TestsController < ApplicationController
   # GET /tests/new
   def new
     @test = Test.new
+
+    # Duplicate test
+    @source = Test.find_by(slug: params[:source])
+    if @source
+      @test.project_id = @source.project_id
+      @test.title = @source.title
+      @test.description = @source.description
+      @source.set_markdown(false)
+      @test.markdown = @source.markdown
+    end
+    puts @source
   end
 
   # GET /tests/1/edit
   def edit
-    @test.update_markdown(with_result: true)
+    @test.set_markdown(true)
   end
 
   def edit_description

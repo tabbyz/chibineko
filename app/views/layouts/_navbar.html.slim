@@ -16,7 +16,7 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
         - if current_controller_action == "tests#show"
           li = link_to fa_icon("line-chart"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Progress" }, remote: true
           li = link_to fa_icon("download"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Export CSV" }, remote: true
-          li = link_to fa_icon("copy"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Duplicate test" }, remote: true
+          li = link_to fa_icon("copy"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name), source: @test.slug), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Duplicate test" }, remote: true
           li.dropdown
             a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
               = fa_icon "cog"

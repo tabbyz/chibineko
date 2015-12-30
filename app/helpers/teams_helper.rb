@@ -4,12 +4,12 @@ module TeamsHelper
   end
 
   def current_team
-    if current_controller == "tests"
-      current_project.team if current_project
+    team_name = params[:name]
+    team_name ||= params[:team_name]
+    if team_name
+      Team.find_by(name: team_name)  
     else
-      team_name = params[:name]
-      team_name ||= params[:team_name]
-      Team.find_by(name: team_name)
+      current_test.project.team if current_test  
     end
   end
 end

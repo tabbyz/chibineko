@@ -48,7 +48,7 @@ class Test < ActiveRecord::Base
     groups
   end
 
-  def update_markdown(with_result = false)
+  def set_markdown(with_result = false)
     array = []
     self.testcases.each do |t|
       buff = nil
