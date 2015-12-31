@@ -1,7 +1,7 @@
 class Test < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
-  has_many :testcases
+  has_many :testcases, dependent: :destroy
   after_initialize :set_slug
   attr_accessor :markdown
 

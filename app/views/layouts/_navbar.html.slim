@@ -1,35 +1,38 @@
-nav.navbar.navbar-fixed-top.navbar-with-sidebar
-  .container-fluid
-    .header-content
-      / .dropdown
-      /   a data-target="#" href="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-      /     Dropdown trigger
-      /     span.caret
-      /   ul.dropdown-menu
-      /     hoge
+nav.navbar.navbar-fixed-top
+  .navbar-content
+    - if current_controller_action == "tests#show"
+      = link_to fa_icon("pencil", text: "Edit test"), edit_test_path(@test), class: "btn color-primary edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true
+    - if current_controller_action == "projects#show"
+      .navbar-title
+        .dropdown
+          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+            = current_project.try(:name)
+            = fa_icon "angle-down"
+          ul.dropdown-menu
+            li
+              a href="#" Settings
+            li.divider role="separator"
+            li
+              = link_to "Delete this project", team_project_path(team_name: current_team.name, project_name: current_project.name), data: {:confirm => "Are you sure?"}, :method => :delete
 
-      ul.nav.navbar-nav
-        - if current_controller_action == "tests#show"
-          = link_to fa_icon("pencil", text: "Edit test"), edit_test_path(@test), class: "btn color-primary edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true
-
-      ul.nav.navbar-nav.navbar-right
-        - if current_controller_action == "tests#show"
-          li = link_to fa_icon("line-chart"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Progress" }, remote: true
-          li = link_to fa_icon("download"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Export CSV" }, remote: true
-          li = link_to fa_icon("copy"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name), source: @test.slug), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Duplicate test" }, remote: true
-          li.dropdown
-            a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-              = fa_icon "cog"
-            / a.dropdown-toggle.btn data-target="#" href="#" data-toggle="tooltip" data-placement="bottom" data-title="Settings" role="button" aria-haspopup="true" aria-expanded="false"
-            ul.dropdown-menu
-              li.dropdown-header Test settings
-              / li
-              /   a href="#" Settings
-              li
-                a href="#" Lock test result
-              li.divider role="separator"
-              li
-                = link_to "Delete test", "", data: {:confirm => "Are you sure?"}, :method => :delete
-                
-        - if current_controller_action == "projects#show"
-          = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-primary new-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }, remote: true
+    ul.nav.navbar-nav.navbar-right
+      - if current_controller_action == "tests#show"
+        li = link_to fa_icon("line-chart"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Progress" }, remote: true
+        li = link_to fa_icon("download"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Export CSV" }, remote: true
+        li = link_to fa_icon("copy"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name), source: @test.slug), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Duplicate test" }, remote: true
+        li.dropdown
+          a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+            = fa_icon "cog"
+          / a.dropdown-toggle.btn data-target="#" href="#" data-toggle="tooltip" data-placement="bottom" data-title="Settings" role="button" aria-haspopup="true" aria-expanded="false"
+          ul.dropdown-menu
+            li.dropdown-header Test settings
+            / li
+            /   a href="#" Settings
+            li
+              a href="#" Lock test result
+            li.divider role="separator"
+            li
+              = link_to "Delete this test", "", data: {:confirm => "Are you sure?"}, :method => :delete
+              
+    - if current_controller_action == "projects#show"
+      = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-primary new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }, remote: true

@@ -1,6 +1,6 @@
 class Team < ActiveRecord::Base
   belongs_to :user
-  has_many :projects
+  has_many :projects, dependent: :destroy
 
   class << self
     def find_by_user(user)
