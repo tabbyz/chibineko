@@ -19,7 +19,7 @@
                   span.caret
                   span.sr-only Toggle Dropdown
                 ul.dropdown-menu.pull-right role="menu"
-                  - @test.result_labels.each do |label|
+                  - @test.result_label_texts.each do |label|
                     li
                       p.result-item = label
             .td.note = best_in_place c, :note, url: test_testcase_path(case_id: c.case_id, test_slug: @test.slug), place_holder: "Note"

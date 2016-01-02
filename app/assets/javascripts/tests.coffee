@@ -2,14 +2,62 @@
 # Event
 # ==================================================
 $(".tests.show").ready ->
-  # alert(gon.test.slug)
-  # alert(gon.results["未実行"])
+  $(document).on "click", ".color-picker .color-item", ->
+    radio = $(this).prev()
+    color = radio.val()
+
+    popover = $(this).parents(".popover")
+    triggerElement = popover.prev()
+    removeColorClass(triggerElement)
+    triggerElement.addClass("color-#{color}")
+    triggerElement.val(color)
+
+
+  # Remove result label
+  $(document).on "click", ".delete-result-label-icon", ->
+    # Check item count
+    tbody = $(this).parents("tbody")
+    if tbody.find("tr").size() == 1
+      alert("You can not remove any more.")
+      return
+
+    # Remove item
+    tr = $(this).parents("tr")
+    tr.remove()
+
+
+  # Add result label
+  $(document).on "click", ".add-result-label-icon", ->
+    table = $(this).parent(".table-footer").prev("table")
+    tbody = table.children("tbody")
+    tr = tbody.find("tr:first").clone()
+
+    # Check item count
+    if tbody.find("tr").size() == 9
+      alert("You can not add any more.")
+      return
+
+    # Reset value
+    textInput = tr.find(".result-label-text > input")
+    textInput.val("")
+    colorInput = tr.find(".result-label-color > input")
+    removeColorClass(colorInput)
+    colorInput.addClass("color-white")
+    
+    # Add Item
+    tbody.append(tr)
+    $(".select-color").popover({
+      html : true, 
+      content: $(".popover-content-template").html()
+    })
+
 
   $(document).on "click", ".result-btn", ->
     label = nextResultLabel($(this).text().trim())
     btn = $(this)
     setResult(btn, label)
     postResult(btn.data("case-id"), label)
+
 
   $(document).on "click", ".result-item", ->
     groupEle = $(this).closest(".result-btn-group")[0]
@@ -19,26 +67,28 @@ $(".tests.show").ready ->
     postResult(btn.data("case-id"), label)
 
 
+  removeColorClass = (element) ->
+    element.removeClass (idx, css) ->
+      return (css.match(/\bcolor-\S+/g) || []).join(' ')
+
+
   setResult = (btn, label) ->
     dropdownBtn = btn.next()
 
-    btn.removeClass (idx, css) ->
-      return (css.match(/\bcolor-\S+/g) || []).join(' ')
-    dropdownBtn.removeClass (idx, css) ->
-      return (css.match(/\bcolor-\S+/g) || []).join(' ')
-
-    btn.addClass("color-#{gon.results[label]}")
-    dropdownBtn.addClass("color-#{gon.results[label]}")
+    removeColorClass(btn)
+    removeColorClass(dropdownBtn)
+    btn.addClass("color-#{gon.resultLabels[label]}")
+    dropdownBtn.addClass("color-#{gon.resultLabels[label]}")
 
     btn.text(label)
 
 
   nextResultLabel = (currentLabel) ->
-    idx = $.inArray(currentLabel, gon.resultLabels)
-    if idx == gon.resultLabels.length - 1
-      gon.resultLabels[0]
+    idx = $.inArray(currentLabel, gon.resultLabelTexts)
+    if idx == gon.resultLabelTexts.length - 1
+      gon.resultLabelTexts[0]
     else
-      gon.resultLabels[idx + 1]
+      gon.resultLabelTexts[idx + 1]
 
 
   prePostResult = null

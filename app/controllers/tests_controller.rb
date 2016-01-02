@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :edit_description, :update, :destroy]
+  before_action :set_test, only: [:show, :edit, :edit_description, :edit_result_label, :update, :update_result_label, :destroy]
 
   # GET /tests
   # GET /tests.json
@@ -10,18 +10,9 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
-    # puts "===="
-    # puts view_context.current_team
-    # puts view_context.current_project
-    # puts view_context.current_test
-    # puts "===="
-
     gon.test = @test
+    gon.resultLabelTexts = @test.result_label_texts
     gon.resultLabels = @test.result_labels
-    gon.results = @test.results
-    
-    # @test.description = "foo\n bar\nfoo\nbar"
-    # puts @test.description
   end
 
   # GET /tests/new
@@ -29,15 +20,15 @@ class TestsController < ApplicationController
     @test = Test.new
 
     # Duplicate test
-    @source = Test.find_by(slug: params[:source])
-    if @source
-      @test.project_id = @source.project_id
-      @test.title = @source.title
-      @test.description = @source.description
-      @source.set_markdown(false)
-      @test.markdown = @source.markdown
+    source = Test.find_by(slug: params[:source])
+    if source
+      @test.project_id = source.project_id
+      @test.title = source.title
+      @test.source = source.slug
+
+      source.set_markdown(false)
+      @test.markdown = source.markdown
     end
-    puts @source
   end
 
   # GET /tests/1/edit
@@ -48,6 +39,9 @@ class TestsController < ApplicationController
   def edit_description
   end
 
+  def edit_result_label
+  end
+
   # POST /tests
   # POST /tests.json
   def create
@@ -56,6 +50,13 @@ class TestsController < ApplicationController
     team = Team.find_by(name: params[:test][:team_name])
     project = team.projects.find_by(name: params[:test][:project_name]) if team
     @test.project_id = project.id if project  # TODO: Authority check
+
+    # Duplicate test
+    source = Test.find_by(slug: @test.source)
+    if source
+      @test.description = source.description
+      @test.result_labels = source.result_labels
+    end
 
     if @test.save
       @test.make_testcase
@@ -94,6 +95,18 @@ class TestsController < ApplicationController
     # end
   end
 
+  def update_result_label
+    keys = params[:result_label_texts]
+    vals = params[:result_label_colors]
+    hash = Hash[*keys.zip(vals).flatten]
+    
+    @test.result_labels = nil
+    @test.save
+
+    @test.result_labels = hash
+    @test.save
+  end
+
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
@@ -118,6 +131,6 @@ class TestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
       # params.require(:test).permit(:slug, :title, :description, :user_id)
-      params.require(:test).permit(:title, :description, :markdown)
+      params.require(:test).permit(:title, :description, :markdown, :source)
     end
 end

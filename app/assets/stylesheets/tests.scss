@@ -93,9 +93,85 @@
   }
 }
 
-textarea#test_title {
-  resize: none;
-  // background-color: red;
-  // display: inline-block;
-  // height: 100% !important;
+.edit-result-label-modal {
+  .popover-content-template {
+    display: none;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+
+    td {
+      padding: 8px;
+    }
+
+    tr {
+      .result-label-text {
+        input {
+          display: inline-block;
+          border: none;
+          outline:none;
+          padding: 2px 4px;
+          border-radius: 2px;
+          width: 100%;
+
+          &:hover {
+            background-color: #FFFFCC;
+          }
+        }
+      }
+
+      .result-label-color {
+        .select-color {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          padding: 0;
+          color: transparent;
+        }
+      }
+
+      .drag-handle-icon, .delete-result-label-icon {
+        color: transparent;
+        cursor: pointer;
+      }
+
+      .delete-result-label {
+        text-align: right;
+
+        .delete-result-label-icon {
+          padding: 6px 4px;
+        }
+      }
+
+      &:hover, &:focus {
+        .drag-handle-icon {
+          color: #555;
+        }
+
+        .delete-result-label-icon {
+          color: #C62828;
+        }
+      }
+    }
+  }
+
+  .table-footer {
+    display: block;
+    text-align: right;
+    padding-right: 2px; 
+
+    .add-result-label-icon {
+      cursor: pointer;
+      width: 30px;
+      padding: 6px 4px;
+      text-align: center;
+    }
+  }
+
+  .drag-handle {
+    cursor: move !important;
+    cursor: -webkit-grabbing !important;
+  }
 }

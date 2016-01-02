@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :tests, path: 't', param: 'slug', except: ['index'] do
     member do
       get 'edit_description'
+      get 'edit_result_label'
+      patch 'update_result_label'
     end
 
     resources :testcases, path: '', param: 'case_id', only: ['update']

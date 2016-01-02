@@ -1,8 +1,6 @@
 .edit-description-modal.modal-dialog.modal-lg
   .modal-content
     = form_for @test, remote: true do |f|
-      / = f.hidden_field :team_name, value: params[:team_name]
-      / = f.hidden_field :project_name, value: params[:project_name]
       .modal-header
         button.close type="button" data-dismiss="modal" aria-label="Close"
           span aria-hidden="true" &times;

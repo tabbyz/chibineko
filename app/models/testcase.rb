@@ -18,11 +18,12 @@ class Testcase < ActiveRecord::Base
 
   def result
     s = super
-    s ||= self.test.result_labels.first
+    s ||= self.test.result_label_texts.first  # Default value
   end
 
   def result_color
-    self.test.results[self.result]
+    color = self.test.result_labels[self.result]
+    color ||= "white"  # Default value
   end
 
   class << self

@@ -1,0 +1,9 @@
+$(".modal").html("<%= escape_javascript(render 'edit_result_label') %>")
+$(".modal").modal("show")
+
+Sortable.create(resultLabelList, { handle: ".drag-handle" });
+
+$(".select-color").popover({
+  html : true, 
+  content: $(".popover-content-template").html()
+})

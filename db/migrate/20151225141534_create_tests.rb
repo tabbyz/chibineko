@@ -4,6 +4,7 @@ class CreateTests < ActiveRecord::Migration
       t.string :slug, null: false
       t.string :title
       t.text :description
+      t.text :result_labels
       t.integer :user_id
       t.integer :project_id
 

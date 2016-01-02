@@ -26,10 +26,10 @@ nav.navbar.navbar-fixed-top
           / a.dropdown-toggle.btn data-target="#" href="#" data-toggle="tooltip" data-placement="bottom" data-title="Settings" role="button" aria-haspopup="true" aria-expanded="false"
           ul.dropdown-menu
             li.dropdown-header Test settings
-            / li
-            /   a href="#" Settings
             li
-              a href="#" Lock test result
+              = link_to "Customize result label", edit_result_label_test_path(@test), remote: true
+            / li
+            /   a href="#" Lock test result
             li.divider role="separator"
             li
               = link_to "Delete this test", "", data: {:confirm => "Are you sure?"}, :method => :delete

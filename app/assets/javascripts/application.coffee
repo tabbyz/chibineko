@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require bootstrap-sprockets
 #= require best_in_place
+#= require Sortable.min
 #= require jquery.readyselector
 #= require_tree .
 

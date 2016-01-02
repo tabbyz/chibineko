@@ -3,33 +3,30 @@ class Test < ActiveRecord::Base
   belongs_to :project
   has_many :testcases, dependent: :destroy
   after_initialize :set_slug
-  attr_accessor :markdown
+  serialize :result_labels
+  attr_accessor :markdown, :source
 
   def to_param
     slug
   end
 
-  # def description_format
-  #   self.description.gsub(/\n/, "<br>")
-  # end
-
-  def results
-    # TODO: From DB
-    {
+  def result_labels
+    hash = super
+    hash ||= {
       "未実行" => "white",
       "OK" => "green",
       "NG" => "red",
       "保留" => "orange",
       "対象外" => "gray",
-    }
+    }  # TODO: localize
   end
 
-  def result_labels
-    results.keys
+  def result_label_texts
+    result_labels.keys
   end
 
-  def result_colors
-    results.values
+  def result_label_colors
+    result_labels.values
   end
 
   def testcase_groups
@@ -60,7 +57,7 @@ class Test < ActiveRecord::Base
       when :testcase
         buff = t.body
         if with_result
-          if t.result && t.result != self.result_labels.first
+          if t.result && t.result != self.result_label_texts.first
             buff += ", [#{t.result}]"
             unless t.note.blank?
               buff += ", #{t.note}"

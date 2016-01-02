@@ -1,0 +1,33 @@
+.edit-result-label-modal.modal-dialog.modal-sm
+  .modal-content
+    = form_for @test, url: update_result_label_test_path, remote: true do |f|
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+        h4.modal-title Customize result label
+        
+      .modal-body
+        table
+          tbody#resultLabelList
+            - @test.result_labels.each do |k, v|
+              tr
+                td.drag-handle style="width:30px;"
+                  = fa_icon "bars", class: "drag-handle-icon"
+                td.result-label-text
+                  = text_field_tag "result_label_texts[]", k, { id: nil, placeholder: "Enter label text", required: true }
+                td.result-label-color style="width:40px;"
+                  input class="btn select-color color-#{v}" name="result_label_colors[]" value="#{v}" type="text" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left"
+                td.delete-result-label style="width:40px;"
+                  = fa_icon("close", class: "delete-result-label-icon")
+        .table-footer
+          = fa_icon("plus", class: "add-result-label-icon")
+
+        .popover-content-template
+          .color-picker
+            - %w(white blue green red orange gray).each do |color|
+              input type="radio" name="color-radio" id="radio-#{color}" value="#{color}"
+                label for="radio-#{color}" class="btn color-item color-#{color}"
+
+      .modal-footer
+        = f.submit "Update", class: "btn btn-lg btn-primary"
+        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Cancel
