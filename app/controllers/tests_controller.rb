@@ -10,9 +10,18 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
-    gon.test = @test
-    gon.resultLabelTexts = @test.result_label_texts
-    gon.resultLabels = @test.result_labels
+    respond_to do |format|
+      format.html do
+        gon.test = @test
+        gon.resultLabelTexts = @test.result_label_texts
+        gon.resultLabels = @test.result_labels
+      end
+      format.csv do
+        encode = "UTF-16LE"
+        bom = "\xFF\xFE".force_encoding(encode)
+        send_data bom + render_to_string.encode(encode), type: :csv, filename: "testcase.csv"
+      end
+    end
   end
 
   # GET /tests/new
