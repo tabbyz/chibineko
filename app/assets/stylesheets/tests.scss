@@ -1,10 +1,11 @@
 .progress.progress-animation {
   position: fixed;
-  top: 50px;
   left: 0;
   right: 0;
+  bottom: 0;
   height: 8px;
   padding-left: 260px;
+  margin-bottom: 0;
   z-index: 1030;
 }
 
