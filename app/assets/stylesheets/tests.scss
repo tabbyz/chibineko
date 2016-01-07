@@ -1,5 +1,15 @@
-.test-title {
+.progress.progress-animation {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  padding-left: 260px;
+  z-index: 1030;
+}
 
+.test-title {
+  margin-top: 30px;
 }
 
 .test-description {
