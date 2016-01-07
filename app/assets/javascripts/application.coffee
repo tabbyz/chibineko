@@ -3,6 +3,9 @@
 #= require bootstrap-sprockets
 #= require best_in_place
 #= require Sortable.min
+#= require ladda/spin.min
+#= require ladda/ladda.min
+#= require ladda/ladda.jquery.min
 #= require jquery.readyselector
 #= require_tree .
 

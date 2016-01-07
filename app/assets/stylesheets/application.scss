@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
  *= require_tree .
  *= require_self
  */
@@ -17,6 +18,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap_overrides";
+@import "ladda-themeless.min";
 @import "font-awesome";
 
 .color-picker {
@@ -82,4 +84,18 @@ textarea {
 
 .bip-placeholder {
   color: #CCC;
+}
+
+.ladda-button {
+  &:disabled {
+    cursor: default;
+  }
+
+  &[data-loading=""] .ladda-spinner {
+    top: 50%;
+  }
+
+  .ladda-spinner {
+    top: 0;
+  }
 }

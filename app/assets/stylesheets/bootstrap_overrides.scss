@@ -2,6 +2,12 @@
   border-radius: 2px;
 }
 
+button.btn.ladda-button {
+  &:focus {
+    outline: none;
+  }
+}
+
 .modal-sm {
   margin: 100px auto;
 }

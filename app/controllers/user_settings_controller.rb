@@ -6,7 +6,7 @@ class UserSettingsController < ApplicationController
   end
 
   def update
-    sleep 1
+    sleep 1  # TODO: debug
     @user.update(user_params)
   end
 
