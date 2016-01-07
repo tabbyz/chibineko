@@ -1,0 +1,36 @@
+.account-settings-modal {
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #DDD;
+
+      .collapse-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .accordion-title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .accordion-description {
+        margin-bottom: 20px;
+        padding-right: 100px;
+      }
+
+      .form-control {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

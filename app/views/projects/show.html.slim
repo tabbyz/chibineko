@@ -15,7 +15,8 @@ table.table.table-condensed
     - @tests.try(:each) do |test|
       tr
         td = link_to test.title, test
-        td = test.updated_at.strftime("%Y/%m/%d %H:%M")
-        td = test.user.email
+        / td = test.updated_at.strftime("%Y/%m/%d %H:%M")
+        td = test.updated_at.in_time_zone(current_user.timezone)
+        td = test.user.username
         td
         / td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete

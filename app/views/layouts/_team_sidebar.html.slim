@@ -4,7 +4,10 @@
       = current_team.try(:name)
       = fa_icon "angle-down"
     ul.dropdown-menu style="top: 50px; left: 20px;"
-      / li.dropdown-header Team menu
+      li.dropdown-header You
+      li
+        = link_to "Account", user_settings_edit_path, remote: true
+      li.dropdown-header Team
       li
         a href="#" Settings
       li

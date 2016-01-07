@@ -1,0 +1,75 @@
+.account-settings-modal.modal-dialog
+  .modal-content
+    .modal-header
+      button.close type="button" data-dismiss="modal" aria-label="Close"
+        span aria-hidden="true" &times;
+      h4.modal-title Account settings
+
+    .modal-body
+      ul
+        li
+          = link_to "expand", "#editUsername", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editUsername" }
+          p.accordion-title Username
+          p.accordion-description Username has not been set. In this case email address is used.
+          .collapse#editUsername
+            = form_for @user, url: user_settings_update_path, remote: true do |f|
+              = f.text_field :username, class: "form-control", style: "width:200px;", placeholder: "Enter username", required: true
+              = f.submit "Save", class: "btn color-primary"
+
+        li
+          = link_to "expand", "#editEmail", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editEmail" }
+          p.accordion-title Email Address
+          p.accordion-description
+            | Your email address is 
+            strong = @user.email
+          .collapse#editEmail
+            = form_for @user, url: user_settings_update_path, remote: true do |f|
+              = f.text_field :email, class: "form-control", style: "width:200px;", placeholder: "New email address", required: true
+              = f.submit "Save", class: "btn color-primary"
+
+        li
+          = link_to "expand", "#editPassword", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editPassword" }
+          p.accordion-title Password
+          p.accordion-description Change password.
+          .collapse#editPassword
+            = form_for @user, url: user_settings_update_path, remote: true do |f|
+              .form-group
+                label for="user_current_password" Current Password
+                = f.text_field :current_password, class: "form-control", style: "width:200px; display:block;", required: true
+              .form-group
+                label for="user_password" New Password
+                = f.text_field :password, class: "form-control", style: "width:200px; display:block;", required: true
+              = f.submit "Update Password", class: "btn color-primary"
+
+        li
+          = link_to "expand", "#editTimezone", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editTimezone" }
+          p.accordion-title Time Zone
+          p.accordion-description
+            | Your time zone is currently set to: 
+            strong = @user.timezone
+          .collapse#editTimezone
+            = form_for @user, url: user_settings_update_path, remote: true do |f|
+              = f.time_zone_select :timezone, nil, { default: nil, prompt: "Please select..." }, { class: "form-control", required: true }
+              = f.submit "Save Time Zone", class: "btn color-primary"
+
+        li
+          = link_to "expand", "#editLanguage", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editLanguage" }
+          p.accordion-title Language
+          p.accordion-description
+            | Your language is currently set to: 
+            / strong = @user.language
+          .collapse#editLanguage
+            = form_for @user, url: user_settings_update_path, remote: true do |f|
+              = f.select :timezone, { "English" => "en", "Japanese" => "ja" }, {}, { class: "form-control", style: "width:200px;" }
+              = f.submit "Save", class: "btn color-primary"
+
+        li
+          = link_to "expand", "#editDeleteAccount", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editDeleteAccount" }
+          p.accordion-title Delete account
+          p.accordion-description Your Chibineko account is deleted. Test pages you created will be remained.
+          .collapse#editDeleteAccount
+            = form_for @user, url: user_settings_update_path, remote: true do |f|
+              = link_to "Delete your account", "#", class: "btn btn-danger"
+
+    .modal-footer
+      button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Close

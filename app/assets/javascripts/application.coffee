@@ -15,6 +15,13 @@ jQuery ->
   $(document).on 'shown.bs.modal', (e) ->
     $('[autofocus]', e.target).focus()
 
+  $(document).on "click", '.collapse-btn', (e) ->
+    if $(this).hasClass("collapsed")
+      $(this).text("expand")
+    else
+      $(this).text("close")
+    
+
 # $("#description .editable").editable({ 
 #   mode: 'inline',
 #   rows: 10,

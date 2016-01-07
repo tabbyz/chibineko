@@ -1,7 +1,7 @@
 nav.navbar.navbar-fixed-top
   .navbar-content
     - if current_controller_action == "tests#show"
-      = link_to fa_icon("pencil", text: "Edit test"), edit_test_path(@test), class: "btn color-primary edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true
+      = link_to fa_icon("pencil", text: "Edit test"), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true
     - if current_controller_action == "projects#show"
       .navbar-title
         .dropdown
@@ -15,6 +15,21 @@ nav.navbar.navbar-fixed-top
             li
               = link_to "Delete this project", team_project_path(team_name: current_team.name, project_name: current_project.name), data: {:confirm => "Are you sure?"}, :method => :delete
 
+    / ul.nav.navbar-nav.navbar-right
+    /   li.dropdown
+    /     a.btn.account-btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+    /       = fa_icon "user"
+    /       = current_user.username
+    /     ul.dropdown-menu
+    /       li.dropdown-header = current_user.username
+    /       li
+    /         = link_to "Settings", "", remote: true
+    /       li
+    /         = link_to "Language", "", remote: true
+    /       li.divider role="separator"
+    /       li
+    /         = link_to "Sign out", "", remote: true
+
     ul.nav.navbar-nav.navbar-right
       - if current_controller_action == "tests#show"
         li = link_to fa_icon("line-chart"), "", class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Progress" }, remote: true
@@ -23,16 +38,13 @@ nav.navbar.navbar-fixed-top
         li.dropdown
           a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
             = fa_icon "cog"
-          / a.dropdown-toggle.btn data-target="#" href="#" data-toggle="tooltip" data-placement="bottom" data-title="Settings" role="button" aria-haspopup="true" aria-expanded="false"
           ul.dropdown-menu
             li.dropdown-header Test settings
             li
               = link_to "Customize result label", edit_result_label_test_path(@test), remote: true
-            / li
-            /   a href="#" Lock test result
             li.divider role="separator"
             li
               = link_to "Delete this test", "", data: {:confirm => "Are you sure?"}, :method => :delete
               
     - if current_controller_action == "projects#show"
-      = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-primary new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }, remote: true
+      = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }, remote: true
