@@ -2,6 +2,10 @@
   background-color: #FFF;
   color: #333;
 
+  &.label {
+    border: 1px solid #BDBDBD;
+  }
+
   &.btn {
     border: 1px solid #BDBDBD;
 

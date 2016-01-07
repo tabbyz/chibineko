@@ -11,6 +11,7 @@
 
 jQuery ->
   # $("a[rel~=popover], .has-popover").popover()
+  $("[data-toggle='popover']").popover({ container: 'body' })
   $("[data-toggle='tooltip']").tooltip({ container: 'body' })
   $(".dropdown-toggle").dropdown()
   $(".best_in_place").best_in_place()

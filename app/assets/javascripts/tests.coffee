@@ -28,7 +28,31 @@ $(".tests.show").ready ->
         OTransition: transition,
         transition: transition
       })
-      countL = countLabel(text)
+
+
+  updateProgressCount = () ->
+    tag = "<ul class='nav progress-count-list'>"
+
+    for text in gon.resultLabelTexts
+      count = countLabel(text)
+      color = gon.resultLabels[text]
+      tag += """
+      <li>
+        <span class='label color-#{color}'>#{text}</span>
+        <span class='pull-right count-value'>#{count}</span>
+      </li>
+      """
+
+    total = countAll()
+    tag += """
+    <li class='count-total'>
+      <span>Total</span>
+      <span class='pull-right count-value'>#{total}</span>
+    </li>
+    </ul>
+    """
+
+    $(".progress-count").attr("data-content", tag)
 
 
   removeColorClass = (element) ->
@@ -86,6 +110,7 @@ $(".tests.show").ready ->
 # Event
 # ==================================================
   updateProgressBar()
+  updateProgressCount()
 
 
   $(document).on "click", ".color-picker .color-item", ->
@@ -144,6 +169,7 @@ $(".tests.show").ready ->
     setResult(btn, label)
     postResult(btn.data("case-id"), label)
     updateProgressBar()
+    updateProgressCount()
 
 
   $(document).on "click", ".result-item", ->
@@ -153,3 +179,4 @@ $(".tests.show").ready ->
     setResult(btn, label)
     postResult(btn.data("case-id"), label)
     updateProgressBar()
+    updateProgressCount()
