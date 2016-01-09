@@ -9,9 +9,7 @@
         = link_to "Account", user_settings_edit_path, remote: true
       li.dropdown-header Team
       li
-        a href="#" Settings
-      li
-        a href="#" Members
+        = link_to "Edit members", team_team_users_path(team_name: current_team.name), remote: true
       li.divider role="separator"
       li
         = link_to "Delete this team", current_team, data: {:confirm => "Are you sure?"}, :method => :delete

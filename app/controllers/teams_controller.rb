@@ -29,7 +29,9 @@ class TeamsController < ApplicationController
   def create
     # @team = Team.new(team_params)
     @team = current_user.teams.build(team_params)
-    @team.save
+    if @team.save
+      @team.team_users.create(team_id: @team.id, user_id: current_user.id)
+    end
 
     # respond_to do |format|
     #   if @team.save

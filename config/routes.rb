@@ -31,6 +31,11 @@ Rails.application.routes.draw do
   # resources :teams, param: 'name', except: ['show']
   # get ':team_name' => 'teams#show', as: 'team_home'
   resources :teams, param: 'name', path: '', except: ['index'] do
+    resources :team_users do
+      collection do
+        get 'ajax_search_user'
+      end
+    end
     resources :projects, param: 'project_name', path: '', except: ['index']
   end
 

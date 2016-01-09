@@ -8,8 +8,16 @@ button.btn.ladda-button {
   }
 }
 
-.modal-sm {
+.modal-xs, .modal-sm {
   margin: 100px auto;
+}
+
+.modal-xs {
+  width: 300px;
+}
+
+.modal-sm {
+  width: 450px;
 }
 
 .modal-dialog {

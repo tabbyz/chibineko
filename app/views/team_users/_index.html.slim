@@ -1,0 +1,35 @@
+.team-users-modal.modal-dialog.modal-sm
+  .modal-content
+    .modal-header
+      button.close type="button" data-dismiss="modal" aria-label="Close"
+        span aria-hidden="true" &times;
+      h4.modal-title Edit team members
+    .modal-body
+      .search-user
+        = form_for @team_user, url: team_team_users_path, remote: true do |f|
+          = hidden_field_tag :team_name, @team.name
+          .form-group
+            label Search Chibineko user:
+            = text_field_tag :email, nil, class: "form-control", placeholder: "name@domain.com", required: true
+          = button_tag type: "submit", class: "btn color-green ladda-button", data: { style: "expand-right" } do
+            = fa_icon "chevron-down"
+            = content_tag :span, "Add user to team", class: "ladda-label"
+
+      table.table.table-condensed
+        thead
+          tr
+            th Email
+            th Name
+            th
+        tbody
+          - @team_users.each do |team_user|
+            tr
+              td = team_user.user.email
+              td = team_user.user.username
+              td
+                - if team_user.user != current_user
+                  = form_for team_user, url: team_team_user_path(@team, team_user), :html => { :method => :delete }, remote: true do |form|
+                    = button_tag type: "submit", class: "btn-link", data: {:confirm => "Are you sure?"} do
+                      = fa_icon "close"
+    .modal-footer
+      button.btn.btn-lg.btn-default.pull-right type="button" data-dismiss="modal" Done
