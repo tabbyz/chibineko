@@ -6,7 +6,7 @@
   - provide :modal_title, "Edit Test"
   - provide :submit_title, "Update Test"
 
-.new-test-modal.modal-dialog.modal-lg.modal-fullscreen
+.edit-test-modal.modal-dialog.modal-lg.modal-fullscreen
   .modal-content
     = form_for @test, remote: true do |f|
       = f.hidden_field :source

@@ -3,7 +3,14 @@ $team-sidebar-width: 200px;
 $hilight-color: #63A0C3;
 
 .content-wrapper {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
   margin-left: $root-sidebar-width + $team-sidebar-width;
+  overflow: scroll;
 }
 
 .sidebar {
@@ -41,58 +48,63 @@ $hilight-color: #63A0C3;
     }
   }
 
-  li {
-    text-align: center;
+  ul {
+    padding-bottom: 50px;
+    
+    li {
+      text-align: center;
 
-    .home-btn {
-      background-color: #01AB52;
-      color: #FFF;
-      height: 60px;
-      border-radius: 2px;
+      .home-btn {
+        background-color: #01AB52;
+        color: #FFF;
+        height: 60px;
 
-      .fa { margin-top: 16px; }
+        .fa {
+          margin-top: 16px;
+        }
+      }
+
+      .team-btn {
+        position: relative;
+        display: inline-block;
+        height: 60px;
+        padding-top: 5px;
+        border-radius: 2px;
+
+        .hilight-bar {
+          display: none;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 4px;
+          background-color: #01AB52;
+        }
+
+        .symbol {
+          display: block;
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .description {
+          display: inline-block;
+          overflow: hidden;
+          max-width: 50px;
+          font-size: 11px;
+        }
+      }
     }
 
-    .team-btn {
-      position: relative;
-      display: inline-block;
-      height: 60px;
-      padding-top: 5px;
-      border-radius: 2px;
+    li.active {
+      .team-btn {
+        background-color: #364760;
+        color: #FFF;
+      }
 
       .hilight-bar {
-        display: none;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 4px;
-        background-color: #01AB52;
-      }
-
-      .symbol {
-        display: block;
-        font-size: 20px;
-        font-weight: bold;
-      }
-
-      .description {
         display: inline-block;
-        overflow: hidden;
-        max-width: 50px;
-        font-size: 11px;
       }
-    }
-  }
-
-  li.active {
-    .team-btn {
-      background-color: #364760;
-      color: #FFF;
-    }
-
-    .hilight-bar {
-      display: inline-block;
     }
   }
 
@@ -119,7 +131,6 @@ $hilight-color: #63A0C3;
     .dropdown-toggle {
       display: inline-block;
       width: 100%;
-      // padding: 16px 20px;
       padding: 10px 20px;
       margin-bottom: 10px;
       font-size: 20px;

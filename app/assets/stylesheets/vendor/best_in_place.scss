@@ -1,0 +1,27 @@
+.best_in_place {
+  display: block;
+  width: 100%;
+  padding: 4px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: #FFFFCC;
+    border-color: #CCC;
+    cursor: text;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+  }
+
+  textarea {
+    resize: none;
+    margin-bottom: -25px;
+    white-space: normal;
+  }
+}

@@ -1,0 +1,13 @@
+.ladda-button {
+  &:disabled {
+    cursor: default;
+  }
+
+  &[data-loading=""] .ladda-spinner {
+    top: 50%;
+  }
+
+  .ladda-spinner {
+    top: 0;
+  }
+}

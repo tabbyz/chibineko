@@ -1,6 +1,17 @@
+a {
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
 .btn, .form-control {
   border-radius: 2px;
 }
+
 
 button.btn.ladda-button {
   &:focus {
@@ -14,6 +25,10 @@ button.btn.ladda-button {
 
 .modal-xs {
   width: 300px;
+
+  .modal-footer {
+    padding: 10px;
+  }
 }
 
 .modal-sm {
@@ -33,18 +48,7 @@ button.btn.ladda-button {
     }
 
     .modal-footer {
-      padding: 0;
-
-      .col-xs-6 {
-        padding: 0;
-      }
-
-      .btn {
-        border-radius: 0;
-        border: none;
-        font-size: 16px;
-        padding: 14px;
-      }
+      border-top: none;
     }
   }
 }

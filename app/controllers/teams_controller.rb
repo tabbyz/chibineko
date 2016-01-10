@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :authenticate_team!
+  before_action :authenticate_team!, except: [:new, :create]
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -65,10 +65,7 @@ class TeamsController < ApplicationController
   # DELETE /teams/1.json
   def destroy
     @team.destroy
-    respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Team was successfully destroyed.' }  # TODO: redirect_to dashboards_path
-      format.json { head :no_content }
-    end
+    redirect_to dashboards_path
   end
 
   private
