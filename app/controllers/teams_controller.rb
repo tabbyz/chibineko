@@ -13,6 +13,8 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+    project = @team.projects.first
+    redirect_to team_project_path(@team, project) if project
   end
 
   # GET /teams/new

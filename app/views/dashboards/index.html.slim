@@ -1,17 +1,23 @@
-p#notice = notice
+- if @tests.size == 0
+  .center
+    h3 No Tests
+    p Let's immediately create a test.
 
-table.table.table-condensed
-  thead
-    tr
-      th style="width:40%;" Title
-      th style="width:20%; min-width:150px;" Progress
-      th style="width:20%; min-width:150px;" Updated at
-      th style="width:20%; min-width:150px;" Team
-  tbody
-    - @tests.each do |test|
+    = link_to fa_icon("plus", text: "Create a new test"), new_test_path, class: "btn btn-lg color-blue"
+
+- else
+  table.table.table-condensed
+    thead
       tr
-        td = link_to test.title, test
-        td
-        td = test.updated_at.in_time_zone(current_user.timezone)
-        td = test.project.try(:team).try(:name)
-        / td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete
+        th style="width:40%;" Title
+        th style="width:20%; min-width:150px;" Progress
+        th style="width:20%; min-width:150px;" Updated at
+        th style="width:20%; min-width:150px;" Team
+    tbody
+      - @tests.each do |test|
+        tr
+          td = link_to test.title, test
+          td
+          td = test.updated_at.in_time_zone(current_user.timezone)
+          td = test.project.try(:team).try(:name)
+          / td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete

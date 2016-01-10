@@ -1,12 +1,6 @@
-p#notice = notice
+- if @team.projects.size == 0
+  .center
+    h3 No Projects
+    p When you create a project which helps to classify test.
 
-p
-  strong Name:
-  = @team.name
-p
-  strong User:
-  = @team.user_id
-
-= link_to 'Edit', edit_team_path(@team)
-'|
-= link_to 'Back', teams_path
+    = link_to fa_icon("plus", text: "Create a new project"), new_team_project_path(current_team), class: "btn btn-lg color-blue add-project-btn", remote: true

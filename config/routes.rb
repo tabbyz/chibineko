@@ -29,8 +29,6 @@ Rails.application.routes.draw do
     resources :testcases, path: '', param: 'case_id', only: ['update']
   end
   
-  # resources :teams, param: 'name', except: ['show']
-  # get ':team_name' => 'teams#show', as: 'team_home'
   resources :teams, param: 'name', path: '', except: ['index'] do
     resources :team_users do
       collection do

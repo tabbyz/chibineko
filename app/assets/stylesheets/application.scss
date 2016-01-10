@@ -49,6 +49,29 @@ textarea {
   // background-color: lightblue;
 }
 
+.center {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  text-align: center;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #BBB;
+    font-size: 26px;
+  }
+
+  p {
+    color: #BBB;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
+
 .best_in_place {
   display: block;
   width: 100%;
