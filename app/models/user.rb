@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :teams
   has_many :tests
+  has_many :team_users
+  has_many :teams, :through => :team_users
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

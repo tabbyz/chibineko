@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  before_action :authenticate_test!
   before_action :set_test, only: [:show, :edit, :edit_description, :edit_result_label, :update, :update_result_label, :destroy]
 
   # GET /tests
@@ -141,5 +142,15 @@ class TestsController < ApplicationController
     def test_params
       # params.require(:test).permit(:slug, :title, :description, :user_id)
       params.require(:test).permit(:title, :description, :markdown, :source)
+    end
+
+    def authenticate_test!
+      test = Test.find_by(slug: params[:slug])
+      team = test.project.try(:team)
+      if team
+        redirect_to root_url unless team.authorized?(current_user)  # TODO: Redirect to 404 page
+      else
+        # TODO: Check public status of the test
+      end
     end
 end

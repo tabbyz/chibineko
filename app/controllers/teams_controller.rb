@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
+  before_action :authenticate_team!
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -77,5 +78,10 @@ class TeamsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
       params.require(:team).permit(:name)
+    end
+
+    def authenticate_team!
+      team = Team.find_by(name: params[:name])
+      redirect_to root_url unless team.authorized?(current_user)  # TODO: Redirect to 404 page
     end
 end
