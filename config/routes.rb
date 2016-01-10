@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # root 'static_pages#home'
   root 'teams#index'
+  get 'dashboards' => 'dashboards#index'
 
   devise_for :users
   # devise_for :users, controllers: {

@@ -146,7 +146,9 @@ class TestsController < ApplicationController
 
     def authenticate_test!
       test = Test.find_by(slug: params[:slug])
-      team = test.project.try(:team)
+      team = test.try(:project).try(:team)
+      team ||= Team.find_by(name: params[:team_name])
+
       if team
         redirect_to root_url unless team.authorized?(current_user)  # TODO: Redirect to 404 page
       else

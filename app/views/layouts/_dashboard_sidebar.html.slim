@@ -1,0 +1,16 @@
+.sidebar.team-sidebar
+  .sidebar-title.dropdown
+    a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+      | Dashboard
+      = fa_icon "angle-down"
+      span.username = current_user.display_name
+    ul.dropdown-menu style="top: 50px; left: 20px;"
+      li.dropdown-header You
+      li
+        = link_to "Account", user_settings_edit_path, remote: true
+
+  ul.sidebar-list
+    li.sidebar-list-header
+      span MENU
+    li class="sidebar-list-item active"
+      = link_to "My tests", dashboards_path

@@ -16,7 +16,10 @@ html
 
       = debug(params) if Rails.env.development?
 
-    - if %w"teams projects tests".include?(current_controller)
+    - if %w"teams projects tests dashboards".include?(current_controller)
       = render "layouts/root_sidebar"
-      = render "layouts/team_sidebar"
+      - if controller_name == "dashboards"
+        = render "layouts/dashboard_sidebar"
+      - else
+        = render "layouts/team_sidebar"
       = render "layouts/navbar"
