@@ -7,7 +7,7 @@ $(".projects, .teams, .tests").ready ->
     clearTimeout(preSearchUser)
     preSearchUser = setTimeout (-> 
       ajaxSearchUser(team, email)
-    ), 300
+    ), 500
 
 
   ajaxSearchUser = (team, email) ->

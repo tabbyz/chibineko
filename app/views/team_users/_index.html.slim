@@ -10,7 +10,7 @@
           = hidden_field_tag :team_name, @team.name
           .form-group
             label Search Chibineko user:
-            = text_field_tag :email, nil, class: "form-control", placeholder: "name@domain.com", required: true
+            = email_field_tag :email, nil, class: "form-control", placeholder: "name@domain.com", required: true
           = button_tag type: "submit", class: "btn color-green ladda-button", data: { style: "expand-right" } do
             = fa_icon "chevron-down"
             = content_tag :span, "Add user to team", class: "ladda-label"
