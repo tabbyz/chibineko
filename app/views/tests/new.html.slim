@@ -1,0 +1,13 @@
+= form_for @test, remote: true do |f|
+  = f.hidden_field :source
+  = f.hidden_field :team_name, value: current_team.try(:name)
+  = f.hidden_field :project_name, value: current_project.try(:name)
+  .test-title
+    = f.text_field :title, class: "form-control input-lg", placeholder: "Enter test title", autofocus: (action_name == "new" ? true : false), required: true
+  .test-body
+    .test-markdown
+      = f.text_area :markdown, class: "form-control", placeholder: "Enter markdown text", autofocus: (action_name == "edit" ? true : false), required: true
+    .test-preview
+
+  footer
+    = f.submit "Create test", class: "btn btn-lg color-primary pull-right"

@@ -1,0 +1,216 @@
+// .tests.show {
+//   .progress-count-list {
+//     padding: 0;
+
+//     li {
+//       margin-bottom: 5px;
+
+//       .count-value {
+//         margin-left: 30px;
+//         font-weight: bold;
+//       }
+//     }
+
+//     .count-total {
+//       margin-top: 10px;
+//       margin-bottom: 0;
+//       border-top: 1px solid #AAA;
+//     }
+//   }
+
+//   .content-wrapper {
+//     .progress.progress-animation {
+//       position: fixed;
+//       left: 0;
+//       right: 0;
+//       bottom: 0;
+//       height: 9px;
+//       padding-top: 1px;
+//       padding-left: 260px;
+//       margin-bottom: 0;
+//       z-index: 1030;
+//       border-radius: 0;
+//       box-shadow: none;
+//       background-color: #DDD;
+//     }
+
+//     .test-title {
+//       margin-top: 30px;
+//     }
+
+//     .test-description {
+//       position: relative;
+//       margin-bottom: 20px;
+//       padding: 6px 34px 6px 10px;
+//       background-color: #EEE;
+//       border-radius: 2px;
+
+//       p {
+//         margin-bottom: 0;
+//         word-wrap: break-word;
+//       }
+
+//       .placeholder {
+//         color: #BBB; 
+//       }
+
+//       .tool-menu {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         display: inline-block;
+//       }
+//     }
+//   }
+
+//   .modal-fullscreen {
+//     width: 100% !important;
+//     height: 100% !important;
+//     margin: 0 !important;
+//     padding: 20px;
+
+//     .modal-content {
+//       height: 100%;
+//       border-radius: 0;
+
+//       .modal-header {
+//         height: 55px;
+//       }
+
+//       .modal-body {
+//         position: absolute;
+//         top: 55px;
+//         left: 0;
+//         right: 0;
+//         bottom: 50px;
+//       }
+
+//       .modal-footer {
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         right: 0;
+//       }
+//     }
+//   }
+
+//   .new-test-modal {
+//     .modal-body {
+//       // background-color: lightgreen;
+//       padding-top: 0 !important;
+
+//       .test-title {
+//         // background-color: lightblue;
+//       }
+
+//       .test-body {
+//         // background-color: lightgray;
+//         height: calc(100% - 40px);
+//         padding-top: 10px;
+
+//         .test-markdown {
+//           height: 100%;
+//           // background-color: green;
+
+//           textarea {
+//             height: 100%;
+//             resize: none;
+//           }
+//         }
+
+//         .test-preview {
+//           height: 100%;
+//           padding-left: 15px;
+//           overflow: scroll;
+//         }
+//       }
+//     }
+
+//     .col-xs-6 {
+//       padding: 0;
+//     }
+//   }
+
+//   .edit-result-label-modal {
+//     .popover-content-template {
+//       display: none;
+//     }
+
+//     table {
+//       table-layout: fixed;
+//       width: 100%;
+
+//       td {
+//         padding: 8px;
+//       }
+
+//       tr {
+//         .result-label-text {
+//           input {
+//             display: inline-block;
+//             border: none;
+//             outline:none;
+//             padding: 2px 4px;
+//             border-radius: 2px;
+//             width: 100%;
+
+//             &:hover {
+//               background-color: #FFFFCC;
+//             }
+//           }
+//         }
+
+//         .result-label-color {
+//           .select-color {
+//             display: inline-block;
+//             width: 20px;
+//             height: 20px;
+//             padding: 0;
+//             color: transparent;
+//           }
+//         }
+
+//         .drag-handle-icon, .delete-result-label-icon {
+//           color: transparent;
+//           cursor: pointer;
+//         }
+
+//         .delete-result-label {
+//           text-align: right;
+
+//           .delete-result-label-icon {
+//             padding: 6px 4px;
+//           }
+//         }
+
+//         &:hover, &:focus {
+//           .drag-handle-icon {
+//             color: #555;
+//           }
+
+//           .delete-result-label-icon {
+//             color: #C62828;
+//           }
+//         }
+//       }
+//     }
+
+//     .table-footer {
+//       display: block;
+//       text-align: right;
+//       padding-right: 2px; 
+
+//       .add-result-label-icon {
+//         cursor: pointer;
+//         width: 30px;
+//         padding: 6px 4px;
+//         text-align: center;
+//       }
+//     }
+
+//     .drag-handle {
+//       cursor: move !important;
+//       cursor: -webkit-grabbing !important;
+//     }
+//   }
+// }

@@ -14,12 +14,14 @@ html
     .content-wrapper
       == yield
 
-      = debug(params) if Rails.env.development?
+      / = debug(params) if Rails.env.development?
 
-    - if %w"teams projects tests dashboards".include?(current_controller)
+    - if %w"dashboards teams projects tests".include?(controller_name)
       = render "layouts/root_sidebar"
-      - if controller_name == "dashboards"
-        = render "layouts/dashboard_sidebar"
-      - else
+
+      - if current_team
         = render "layouts/team_sidebar"
+      - else
+        = render "layouts/dashboard_sidebar"
+      
       = render "layouts/navbar"

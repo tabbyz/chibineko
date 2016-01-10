@@ -39,8 +39,14 @@ textarea {
 }
 
 .content-wrapper {
-  // overflow: hidden;
-  padding: 0 20px;  // TODO: 
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  overflow: scroll;
+  // background-color: lightblue;
 }
 
 .best_in_place {

@@ -1,4 +1,4 @@
-$(".tests.show").ready ->
+$(".tests.show, .tests.new").ready ->
 # ==================================================
 # Function
 # ==================================================
@@ -66,14 +66,18 @@ $(".tests.show").ready ->
 
 
   updatePreview = () ->
-    markdown = $("#test_markdown").val()
-    tag = caseTag(markdown)
-    $(".test-preview").empty()
-    $(".test-preview").append(tag)
+    e = $("#test_markdown")
+    if e.length
+      markdown = e.val()
+      tag = caseTag(markdown)
+      $(".test-preview").empty()
+      $(".test-preview").append(tag)
 
 
 # ==================================================
 # Event
 # ==================================================
+  updatePreview()
+
   $(document).on "keyup", "#test_markdown", ->
     updatePreview()

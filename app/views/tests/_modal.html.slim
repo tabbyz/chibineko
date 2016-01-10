@@ -1,4 +1,4 @@
-- case current_action
+- case action_name
 - when "new"
   - provide :modal_title, "New Test"
   - provide :submit_title, "Create a new test"
@@ -17,12 +17,12 @@
           span aria-hidden="true" &times;
         h4.modal-title = yield :modal_title
       .modal-body
-        .test-title.row
-          = f.text_field :title, class: "form-control input-lg", placeholder: "Enter test title", autofocus: (current_action == "new" ? true : false), required: true
-        .test-body.row
-          .test-markdown.col-xs-6
-            = f.text_area :markdown, class: "form-control", placeholder: "Enter markdown text", autofocus: (current_action == "edit" ? true : false), required: true
-          .test-preview.col-xs-6
+        .test-title
+          = f.text_field :title, class: "form-control input-lg", placeholder: "Enter test title", autofocus: (action_name == "new" ? true : false), required: true
+        .test-body
+          .test-markdown
+            = f.text_area :markdown, class: "form-control", placeholder: "Enter markdown text", autofocus: (action_name == "edit" ? true : false), required: true
+          .test-preview
             
       .modal-footer
         = f.submit yield(:submit_title), class: "btn btn-lg btn-primary"
