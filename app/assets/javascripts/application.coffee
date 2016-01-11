@@ -9,8 +9,7 @@
 #= require jquery.readyselector
 #= require_tree .
 
-jQuery ->
-  # $("a[rel~=popover], .has-popover").popover()
+$(document).ready ->
   $("[data-toggle='popover']").popover({ container: 'body' })
   $("[data-toggle='tooltip']").tooltip({ container: 'body' })
   $(".dropdown-toggle").dropdown()
@@ -24,11 +23,3 @@ jQuery ->
       $(this).text("expand")
     else
       $(this).text("close")
-    
-
-# $("#description .editable").editable({ 
-#   mode: 'inline',
-#   rows: 10,
-#   highlight: false,
-#   onblur: 'ignore',
-# });

@@ -1,4 +1,4 @@
-.new-team-modal.modal-dialog.modal-xs
+.new-team-modal.modal-dialog.modal-sm
   .modal-content
     = form_for @team, remote: true do |f|
       .modal-header
@@ -6,7 +6,9 @@
           span aria-hidden="true" &times;
         h4.modal-title New team
       .modal-body
-        = f.text_field :name, class: "form-control input-lg", placeholder: "Enter team name", autofocus: true, required: true
+        .form-group
+          = f.text_field :name, class: "form-control input-lg", placeholder: "Enter team name", autofocus: true, required: true
+          p.text-danger.error-message
       .modal-footer
         = f.submit "Create", class: "btn btn-lg color-primary btn-primaryX btn-blockX"
         button.btn.btn-lg.btn-default.btn-blockX type="button" data-dismiss="modal" Cancel

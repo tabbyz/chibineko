@@ -34,6 +34,8 @@ class TeamsController < ApplicationController
     @team = current_user.teams.build(team_params)
     if @team.save
       @team.team_users.create(team_id: @team.id, user_id: current_user.id)
+    else
+      render json: @team.errors.messages, status: :unprocessable_entity
     end
 
     # respond_to do |format|
