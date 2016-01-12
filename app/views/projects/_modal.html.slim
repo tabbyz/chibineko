@@ -1,14 +1,15 @@
 .new-project-modal.modal-dialog.modal-sm
   .modal-content
-    = form_for @project, url: team_projects_path, remote: true do |f|
+    = 
+    = form_for @project, url: action_name == "new" ? team_projects_path : team_project_path, remote: true do |f|
       .modal-header
         button.close type="button" data-dismiss="modal" aria-label="Close"
           span aria-hidden="true" &times;
-        h4.modal-title New project
+        h4.modal-title New/Edit project
       .modal-body
         .form-group
           = f.text_field :name, class: "form-control input-lg", placeholder: "Enter project name", autofocus: true, required: true
           p.text-danger.error-message
       .modal-footer
-        = f.submit "Create", class: "btn btn-lg color-primary"
+        = f.submit "Create/Update", class: "btn btn-lg color-primary"
         button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Cancel

@@ -12,11 +12,9 @@ nav.navbar.navbar-fixed-top
             = current_project.try(:name)
             = fa_icon "angle-down"
           ul.dropdown-menu
-            li
-              a href="#" Settings
+            li = link_to "Rename", edit_team_project_path(current_team, current_project), remote: true
             li.divider role="separator"
-            li
-              = link_to "Delete this project", team_project_path(team_name: current_team.name, project_name: current_project.name), data: {:confirm => "Are you sure?"}, :method => :delete
+            li = link_to "Delete this project", team_project_path(team_name: current_team.name, project_name: current_project.name), data: {:confirm => "Are you sure?"}, :method => :delete
 
     ul.nav.navbar-nav.navbar-right
       - if controller_action == "tests#show"
@@ -28,13 +26,10 @@ nav.navbar.navbar-fixed-top
             = fa_icon "cog"
           ul.dropdown-menu
             li.dropdown-header Test settings
-            li
-              = link_to "Move to", move_test_path(@test), remote: true
-            li
-              = link_to "Customize result label", edit_result_label_test_path(@test), remote: true
+            li = link_to "Move to", move_test_path(@test), remote: true
+            li = link_to "Customize result label", edit_result_label_test_path(@test), remote: true
             li.divider role="separator"
-            li
-              = link_to "Delete this test", "", data: {:confirm => "Are you sure?"}, :method => :delete
+            li = link_to "Delete this test", "", data: {:confirm => "Are you sure?"}, :method => :delete
 
     - if %w"dashboards#index projects#show".include?(controller_action)
       = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }
