@@ -1,0 +1,20 @@
+.move-test-modal.modal-dialog.modal-xs
+  .modal-content
+    = form_for @test, remote: true do |f|
+      = f.hidden_field :project_id, class: "selected-id-field"
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+        h4.modal-title Move to
+      .modal-body
+        .project-list
+          - @teams.each do |team|
+            - if team.projects.size != 0
+              p.team-name = team.name
+              ul.nav
+                - team.projects.each do |project|
+                  li data-project-id="#{project.id}" class="project-name #{'active' if project == current_project}"
+                    = project.name
+      .modal-footer
+        = f.submit "Move", class: "btn btn-lg color-primary"
+        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Cancel

@@ -1,0 +1,29 @@
+.move-test-modal {
+  .project-list {
+    .team-name {
+      padding: 2px 10px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      font-weight: bold;
+    }
+
+    ul {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      .project-name {
+        padding: 5px 10px 5px 20px;
+        background-color: #EEE;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &:hover, &:focus, &.active {
+          // background-color: #81C784;
+          background-color: #4CAF50;
+          color: #C8E6C9;
+        }
+      }
+    }
+  }
+}

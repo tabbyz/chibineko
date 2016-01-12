@@ -29,6 +29,8 @@ nav.navbar.navbar-fixed-top
           ul.dropdown-menu
             li.dropdown-header Test settings
             li
+              = link_to "Move to", move_test_path(@test), remote: true
+            li
               = link_to "Customize result label", edit_result_label_test_path(@test), remote: true
             li.divider role="separator"
             li

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :tests, path: 't', param: 'slug', except: ['index'] do
     member do
+      get 'move'
       get 'edit_description'
       get 'edit_result_label'
       patch 'update_result_label'

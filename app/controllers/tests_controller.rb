@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :authenticate_test!
-  before_action :set_test, only: [:show, :edit, :edit_description, :edit_result_label, :update, :update_result_label, :destroy]
+  before_action :set_test, only: [:show, :edit, :edit_description, :edit_result_label, :update, :update_result_label, :destroy, :move]
 
   # GET /tests
   # GET /tests.json
@@ -132,6 +132,10 @@ class TestsController < ApplicationController
     # end
   end
 
+  def move
+    @teams = current_user.teams
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_test
@@ -141,7 +145,7 @@ class TestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
       # params.require(:test).permit(:slug, :title, :description, :user_id)
-      params.require(:test).permit(:title, :description, :markdown, :source)
+      params.require(:test).permit(:title, :description, :project_id, :markdown, :source)
     end
 
     def authenticate_test!
