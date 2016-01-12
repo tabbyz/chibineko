@@ -14,12 +14,10 @@
 
       .project-name {
         padding: 5px 10px 5px 20px;
-        background-color: #EEE;
         border-radius: 2px;
         cursor: pointer;
 
         &:hover, &:focus, &.active {
-          // background-color: #81C784;
           background-color: #4CAF50;
           color: #C8E6C9;
         }
