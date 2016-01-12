@@ -1,3 +1,7 @@
 $(".modal").html("<%= escape_javascript(render 'edit') %>")
 $(".modal").modal("show")
 $("#test_markdown").keyup()
+
+$("#test_markdown").scroll( function() {
+  syncScroll($(this))
+})

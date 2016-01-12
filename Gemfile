@@ -19,6 +19,7 @@ gem 'bcrypt', '~> 3.1.0'
 gem 'devise', '~> 3.5.0'
 gem 'best_in_place', '~> 3.1.0'
 gem 'rails_autolink', '~> 1.1.0'
+gem 'http_accept_language', '~> 2.0.0'
 
 group :development, :test do
   gem 'byebug'

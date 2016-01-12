@@ -66,10 +66,10 @@
           p.accordion-title Language
           p.accordion-description
             | Your language is currently set to: 
-            / strong = @user.language
+            strong = @user.locale
           .collapse#editLanguage
             = form_for @user, url: user_settings_update_path, remote: true do |f|
-              = f.select :timezone, { "English" => "en", "Japanese" => "ja" }, {}, { class: "form-control", style: "width:200px;" }
+              = f.select :locale, { "en" => "en", "ja" => "ja" }, {}, { class: "form-control", style: "width:200px;" }
               = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
                 = content_tag :span, "Save", class: "ladda-label"
 

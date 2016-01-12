@@ -81,3 +81,17 @@ $(".tests.show, .tests.new").ready ->
 
   $(document).on "keyup", "#test_markdown", ->
     updatePreview()
+
+  # $(document).on "scroll", "#test_markdown", ->  # TODO: Doesn't work...
+  $("#test_markdown").scroll ->
+    syncScroll($(this))
+
+
+# TODO: Global
+@syncScroll = (e) ->
+  source = e
+  target = $(".test-preview")
+  sourceScrollMax = source.get(0).scrollHeight - source.get(0).offsetHeight
+  targetScrollMax = target.get(0).scrollHeight - target.get(0).offsetHeight
+  scrollRatio = source.scrollTop()/ sourceScrollMax
+  target.scrollTop(targetScrollMax * scrollRatio)

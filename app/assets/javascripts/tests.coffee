@@ -111,7 +111,7 @@ $(".tests.show").ready ->
 # ==================================================
   updateProgressBar()
   updateProgressCount()
-  
+
 
   $(document).on "click", ".color-picker .color-item", ->
     radio = $(this).prev()
