@@ -36,7 +36,7 @@ Rails.application.routes.draw do
         get 'ajax_search_user'
       end
     end
-    resources :projects, param: 'project_name', path: '', except: ['index']
+    resources :projects, param: 'project_name', except: ['index']
   end
 
 
