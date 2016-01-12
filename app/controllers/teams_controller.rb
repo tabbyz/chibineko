@@ -31,6 +31,7 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = current_user.teams.build(team_params)
+    @team.user_id = current_user.id
     if @team.save
       @team.authorized!(current_user)
     else

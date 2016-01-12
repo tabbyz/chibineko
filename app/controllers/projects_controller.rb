@@ -67,7 +67,8 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find_by(name: params[:project_name])
+      team = Team.find_by(name: params[:team_name])
+      @project = team.projects.find_by(name: params[:project_name])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

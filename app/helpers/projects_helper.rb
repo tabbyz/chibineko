@@ -4,9 +4,11 @@ module ProjectsHelper
   end
 
   def current_project
+    team_name = params[:team_name]
     project_name = params[:project_name]
-    if project_name
-      Project.find_by(name: project_name)
+    if team_name && project_name
+      team = Team.find_by(name: team_name)
+      team.projects.find_by(name: project_name)
     else
       current_test.project if current_test
     end
