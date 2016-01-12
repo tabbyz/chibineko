@@ -6,8 +6,8 @@ class Team < ActiveRecord::Base
   before_save { self.name = name.downcase }
   validates :name,
     presence: true,
-    uniqueness: true,
-    length: { in: 6..30 },
+    uniqueness: { case_sensitive: false },
+    length: { in: 4..30 },
     format: { with: /\A[a-z0-9_]+\z/i }
 
   class << self
@@ -19,6 +19,10 @@ class Team < ActiveRecord::Base
 
   def authorized?(user)
     self.users.include?(user)
+  end
+
+  def authorized!(user)
+    self.team_users.create(team_id: self.id, user_id: user.id)
   end
   
   def to_param

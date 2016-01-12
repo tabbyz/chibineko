@@ -10,6 +10,7 @@ nav.navbar.navbar-fixed-top
         .dropdown
           a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
             = current_project.try(:name)
+            = current_project.try(:id)
             = fa_icon "angle-down"
           ul.dropdown-menu
             li

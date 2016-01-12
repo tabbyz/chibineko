@@ -30,23 +30,12 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
-    # @team = Team.new(team_params)
     @team = current_user.teams.build(team_params)
     if @team.save
-      @team.team_users.create(team_id: @team.id, user_id: current_user.id)
+      @team.authorized!(current_user)
     else
       render json: @team.errors.messages, status: :unprocessable_entity
     end
-
-    # respond_to do |format|
-    #   if @team.save
-    #     format.html { redirect_to @team, notice: 'Team was successfully created.' }
-    #     format.json { render :show, status: :created, location: @team }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @team.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /teams/1

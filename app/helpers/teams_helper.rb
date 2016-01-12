@@ -5,7 +5,7 @@ module TeamsHelper
     if team_name
       Team.find_by(name: team_name)  
     else
-      current_test.project.team if current_test  
+      current_test.try(:project).try(:team) if current_test
     end
   end
 end

@@ -8,5 +8,8 @@
 
 user = User.create(email: "1@1.com", password: "1234")
 google = Team.create(name: "google", user_id: user.id)
+google.authorized!(user)
 Project.create(name: "gmail", user_id: user.id, team_id: google.id)
 Project.create(name: "chrome", user_id: user.id, team_id: google.id)
+
+User.create(email: "2@2.com", password: "1234")
