@@ -4,6 +4,8 @@ class Test < ActiveRecord::Base
   has_many :testcases, dependent: :destroy
   after_initialize :set_slug
   serialize :result_labels
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :description, length: { maximum: 4096 }
   attr_accessor :markdown, :source
 
   def to_param

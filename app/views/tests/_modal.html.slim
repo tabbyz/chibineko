@@ -18,7 +18,7 @@
         h4.modal-title = yield :modal_title
       .modal-body
         .test-title
-          = f.text_field :title, class: "form-control input-lg", placeholder: "Enter test title", autofocus: (action_name == "new" ? true : false), required: true
+          = f.text_field :title, class: "form-control input-lg", placeholder: "Enter test title", autofocus: (action_name == "new" ? true : false), maxlength: 255, required: true
         .test-body
           .test-markdown
             = f.text_area :markdown, class: "form-control", placeholder: "Enter markdown text", autofocus: (action_name == "edit" ? true : false), required: true

@@ -8,7 +8,7 @@
         h4.modal-title New/Edit project
       .modal-body
         .form-group
-          = f.text_field :name, class: "form-control input-lg", placeholder: "Enter project name", autofocus: true, required: true
+          = f.text_field :name, class: "form-control input-lg", placeholder: "Enter project name", autofocus: true, maxlength: 30, required: true
           p.text-danger.error-message
       .modal-footer
         = f.submit "Create/Update", class: "btn btn-lg color-primary"

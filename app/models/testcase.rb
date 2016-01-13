@@ -1,5 +1,8 @@
 class Testcase < ActiveRecord::Base
   belongs_to :test
+  validates :body, length: { maximum: 1024 }
+  validates :result, length: { maximum: 255 }
+  validates :note, length: { maximum: 1024 }
 
   def to_param
     case_id

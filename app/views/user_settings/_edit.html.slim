@@ -18,19 +18,7 @@
               strong = @user.username
           .collapse#editUsername
             = form_for @user, url: user_settings_update_path, remote: true do |f|
-              = f.text_field :username, class: "form-control", style: "width:200px;", placeholder: "Enter username", required: true
-              = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
-                = content_tag :span, "Save", class: "ladda-label"
-
-        li
-          = link_to "expand", "#editEmail", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editEmail" }
-          p.accordion-title Email Address
-          p.accordion-description
-            | Your email address is 
-            strong = @user.email
-          .collapse#editEmail
-            = form_for @user, url: user_settings_update_path, remote: true do |f|
-              = f.text_field :email, class: "form-control", style: "width:200px;", placeholder: "New email address", required: true
+              = f.text_field :username, class: "form-control", style: "width:200px;", placeholder: "Enter username", maxlength: 255, required: true
               = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
                 = content_tag :span, "Save", class: "ladda-label"
 
@@ -54,7 +42,7 @@
           p.accordion-title Time Zone
           p.accordion-description
             | Your time zone is currently set to: 
-            strong = Time.zone
+            strong = @user.timezone
           .collapse#editTimezone
             = form_for @user, url: user_settings_update_path, remote: true do |f|
               = f.time_zone_select :timezone, nil, { default: nil, prompt: "Please select..." }, { class: "form-control", required: true }
