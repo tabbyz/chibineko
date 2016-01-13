@@ -4,10 +4,10 @@
   }
 
   &[data-loading=""] .ladda-spinner {
-    top: 50%;
+    top: 50% !important;
   }
 
   .ladda-spinner {
-    top: 0;
+    top: 0 !important;
   }
 }

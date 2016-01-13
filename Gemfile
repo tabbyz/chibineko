@@ -20,6 +20,7 @@ gem 'devise', '~> 3.5.0'
 gem 'best_in_place', '~> 3.1.0'
 gem 'rails_autolink', '~> 1.1.0'
 gem 'http_accept_language', '~> 2.0.0'
+gem 'browser-timezone-rails', github: 'kbaum/browser-timezone-rails'
 
 group :development, :test do
   gem 'byebug'

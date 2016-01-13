@@ -54,7 +54,7 @@
           p.accordion-title Time Zone
           p.accordion-description
             | Your time zone is currently set to: 
-            strong = @user.timezone
+            strong = Time.zone
           .collapse#editTimezone
             = form_for @user, url: user_settings_update_path, remote: true do |f|
               = f.time_zone_select :timezone, nil, { default: nil, prompt: "Please select..." }, { class: "form-control", required: true }

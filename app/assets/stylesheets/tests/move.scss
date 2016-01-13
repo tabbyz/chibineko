@@ -16,8 +16,13 @@
         padding: 5px 10px 5px 20px;
         border-radius: 2px;
         cursor: pointer;
+        border: 3px dashed transparent;
 
-        &:hover, &:focus, &.active {
+        &:hover, &:focus {
+          border-color: #4CAF50;
+        }
+
+        &.active {
           background-color: #4CAF50;
           color: #C8E6C9;
         }
