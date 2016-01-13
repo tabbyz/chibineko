@@ -204,7 +204,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.0)
   best_in_place (~> 3.1.0)
   bootstrap-sass (~> 3.3.0)
-  browser-timezone-rails (~> 0.2.00)!
+  browser-timezone-rails!
   bullet
   byebug
   coffee-rails (~> 4.1.0)

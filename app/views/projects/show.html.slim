@@ -18,6 +18,6 @@
         tr
           td = link_to test.title, test
           td
-          td = test.updated_at.in_time_zone(current_user.timezone)
+          td = l(test.updated_at, format: :short)
           td = test.user.display_name
           / td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete
