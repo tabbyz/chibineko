@@ -68,13 +68,5 @@
               = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
                 = content_tag :span, "Save", class: "ladda-label"
 
-        li
-          = link_to "expand", "#editDeleteAccount", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editDeleteAccount" }
-          p.accordion-title Delete account
-          p.accordion-description Your Chibineko account is deleted. Test pages you created will be remained.
-          .collapse#editDeleteAccount
-            = form_for @user, url: user_settings_update_path, remote: true do |f|
-              = link_to "Delete your account", "#", class: "btn btn-danger"
-
     .modal-footer
       button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Close
