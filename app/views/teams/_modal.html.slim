@@ -7,9 +7,6 @@
         h4.modal-title New/Edit team
       .modal-body
         .form-group
-          / = f.text_field :name, class: "form-control input-lg", placeholder: "Enter team name", autofocus: true, maxlength: 30, required: true
-          / p.text-danger.error-message
-          / = f.text_field :name, class: "form-control input-lg validation", placeholder: "Enter team name", autofocus: true, maxlength: 30, required: true, data: { toggle: "popover", placement: "bottom", content: "error" }
           = f.text_field :name, class: "form-control input-lg validation", placeholder: "Enter team name", autofocus: true, maxlength: 30, required: true
           p.text-danger.error-message
       .modal-footer
