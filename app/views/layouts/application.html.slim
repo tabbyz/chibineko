@@ -8,20 +8,17 @@ html
     = csrf_meta_tags
 
   body class="#{controller_name} #{action_name}"
-    p.notice = notice
-    p.alert = alert
-
-    .content-wrapper
-      == yield
-
-      / = debug(params) if Rails.env.development?
-
     - if %w"dashboards teams projects tests".include?(controller_name)
-      = render "layouts/root_sidebar"
-
-      - if current_team
-        = render "layouts/team_sidebar"
-      - else
-        = render "layouts/dashboard_sidebar"
-      
       = render "layouts/navbar"
+      .page.page-with-sidebar
+        .content
+          == yield
+        = render "layouts/root_sidebar"
+        = current_team ? render("layouts/team_sidebar") : render("layouts/dashboard_sidebar")
+    - else
+      = render "layouts/simple_navbar"
+      .page
+        .content
+          == yield
+
+/ = debug(params) if Rails.env.development?

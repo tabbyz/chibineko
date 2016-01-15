@@ -1,4 +1,4 @@
-nav.navbar.navbar-fixed-top
+nav.navbar.navbar-fixed-top.navbar-with-sidebar
   .navbar-content
     - if controller_action == "tests#show"
       = link_to fa_icon("pencil", text: "Edit test"), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true

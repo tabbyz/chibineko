@@ -1,0 +1,8 @@
+.card.text-center
+  = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+    h1.card-title Resend confirmation instructions
+    .card-body
+      .form-group
+        = f.email_field :email, class: "form-control input-lg", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), autofocus: true, placeholder: "Email", required: true
+
+      = f.submit "Send mail", class: "btn btn-lg color-primary btn-block", data: { disable_with: "Processing" }

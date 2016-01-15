@@ -16,6 +16,6 @@ class UserSettingsController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :username, :timezone, :locale)
+      params.require(:user).permit(:username, :timezone, :locale)
     end
 end

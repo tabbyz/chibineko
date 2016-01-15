@@ -1,0 +1,17 @@
+.card.text-center
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    h1.card-title Sign up
+    .card-body
+      .form-group
+        = f.email_field :email, class: "form-control input-lg", autofocus: true, placeholder: "Email", required: true
+
+      .form-group
+        = f.password_field :password, class: "form-control input-lg", autocomplete: "off", placeholder: "Password", required: true
+
+      .form-group
+        = f.password_field :password_confirmation, class: "form-control input-lg", autocomplete: "off", placeholder: "Password confirmation", required: true
+
+      = f.submit "Sign up", class: "btn btn-lg color-primary btn-block", data: { disable_with: "Processing" }
+      
+    .text-left
+      = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)

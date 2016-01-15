@@ -1,0 +1,16 @@
+nav.navbar.navbar-fixed-top
+  / .navbar-header
+  = link_to "", root_url, class: "logo"
+    / span Chibineko
+    / = link_to image_tag('logo_black.png', { class: "logo", style: "height: 90%;" }), root_url, { class: "navbar-brandX" }
+
+  / .navbar-collapse.collapse
+  /   ul.nav.navbar-nav.navbar-right
+      / <%= render 'layouts/user_menu' %>
+
+  ul.nav.navbar-nav.pull-right
+    - if user_signed_in?
+      li = link_to "Sign out", destroy_user_session_path, class: "navbar-link", method: :delete
+    - else
+      li = link_to "Sign in", new_user_session_path, class: "navbar-link"
+      li = link_to "Sign up", new_user_registration_path, class: "btn color-blue sign-up"

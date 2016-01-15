@@ -1,4 +1,32 @@
-.navbar {
+nav {
+  background-color: #FFF;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+
+  .logo {
+    background: url(/images/header_logo.png);
+    height: 30px;
+    width: 150px;
+    float: left;
+    margin-top: 9px;
+    margin-left: 9px;
+  }
+
+  .navbar-nav > li > a {
+    padding: 6px 12px;
+    margin-top: 8px;
+    border-radius: 2px;
+  }
+
+  .navbar-nav > li:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .navbar-nav.pull-right {
+    padding-right: 20px;
+  }
+}
+
+.navbar.navbar-with-sidebar {
   background-color: #FFF;
   padding-left: 260px;
 
@@ -30,17 +58,5 @@
         }
       }
     }
-  }
-
-  // .account-btn {
-  .fa-user {
-    // width: 25px;
-    // height: 25px;
-    padding: 6px 8px;
-    border-radius: 50%;
-    border: 2px solid;
-    // &:focus {
-    //   background-color: yellow;
-    // }
   }
 }

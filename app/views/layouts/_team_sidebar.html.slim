@@ -6,16 +6,13 @@
       span.username = current_user.display_name
     ul.dropdown-menu style="top: 50px; left: 20px;"
       li.dropdown-header You
-      li
-        = link_to "Account", user_settings_edit_path, remote: true
+      li = link_to "Account", user_settings_edit_path, remote: true
+      li = link_to "Sign out", destroy_user_session_path, method: :delete
       li.dropdown-header Team
-      li
-        = link_to "Edit members", team_team_users_path(current_team), remote: true
-      li
-        = link_to "Rename", edit_team_path(current_team), remote: true
+      li = link_to "Edit members", team_team_users_path(current_team), remote: true
+      li = link_to "Rename", edit_team_path(current_team), remote: true
       li.divider role="separator"
-      li
-        = link_to "Delete this team", current_team, data: {:confirm => "Are you sure?"}, :method => :delete
+      li = link_to "Delete this team", current_team, data: {:confirm => "Are you sure?"}, :method => :delete
 
   ul.sidebar-list
     li.sidebar-list-header

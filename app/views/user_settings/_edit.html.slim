@@ -27,13 +27,16 @@
           p.accordion-title Password
           p.accordion-description Change password.
           .collapse#editPassword
-            = form_for @user, url: user_settings_update_path, remote: true do |f|
+            = form_for @user, as: "user", url: registration_path("user"), html: { method: :put }, remote: true do |f| 
               .form-group
-                label for="user_current_password" Current Password
+                label for="user_current_password" Current password
                 = f.text_field :current_password, class: "form-control", style: "width:200px; display:block;", required: true
               .form-group
-                label for="user_password" New Password
-                = f.text_field :password, class: "form-control", style: "width:200px; display:block;", required: true
+                label for="user_password" New password
+                = f.text_field :password, class: "form-control", style: "width:200px; display:block;", autocomplete: "off", required: true
+              .form-group
+                label for="user_password" Confirm new password
+                = f.text_field :password_confirmation, class: "form-control", style: "width:200px; display:block;", autocomplete: "off", required: true
               = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
                 = content_tag :span, "Update Password", class: "ladda-label"
 

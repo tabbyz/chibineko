@@ -6,8 +6,8 @@
       span.username = current_user.display_name
     ul.dropdown-menu style="top: 50px; left: 20px;"
       li.dropdown-header You
-      li
-        = link_to "Account", user_settings_edit_path, remote: true
+      li = link_to "Account", user_settings_edit_path, remote: true
+      li = link_to "Sign out", destroy_user_session_path, method: :delete
 
   ul.sidebar-list
     li.sidebar-list-header
