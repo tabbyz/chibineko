@@ -29,10 +29,23 @@
   }
 }
 
-.error-message {
-  margin-top: 5px;
-  margin-bottom: 0;
-  height: 20px;
+.inline-block {
+  display: inline-block !important;
+}
+
+.has-feedback .form-control.validation {
+  padding-right: 16px;
+}
+
+.popover.error {
+  width: 100%;
+  max-width: 100%;
+  background-color: #F44336;
+  color: #FFF;
+
+  &.top .arrow:after, &.bottom .arrow:after {
+    border-bottom-color: #F44336;
+  }
 }
 
 .center {

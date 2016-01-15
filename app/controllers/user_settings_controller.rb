@@ -7,7 +7,11 @@ class UserSettingsController < ApplicationController
 
   def update
     sleep 1  # TODO: debug
-    @user.update(user_params)
+    if @user.update(user_params)
+      # Do nothing
+    else
+      render json: @user.errors.messages, status: :unprocessable_entity
+    end
   end
 
   private
