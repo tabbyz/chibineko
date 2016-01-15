@@ -31,5 +31,5 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
             li.divider role="separator"
             li = link_to "Delete this test", "", data: {:confirm => "Are you sure?"}, :method => :delete
 
-    - if %w"dashboards#index projects#show".include?(controller_action)
+    - if %w"dashboard#index projects#show".include?(controller_action)
       = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }

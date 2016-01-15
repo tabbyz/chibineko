@@ -8,7 +8,7 @@ html
     = csrf_meta_tags
 
   body class="#{controller_name} #{action_name}"
-    - if %w"dashboards teams projects tests".include?(controller_name)
+    - if %w"dashboard teams projects tests".include?(controller_name)
       = render "layouts/navbar"
       .page.page-with-sidebar
         .content

@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :set_locale, :set_timezone
 
+  def after_sign_in_path_for(resource)
+    dashboard_path
+  end
+
   private
     def set_locale
       client_locale = http_accept_language.compatible_language_from(I18n.available_locales)

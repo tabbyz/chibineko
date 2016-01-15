@@ -1,7 +1,7 @@
 .sidebar.root-sidebar
   ul
     li
-      = link_to fa_icon("home 2x"), dashboards_path, class: "home-btn", data: { toggle: "tooltip", placement: "right", title: "Dashboard" }
+      = link_to fa_icon("home 2x"), dashboard_path, class: "home-btn", data: { toggle: "tooltip", placement: "right", title: "Dashboard" }
     - current_user.teams.each do |team|
       li class="#{'active' if team == current_team}"
         = link_to team_path(team), class: "team-btn", data: { toggle: "tooltip", placement: "right", title: team.name } do
