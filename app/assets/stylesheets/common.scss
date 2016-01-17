@@ -29,6 +29,23 @@
   }
 }
 
+.btn-ghost {
+  border: 3px solid #FFF;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #FFF;
+  font-size: 20px;
+  padding: 18px 20px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+
+  &:hover, &:focus {
+    background-color: #FFF;
+    color: #01AB52;
+  }
+}
+
 .inline-block {
   display: inline-block !important;
 }

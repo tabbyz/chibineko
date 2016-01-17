@@ -1,0 +1,50 @@
+section.branding.text-center
+  h1 The simplest test supporting tool
+  p
+    | chibineko.jp is a hosting service of 
+    a href="#" target="_blank" Chibineko-OSS
+
+  - if user_signed_in?
+    = link_to "Get Started", dashboard_path, class: "btn-ghost"
+  - else
+    = link_to "Sign Up for Free", new_user_registration_path, class: "btn-ghost"
+
+  .browser-outline
+    .browser-header
+      ul.browser-btn
+        li.red
+        li.yellow
+        li.green
+    #carousel-screenshot.carousel.slide data-ride="carousel" 
+      ol.carousel-indicators
+        li.active data-slide-to="0" data-target="#carousel-screenshot" 
+        li data-slide-to="1" data-target="#carousel-screenshot" 
+        li data-slide-to="2" data-target="#carousel-screenshot" 
+      .carousel-inner role="listbox" 
+        - (1..3).each do |i|
+          div class="item #{'active' if i == 1}"
+            img alt=("First") data-holder-rendered="true" data-src=("First slide") src="images/screenshot_1.png" /
+      a.left.carousel-control data-slide="prev" href="#carousel-screenshot" role="button" 
+        span.glyphicon.glyphicon-chevron-left aria-hidden="true" 
+        span.sr-only Previous
+      a.right.carousel-control data-slide="next" href="#carousel-screenshot" role="button" 
+        span.glyphicon.glyphicon-chevron-right aria-hidden="true" 
+        span.sr-only Next
+
+
+section.support
+  h2 Support
+  ul
+    li = link_to fa_icon("envelope-o", text: "support@chibineko.jp"), "#"
+    li = link_to fa_icon("github-alt", text: "GitHub Issues"), "#"
+    li = link_to fa_icon("twitter", text: "Twitter"), "#"
+
+
+section.footer
+  ul.list-inline
+    li = link_to "Terms of Service", "#"
+    li = link_to "Releases", "#"
+    li = link_to "Roadmap", "#"
+  span.powered-by
+    | Powerd by
+    = link_to "SHIFT", "https://chibineko.jp", target: "blank"

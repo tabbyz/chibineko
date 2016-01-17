@@ -17,6 +17,7 @@ $(document).ready ->
   $("[data-toggle='tooltip']").tooltip({ container: 'body' })
   $(".dropdown-toggle").dropdown()
   $(".best_in_place").best_in_place()
+  $(".carousel").carousel()
 
   $(document).on 'shown.bs.modal', (e) ->
     $('[autofocus]', e.target).focus()

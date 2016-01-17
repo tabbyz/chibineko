@@ -53,9 +53,12 @@ button.btn.ladda-button {
   }
 }
 
-// input {
-//   &::-webkit-input-placeholder { color: transparent; }  // Webkit
-//   &:-moz-placeholder           { color: transparent; }  // FF 18
-//   &::-moz-placeholder          { color: transparent; }  // FF 19
-//   &:-ms-input-placeholder      { color: transparent; }  // IE
-// }
+// TODO:
+.navbar-nav > li {
+  float: left;
+}
+
+// TODO:
+.navbar-right {
+  float: right !important;
+}

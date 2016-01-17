@@ -1,16 +1,4 @@
-nav {
-  background-color: #FFF;
-  box-shadow: 0 1px 1px rgba(0,0,0,.1);
-
-  .logo {
-    background: url(/images/header_logo.png);
-    height: 30px;
-    width: 150px;
-    float: left;
-    margin-top: 9px;
-    margin-left: 9px;
-  }
-
+.navbar {
   .navbar-nav > li > a {
     padding: 6px 12px;
     margin-top: 8px;

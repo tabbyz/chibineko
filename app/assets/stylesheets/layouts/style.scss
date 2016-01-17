@@ -1,10 +1,8 @@
 body, html {
   width: 100%;
-  // overflow-x: hidden;
 }
 
 body {
-  // position: relative;
   min-height: 100%;
   margin: 0;
 }
@@ -14,45 +12,22 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: #F3F3F3;
+
+    .navbar {
+      background-color: #FFF;
+      box-shadow: 0 1px 1px rgba(0,0,0,.1);
+
+      .logo {
+        background: url(/images/header_logo.png);
+        height: 30px;
+        width: 150px;
+        float: left;
+        margin-top: 9px;
+        margin-left: 9px;
+      }
+    }
   }
 
-  &.static_pages.home {
-    padding-top: 50px;
-    background-color: #01AB52;
-    color: #FFF;
+  &.static_pages.top {
   }
-}
-
-// html, body　{
-//   margin: 0;
-//   padding: 0;
-//   height: 100% !important;
-//   width: 100%;
-// }
-
-// html {
-//   position: relative;
-//   min-height: 100%;
-// }
-
-// body {
-//   font-family: Verdana, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-//   -webkit-text-size-adjust: 100%;
-//   background-color: yellow !important;
-// }
-
-// body {
-//   background-color: #F3F3F3;
-//   margin-top: 50px;
-// }
-
-.page {
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
-  // min-height: 100% !important;
-  // padding-top: 50px;
-  // padding-bottom: 50px;
 }
