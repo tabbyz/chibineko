@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Chibineko
+    title = page_title(yield :title)
     = stylesheet_link_tag 'application', media: 'all'
     = include_gon
     = javascript_include_tag 'application'
