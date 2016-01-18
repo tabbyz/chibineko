@@ -9,15 +9,12 @@
   table.table.table-condensed
     thead
       tr
-        th style="width:40%;" Title
-        th style="width:20%; min-width:150px;" Progress
+        th style="width:60%;" Title
         th style="width:20%; min-width:150px;" Updated at
         th style="width:20%; min-width:150px;" Created by
     tbody
       - @tests.try(:each) do |test|
         tr
           td = link_to test.title, test
-          td
           td = l(test.updated_at, format: :short)
           td = test.user.display_name
-          / td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete
