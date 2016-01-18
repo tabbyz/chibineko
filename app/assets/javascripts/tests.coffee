@@ -180,3 +180,7 @@ $(".tests.show").ready ->
     postResult(btn.data("case-id"), label)
     updateProgressBar()
     updateProgressCount()
+
+
+  $(document).on "blur", ".testcase-list .note input", ->
+    $(this).parents(".best_in_place").attr("data-original-title", $(this).val())

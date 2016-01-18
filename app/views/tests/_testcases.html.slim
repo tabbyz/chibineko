@@ -22,4 +22,4 @@
                   - @test.result_label_texts.each do |label|
                     li
                       p.result-item = label
-            .td.note = best_in_place c, :note, url: test_testcase_path(case_id: c.case_id, test_slug: @test.slug), place_holder: "Note", html_attrs: { maxlength: 1024 }
+            .td.note = best_in_place c, :note, url: test_testcase_path(case_id: c.case_id, test_slug: @test.slug), place_holder: "Note", html_attrs: { maxlength: 1024 }, data: { toggle: "tooltip", placement: "top", "original-title" => c.note }
