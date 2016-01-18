@@ -159,16 +159,12 @@
 
     .powered-by {
       position: absolute;
-      top: 5px;
-      right: 10px;
-
-      a {
-        font-size: 20px;
-        font-weight: bold;
-        font-style: italic;
-        color: #AD1B2B;
-        display: inline-block;
-        padding: 6px;
+      top: 18px;
+      right: 14px;
+      
+      img {
+        margin-left: 4px;
+        margin-bottom: 6px;
       }
     }
   }
