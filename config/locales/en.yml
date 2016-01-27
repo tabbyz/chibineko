@@ -1,23 +1,169 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  language_name: "English"
+
+
+  helpers:
+    submit:
+      create: "Create"
+      submit: "Save"
+      update: "Update"
+
+
+  dialog:
+    done: "Done"
+    close: "Close"
+    cancel: "Cancel"
+
+
+  # activerecord:
+  #   models:
+  #     team: "team"
+  #     project: "project"
+  #     test: "test"
+  #     user: "user"
+  #   attributes:
+  #     team:
+  #       name: "name"
+  #     project:
+  #       name: "name"
+  #     user:
+  #       email: "email"
+  #       name: "name"
+
+  activerecord:
+    models:
+      user: Dude
+    attributes:
+      user:
+        login: "HandleX"
+      team:
+        name: "NameE"
+
+
+  root_sidebar:
+    add_team: "Create a new team"
+
+
+  team_sidebar:
+    menu:
+      account_settings: "Account settings"
+      sign_out: "Sign out"
+      rename_team: "Rename team"
+      delete_team: "Delete this team"
+
+      edit_members:
+        title: "Edit team members"
+        search_user: "Search Chibineko user:"
+        add_user: "Add user to team"
+
+
+  teams:
+    modal:
+      title:
+        new: "New team"
+        edit: "Edit team"
+      enter_name: "Enter team name"
+    show:
+      empty_message: "No Projects"
+      empty_sub_message: "When you create a project which helps to classify test."
+
+
+  projects:
+    show:
+      empty_message: "No Tests"
+      empty_sub_message: "Let's immediately create a test!"
+      menu:
+        rename_project: "Rename project"
+        delete_project: "Delete this project"
+    modal:
+      title:
+        new: "New project"
+        edit: "Edit project"
+      enter_name: "Enter project name"
+
+
+  tests:
+    show:
+      blank_description: "Description is blank"
+      delete_confirm: "Are you sure?You can't undo this."
+    new:
+      title: "Create test"
+      title_placeholder: "Enter test title"
+      markdown_placeholder: "Enter markdown text"
+      submit: "Create test"
+    edit:
+      title: "Edit Test"
+      title_placeholder: "Enter test title"
+      markdown_placeholder: "Enter markdown text"
+    description:
+      title: "Edit description"
+    move:
+      title: "Move to"
+      submit: "Move"
+    result_label:
+      title: "Customize result label"
+      label_placeholder: "Enter label text"
+
+
+  dashboard:
+    index:
+      title: "Dashboard"
+      navbar:
+        new_test: "Create a new test"
+      table_header:
+        title: "Title"
+        updated_at: "Updated at"
+        team: "Team"
+
+
+  user_settings:
+    modal:
+      title: "Account settings"
+      expand: "expand"
+      close: "close"
+      username:
+        title: "Username"
+        blank: "Username has not been set. In this case email address is used."
+        current_value_html: "Your username is <strong>%{username}</strong>"
+      password:
+        title: "Password"
+        change_password: "Change signin password."
+        current_password: "Current password"
+        new_password: "New password"
+        confirm_password: "Confirm new password"
+        update: "Update Password"
+      timezone:
+        title: "Time Zone"
+        current_value_html: "Your time zone is currently set to: <strong>%{timezone}</strong>"
+        update: "Save Time Zone"
+      language:
+        title: "Language"
+        current_value_html: "Your language is currently set to: <strong>%{language}</strong>"
+
+
+  common:
+    team: "Team"
+    project: "Project"
+    you: "You"
+    table_header:
+      title: "Title"
+      updated_at: "Updated at"
+      created_by: "Created by"
+      team: "Team"
+    button:
+      new_team: "New team"
+      create_new_team: "Create a new team"
+      new_project: "New project"
+      create_new_project: "Create a new project"
+      new_test: "New test"
+      create_new_test: "Create a new test"
+      edit_test: "Edit test"
+      edit_current_test: "Edit current test"
+      export_csv: "Export CSV"
+      test_settings: "Test settings"
+      duplicate_test: "Duplicate test"
+      move_to: "Move to"
+      customize_result_label: "Customize result label"
+      delete_test: "Delete this test"
+    message:
+      delete_confirm: "本当に削除しますか？この操作は取り消せません。"

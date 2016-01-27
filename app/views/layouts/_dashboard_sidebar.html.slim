@@ -1,16 +1,14 @@
 .sidebar.team-sidebar
   .sidebar-title.dropdown
     a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-      | Dashboard
+      = t("dashboard.index.title")
       = fa_icon "angle-down"
       span.username = current_user.display_name
     ul.dropdown-menu style="top: 50px; left: 20px;"
-      li.dropdown-header You
-      li = link_to "Account", user_settings_edit_path, remote: true
-      li = link_to "Sign out", destroy_user_session_path, method: :delete
+      li.dropdown-header = t("common.you")
+      li = link_to t("team_sidebar.menu.account_settings"), user_settings_edit_path, remote: true
+      li = link_to t("team_sidebar.menu.sign_out"), destroy_user_session_path, method: :delete
 
   ul.sidebar-list
-    li.sidebar-list-header
-      span MENU
     li class="sidebar-list-item active"
       = link_to "My tests", dashboard_path

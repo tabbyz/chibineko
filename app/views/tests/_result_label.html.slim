@@ -4,7 +4,7 @@
       .modal-header
         button.close type="button" data-dismiss="modal" aria-label="Close"
           span aria-hidden="true" &times;
-        h4.modal-title Customize result label
+        h4.modal-title = t(".title")
         
       .modal-body
         table
@@ -14,7 +14,7 @@
                 td.drag-handle style="width:30px;"
                   = fa_icon "bars", class: "drag-handle-icon"
                 td.result-label-text
-                  = text_field_tag "result_label_texts[]", k, { id: nil, placeholder: "Enter label text", maxlength: 128, required: true }
+                  = text_field_tag "result_label_texts[]", k, { id: nil, placeholder: t(".label_placeholder"), maxlength: 128, required: true }
                 td.result-label-color style="width:40px;"
                   input class="btn select-color color-#{v}" name="result_label_colors[]" value="#{v}" type="text" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left"
                 td.delete-result-label style="width:40px;"
@@ -29,5 +29,5 @@
                 label for="radio-#{color}" class="btn color-item color-#{color}"
 
       .modal-footer
-        = f.submit "Update", class: "btn btn-lg color-primary"
-        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Cancel
+        = f.submit class: "btn btn-lg color-primary"
+        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" = t("dialog.cancel")

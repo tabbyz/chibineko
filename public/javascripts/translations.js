@@ -1,0 +1,2 @@
+var I18n = I18n || {};
+I18n.translations = {"en":{"js":{"collapse":{"expand":"expand","close":"close"},"ladda":{"saving":"saving...","processing":"processing..."}}},"ja":{"js":{"collapse":{"expand":"展開","close":"閉じる"},"ladda":{"saving":"保存中...","processing":"処理中..."}}}};

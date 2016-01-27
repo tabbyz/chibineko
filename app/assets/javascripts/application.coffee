@@ -10,6 +10,8 @@
 #= require ladda/ladda.min
 #= require ladda/ladda.jquery.min
 #= require jquery.readyselector
+#= require i18n
+#= require i18n/translations
 #= require_tree .
 
 $(document).ready ->
@@ -24,6 +26,6 @@ $(document).ready ->
 
   $(document).on "click", '.collapse-btn', (e) ->
     if $(this).hasClass("collapsed")
-      $(this).text("expand")
+      $(this).text(I18n.t("js.collapse.expand"))
     else
-      $(this).text("close")
+      $(this).text(I18n.t("js.collapse.close"))

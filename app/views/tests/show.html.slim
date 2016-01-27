@@ -8,10 +8,10 @@ h3.test-title = @test.title
 
 .test-description
   - if @test.description.blank?
-    p.placeholder Description
+    p.placeholder = t(".blank_description")
   - else
     = auto_link simple_format(html_escape(@test.description)), :html => { target: "_blank" }
   .tool-menu
-    = link_to fa_icon("pencil"), edit_description_test_path(@test), class: "btn", data: { toggle: "tooltip", placement: "left", title: "Edit description" }, remote: true
+    = link_to fa_icon("pencil"), description_test_path(@test), class: "btn", data: { toggle: "tooltip", placement: "left", title: t("tests.description.title") }, remote: true
 
 = render "testcases"

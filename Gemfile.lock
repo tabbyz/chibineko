@@ -93,6 +93,8 @@ GEM
       request_store (>= 1.0)
     http_accept_language (2.0.5)
     i18n (0.7.0)
+    i18n-js (2.1.2)
+      i18n
     jbuilder (2.4.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -212,6 +214,7 @@ DEPENDENCIES
   font-awesome-rails (~> 4.5.0)
   gon (~> 6.0)
   http_accept_language (~> 2.0.0)
+  i18n-js (~> 2.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.4)
@@ -225,4 +228,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

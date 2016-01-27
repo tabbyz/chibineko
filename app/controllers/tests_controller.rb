@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :authenticate_test!
-  before_action :set_test, only: [:show, :edit, :edit_description, :edit_result_label, :update, :update_result_label, :destroy, :move]
+  before_action :set_test, only: [:show, :edit, :description, :result_label, :update, :update_result_label, :destroy, :move]
 
   # GET /tests
   # GET /tests.json
@@ -46,10 +46,10 @@ class TestsController < ApplicationController
     @test.set_markdown(true)
   end
 
-  def edit_description
+  def description
   end
 
-  def edit_result_label
+  def result_label
   end
 
   # POST /tests

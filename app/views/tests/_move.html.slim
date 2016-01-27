@@ -5,7 +5,7 @@
       .modal-header
         button.close type="button" data-dismiss="modal" aria-label="Close"
           span aria-hidden="true" &times;
-        h4.modal-title Move to
+        h4.modal-title = t(".title")
       .modal-body
         .project-list
           - @teams.each do |team|
@@ -16,5 +16,5 @@
                   li data-project-id="#{project.id}" class="project-name #{'active' if project == current_project}"
                     = project.name
       .modal-footer
-        = f.submit "Move", class: "btn btn-lg color-primary"
-        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Cancel
+        = f.submit t(".submit"), class: "btn btn-lg color-primary"
+        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" = t("dialog.cancel")

@@ -5,19 +5,19 @@
       = fa_icon "angle-down"
       span.username = current_user.display_name
     ul.dropdown-menu style="top: 50px; left: 20px;"
-      li.dropdown-header You
-      li = link_to "Account", user_settings_edit_path, remote: true
-      li = link_to "Sign out", destroy_user_session_path, method: :delete
-      li.dropdown-header Team
-      li = link_to "Edit members", team_team_users_path(current_team), remote: true
-      li = link_to "Rename", edit_team_path(current_team), remote: true
+      li.dropdown-header = t("common.you")
+      li = link_to t("team_sidebar.menu.account_settings"), user_settings_edit_path, remote: true
+      li = link_to t("team_sidebar.menu.sign_out"), destroy_user_session_path, method: :delete
+      li.dropdown-header = t("common.team")
+      li = link_to t("team_sidebar.edit_members.title"), team_team_users_path(current_team), remote: true
+      li = link_to t("team_sidebar.menu.rename_team"), edit_team_path(current_team), remote: true
       li.divider role="separator"
-      li = link_to "Delete this team", current_team, data: {:confirm => "Are you sure?"}, :method => :delete
+      li = link_to t("team_sidebar.menu.delete_team"), current_team, data: { confirm: t("common.message.delete_confirm") }, :method => :delete
 
   ul.sidebar-list
     li.sidebar-list-header
-      span PROJECTS
-      = link_to fa_icon("plus-circle"), new_team_project_path(current_team), class: "add-project-btn", data: { toggle: "tooltip", placement: "top", title: "Create a new project" }, remote: true
+      span = t("common.project")
+      = link_to fa_icon("plus-circle"), new_team_project_path(current_team), class: "add-project-btn", data: { toggle: "tooltip", placement: "top", title: t("common.button.create_new_project") }, remote: true
     - current_team.projects.each do |project|
       li class="sidebar-list-item #{'active' if project == current_project}"
         = link_to project.name, team_project_path(team_name: current_team.name, project_name: project.name)

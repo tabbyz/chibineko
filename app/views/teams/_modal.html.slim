@@ -4,11 +4,11 @@
       .modal-header
         button.close type="button" data-dismiss="modal" aria-label="Close"
           span aria-hidden="true" &times;
-        h4.modal-title New/Edit team
+        h4.modal-title = t(".title.#{action_name}")
       .modal-body
         .form-group
-          = f.text_field :name, class: "form-control input-lg validation", placeholder: "Enter team name", autofocus: true, maxlength: 30, required: true
+          = f.text_field :name, class: "form-control input-lg validation", placeholder: t(".enter_name"), autofocus: true, maxlength: 30, required: true
           p.text-danger.error-message
       .modal-footer
-        = f.submit "Create/Update", class: "btn btn-lg color-primary"
-        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" Cancel
+        = f.submit class: "btn btn-lg color-primary"
+        button.btn.btn-lg.btn-default type="button" data-dismiss="modal" = t("dialog.cancel")

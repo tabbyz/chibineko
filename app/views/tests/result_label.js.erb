@@ -1,4 +1,4 @@
-$(".modal").html("<%= escape_javascript(render 'edit_result_label') %>")
+$(".modal").html("<%= escape_javascript(render 'result_label') %>")
 $(".modal").modal("show")
 
 Sortable.create(resultLabelList, { handle: ".drag-handle" });

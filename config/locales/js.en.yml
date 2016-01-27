@@ -1,0 +1,8 @@
+en:
+  js:
+    collapse:
+      expand: "expand"
+      close: "close"
+    ladda:
+      saving: "saving..."
+      processing: "processing..."

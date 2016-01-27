@@ -1,10 +1,10 @@
 nav.navbar.navbar-fixed-top.navbar-with-sidebar
   .navbar-content
     - if controller_action == "tests#show"
-      = link_to fa_icon("pencil", text: "Edit test"), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: "Edit current test" }, remote: true
+      = link_to fa_icon("pencil", text: t("common.button.edit_test")), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.edit_current_test") }, remote: true
     - if controller_action == "tests#new"
       .navbar-title
-        span Create test
+        span = t("tests.new.title")
     - if controller_action == "projects#show"
       .navbar-title
         .dropdown
@@ -12,24 +12,25 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
             = current_project.try(:name)
             = fa_icon "angle-down"
           ul.dropdown-menu
-            li = link_to "Rename", edit_team_project_path(current_team, current_project), remote: true
+            li.dropdown-header = t("common.project")
+            li = link_to t("projects.show.menu.rename_project"), edit_team_project_path(current_team, current_project), remote: true
             li.divider role="separator"
-            li = link_to "Delete this project", team_project_path(team_name: current_team.name, project_name: current_project.name), data: {:confirm => "Are you sure?"}, :method => :delete
+            li = link_to t("projects.show.menu.delete_project"), team_project_path(team_name: current_team.name, project_name: current_project.name), data: { confirm: t("common.message.delete_confirm") }, :method => :delete
 
     ul.nav.navbar-nav.navbar-right
       - if controller_action == "tests#show"
         li = link_to fa_icon("line-chart"), "#", class: "btn progress-count", data: { toggle: "popover", placement: "bottom", trigger: "hover", html: "true", content: "" }
-        li = link_to fa_icon("download"), test_path(format: :csv), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Export CSV" }
-        li = link_to fa_icon("copy"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name), source: @test.slug), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: "Duplicate test" }
+        li = link_to fa_icon("download"), test_path(format: :csv), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.export_csv") }
+        li = link_to fa_icon("copy"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name), source: @test.slug), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.duplicate_test") }
         li.dropdown
           a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
             = fa_icon "cog"
           ul.dropdown-menu
-            li.dropdown-header Test settings
-            li = link_to "Move to", move_test_path(@test), remote: true
-            li = link_to "Customize result label", edit_result_label_test_path(@test), remote: true
+            li.dropdown-header = t("common.button.test_settings")
+            li = link_to t("common.button.move_to"), move_test_path(@test), remote: true
+            li = link_to t("common.button.customize_result_label"), result_label_test_path(@test), remote: true
             li.divider role="separator"
-            li = link_to "Delete this test", "", data: {:confirm => "Are you sure?"}, :method => :delete
+            li = link_to t("common.button.delete_test"), "", data: { confirm: t("tests.show.delete_confirm") }, :method => :delete
 
     - if %w"dashboard#index projects#show".include?(controller_action)
-      = link_to fa_icon("plus", text: "New test"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: "Create a new test" }
+      = link_to fa_icon("plus", text: t("common.button.new_test")), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.create_new_test") }

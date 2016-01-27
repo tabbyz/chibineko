@@ -1,26 +1,205 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 ja:
-  hello: "こんにちは世界"
+  language_name: "日本語"
+
+
+  helpers:
+    submit:
+      create: "作成"
+      submit: "保存"
+      update: "更新"
+
+
+  dialog:
+    done: "完了"
+    close: "閉じる"
+    cancel: "キャンセル"
+
+
+  # activerecord:
+  #   attributes:
+  #     team:
+  #       name: チーム名
+  #   errors:
+  #     models:
+  #       team:
+  #         too_short: "は%{count}文字以上で記入してください。X"
+  #     messages:
+  #       inclusion: "は一覧にありません。"
+  #       exclusion: "は予約されています。"
+  #       invalid: "が不正な値です。"
+  #       confirmation: "が一致しません。"
+  #       accepted: "を承諾してください。"
+  #       empty: "が記入されていません。"
+  #       blank: "が記入されていません。"
+  #       too_long: "は{{count}}文字以内で記入してください。"
+  #       too_short: "は{{count}}文字以上で記入してください。"
+        # 
+  # activerecord:
+  #   models:
+  #     team: "チーム"
+  #     project: "プロジェクト"
+  #     test: "テスト"
+  #     user: "ユーザー"
+  #   attributes:
+  #     team:
+  #       name: "チーム名"
+  #     project:
+  #       name: "プロジェクト名"
+  #     user:
+  #       email: "Email"
+  #       name: "ユーザー名"
+  #   errors:
+  #     format: "%{attribute}%{message}"
+  #     messages:
+  #       too_short: は%{count}文字以上で入力してください
+
+
+  activerecord:
+    models:
+      user: Dude
+    attributes:
+      user:
+        login: "HandleZ"
+      team:
+        name: NameJ
+    errors:
+      messages:
+        too_short: は%{count}文字以上で入力してください
+
+  attributes:
+    name: "名前"
+
+
+  root_sidebar:
+    create_team: "新しいチームを作成"
+
+
+  team_sidebar:
+    menu:
+      account_settings: "アカウント設定"
+      sign_out: "ログアウト"
+      rename_team: "チーム名を変更"
+      delete_team: "このチームを削除"
+
+    edit_members:
+      title: "チームメンバーを編集"
+      search_user: "Chibinekoユーザーを検索:"
+      add_user: "ユーザーをチームに追加"
+
+
+  teams:
+    modal:
+      title:
+        new: "新しいチーム"
+        edit: "チーム名を変更"
+      enter_name: "チーム名を入力"
+    show:
+      empty_message: "プロジェクトがありません"
+      empty_sub_message: "プロジェクトを作成するとテストの管理がより快適になります"
+
+
+  projects:
+    show:
+      empty_message: "テストがありません"
+      empty_sub_message: "今すぐテストを作成してみましょう！"
+      menu:
+        rename_project: "プロジェクト名を変更"
+        delete_project: "このプロジェクトを削除"
+
+    modal:
+      title:
+        new: "新しいプロジェクト"
+        edit: "プロジェクト名を変更"
+      enter_name: "プロジェクト名を入力"
+
+
+  tests:
+    show:
+      blank_description: "説明が入力されていません"
+      delete_confirm: "本当に削除しますか？この操作は取り消せません。"
+    new:
+      title: "テストを作成"
+      title_placeholder: "タイトルを入力"
+      markdown_placeholder: "テスト内容を入力"
+      submit: "テストを作成"
+    edit:
+      title: "テストを編集"
+      title_placeholder: "タイトルを入力"
+      markdown_placeholder: "テスト内容を入力"
+    description:
+      title: "説明を編集"
+    move:
+      title: "テストを移動"
+      submit: "移動"
+    result_label:
+      title: "結果ラベルをカスタマイズ"
+      label_placeholder: "ラベルを入力"
+
+
+  dashboard:
+    index:
+      title: "ダッシュボード"
+      navbar:
+        new_test: "新しいテストを作成"
+      table_header:
+        title: "タイトル"
+        updated_at: "更新日時"
+        team: "チーム"
+
+
+  user_settings:
+    modal:
+      title: "アカウント設定"
+      expand: "編集"
+      close: "閉じる"
+      username:
+        title: "ユーザー名"
+        blank: "ユーザー名が設定されていない場合はメールアドレスがユーザー名として使用されます"
+        current_value_html: "あなたのユーザー名: <strong>%{username}</strong>"
+      password:
+        title: "パスワード"
+        change_password: "ログインパスワードを変更します"
+        current_password: "現在のパスワード"
+        new_password: "新しいパスワード"
+        confirm_password: "新しいパスワード（確認）"
+        update: "パスワードを更新"
+      timezone:
+        title: "タイムゾーン"
+        current_value_html: "現在のタイムゾーン: <strong>%{timezone}</strong>"
+        update: "タイムゾーンを保存"
+      language:
+        title: "言語"
+        current_value_html: "現在の言語: <strong>%{language}</strong>"
+
+
+  common:
+    team: "チーム"
+    project: "プロジェクト"
+    you: "あなた"
+    table_header:
+      title: "タイトル"
+      updated_at: "更新日時"
+      created_by: "作成者"
+      team: "チーム"
+    button:
+      new_team: "新規チーム"
+      create_new_team: "新しいチームを作成"
+      new_project: "新規プロジェクト"
+      create_new_project: "新しいプロジェクトを作成"
+      new_test: "新規テスト"
+      create_new_test: "新しいテストを作成"
+      edit_test: "テストを編集"
+      edit_current_test: "現在のテストを編集"
+      export_csv: "CSVエクスポート"
+      test_settings: "テスト設定"
+      duplicate_test: "テストを複製"
+      move_to: "別プロジェクトへ移動"
+      customize_result_label: "結果ラベルをカスタマイズ"
+      delete_test: "テストを削除"
+    message:
+      delete_confirm: "本当に削除しますか？この操作は取り消せません。"
+
+
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"

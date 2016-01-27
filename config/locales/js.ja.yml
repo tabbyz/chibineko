@@ -1,0 +1,8 @@
+ja:
+  js:
+    collapse:
+      expand: "展開"
+      close: "閉じる"
+    ladda:
+      saving: "保存中..."
+      processing: "処理中..."
