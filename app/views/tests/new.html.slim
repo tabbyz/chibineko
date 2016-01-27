@@ -1,3 +1,5 @@
+= render "navbar"
+
 = form_for @test, remote: true do |f|
   = f.hidden_field :source
   = f.hidden_field :team_name, value: current_team.try(:name)

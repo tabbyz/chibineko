@@ -102,10 +102,10 @@ ja:
     show:
       empty_message: "テストがありません"
       empty_sub_message: "今すぐテストを作成してみましょう！"
+    navbar:
       menu:
         rename_project: "プロジェクト名を変更"
         delete_project: "このプロジェクトを削除"
-
     modal:
       title:
         new: "新しいプロジェクト"
@@ -116,7 +116,6 @@ ja:
   tests:
     show:
       blank_description: "説明が入力されていません"
-      delete_confirm: "本当に削除しますか？この操作は取り消せません。"
     new:
       title: "テストを作成"
       title_placeholder: "タイトルを入力"
@@ -134,6 +133,15 @@ ja:
     result_label:
       title: "結果ラベルをカスタマイズ"
       label_placeholder: "ラベルを入力"
+    navbar:
+      edit_test: "テストを編集"
+      edit_current_test: "現在のテストを編集"
+      export_csv: "CSVエクスポート"
+      test_settings: "テスト設定"
+      duplicate_test: "テストを複製"
+      move_to: "別プロジェクトへ移動"
+      customize_result_label: "結果ラベルをカスタマイズ"
+      delete_test: "テストを削除"
 
 
   dashboard:
@@ -188,14 +196,6 @@ ja:
       create_new_project: "新しいプロジェクトを作成"
       new_test: "新規テスト"
       create_new_test: "新しいテストを作成"
-      edit_test: "テストを編集"
-      edit_current_test: "現在のテストを編集"
-      export_csv: "CSVエクスポート"
-      test_settings: "テスト設定"
-      duplicate_test: "テストを複製"
-      move_to: "別プロジェクトへ移動"
-      customize_result_label: "結果ラベルをカスタマイズ"
-      delete_test: "テストを削除"
     message:
       delete_confirm: "本当に削除しますか？この操作は取り消せません。"
 

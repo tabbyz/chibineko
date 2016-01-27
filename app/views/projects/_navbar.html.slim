@@ -1,0 +1,14 @@
+nav.navbar.navbar-fixed-top.navbar-with-sidebar
+  .navbar-content
+    .navbar-title
+      .dropdown
+        a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
+          = current_project.try(:name)
+          = fa_icon "angle-down"
+        ul.dropdown-menu
+          li.dropdown-header = t("common.project")
+          li = link_to t(".menu.rename_project"), edit_team_project_path(current_team, current_project), remote: true
+          li.divider role="separator"
+          li = link_to t(".menu.delete_project"), team_project_path(team_name: current_team.name, project_name: current_project.name), data: { confirm: t("common.message.delete_confirm") }, :method => :delete
+
+    = link_to fa_icon("plus", text: t("common.button.new_test")), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.create_new_test") }

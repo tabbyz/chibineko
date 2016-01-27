@@ -1,5 +1,7 @@
 - provide :title, @test.title
 
+= render "navbar"
+
 .progress.progress-animation
   - @test.result_labels.drop(1).push(@test.result_labels.first).each do |k, v|
     div class="progress-bar progress-bar-xs color-#{v}" style="width: 0%; transition: width 0.5s ease;" data-result-text="#{k}"

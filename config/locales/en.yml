@@ -72,6 +72,7 @@ en:
     show:
       empty_message: "No Tests"
       empty_sub_message: "Let's immediately create a test!"
+    navbar:
       menu:
         rename_project: "Rename project"
         delete_project: "Delete this project"
@@ -85,7 +86,6 @@ en:
   tests:
     show:
       blank_description: "Description is blank"
-      delete_confirm: "Are you sure?You can't undo this."
     new:
       title: "Create test"
       title_placeholder: "Enter test title"
@@ -103,6 +103,15 @@ en:
     result_label:
       title: "Customize result label"
       label_placeholder: "Enter label text"
+    navbar:
+      edit_test: "Edit test"
+      edit_current_test: "Edit current test"
+      export_csv: "Export CSV"
+      test_settings: "Test settings"
+      duplicate_test: "Duplicate test"
+      move_to: "Move to"
+      customize_result_label: "Customize result label"
+      delete_test: "Delete this test"
 
 
   dashboard:
@@ -157,13 +166,5 @@ en:
       create_new_project: "Create a new project"
       new_test: "New test"
       create_new_test: "Create a new test"
-      edit_test: "Edit test"
-      edit_current_test: "Edit current test"
-      export_csv: "Export CSV"
-      test_settings: "Test settings"
-      duplicate_test: "Duplicate test"
-      move_to: "Move to"
-      customize_result_label: "Customize result label"
-      delete_test: "Delete this test"
     message:
-      delete_confirm: "本当に削除しますか？この操作は取り消せません。"
+      delete_confirm: "Are you sure?You can't undo this."

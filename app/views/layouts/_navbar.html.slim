@@ -1,36 +1,29 @@
-nav.navbar.navbar-fixed-top.navbar-with-sidebar
-  .navbar-content
-    - if controller_action == "tests#show"
-      = link_to fa_icon("pencil", text: t("common.button.edit_test")), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.edit_current_test") }, remote: true
-    - if controller_action == "tests#new"
-      .navbar-title
-        span = t("tests.new.title")
-    - if controller_action == "projects#show"
-      .navbar-title
-        .dropdown
-          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
-            = current_project.try(:name)
-            = fa_icon "angle-down"
-          ul.dropdown-menu
-            li.dropdown-header = t("common.project")
-            li = link_to t("projects.show.menu.rename_project"), edit_team_project_path(current_team, current_project), remote: true
-            li.divider role="separator"
-            li = link_to t("projects.show.menu.delete_project"), team_project_path(team_name: current_team.name, project_name: current_project.name), data: { confirm: t("common.message.delete_confirm") }, :method => :delete
+- if controller_action == "static_pages#top"
+  nav.navbar
+    = link_to "Chibineko", root_url, class: "logo"
 
-    ul.nav.navbar-nav.navbar-right
-      - if controller_action == "tests#show"
-        li = link_to fa_icon("line-chart"), "#", class: "btn progress-count", data: { toggle: "popover", placement: "bottom", trigger: "hover", html: "true", content: "" }
-        li = link_to fa_icon("download"), test_path(format: :csv), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.export_csv") }
-        li = link_to fa_icon("copy"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name), source: @test.slug), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.duplicate_test") }
+    ul.nav.navbar-nav.pull-right
+      li = link_to fa_icon("github-alt", text: "GitHub page"), "#", target: "blank"
+      - if user_signed_in?
         li.dropdown
-          a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-            = fa_icon "cog"
-          ul.dropdown-menu
-            li.dropdown-header = t("common.button.test_settings")
-            li = link_to t("common.button.move_to"), move_test_path(@test), remote: true
-            li = link_to t("common.button.customize_result_label"), result_label_test_path(@test), remote: true
-            li.divider role="separator"
-            li = link_to t("common.button.delete_test"), "", data: { confirm: t("tests.show.delete_confirm") }, :method => :delete
+          a href="#" class="dropdown-toggle" data-toggle="dropdown" data-container="body" role="button" aria-expanded="false"
+            = current_user.display_name
+            span.caret
+          ul.dropdown-menu.dropdown-menu-right role="menu"
+            li = link_to "Dashboard", dashboard_path
+            li.divider
+            li = link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link"
+      - else
+        li = link_to "Sign in", new_user_session_path
+      
 
-    - if %w"dashboard#index projects#show".include?(controller_action)
-      = link_to fa_icon("plus", text: t("common.button.new_test")), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.create_new_test") }
+- else
+  nav.navbar.navbar-fixed-top
+    = link_to "", root_url, class: "logo"
+
+    ul.nav.navbar-nav.pull-right
+      - if user_signed_in?
+        li = link_to "Sign out", destroy_user_session_path, class: "navbar-link", method: :delete
+      - else
+        li = link_to "Sign in", new_user_session_path, class: "navbar-link"
+        li = link_to "Sign up", new_user_registration_path, class: "btn color-blue sign-up"

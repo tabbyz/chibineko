@@ -1,5 +1,7 @@
 - provide :title, "#{@project.team.name}##{@project.name}"
 
+= render "navbar"
+
 - if @project.tests.size == 0
   .center
     h3 = t(".empty_message")

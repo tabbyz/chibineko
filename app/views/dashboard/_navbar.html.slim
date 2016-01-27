@@ -1,0 +1,3 @@
+nav.navbar.navbar-fixed-top.navbar-with-sidebar
+  .navbar-content
+    = link_to fa_icon("plus", text: t("common.button.new_test")), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.create_new_test") }
