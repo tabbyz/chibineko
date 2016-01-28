@@ -35,7 +35,7 @@ class TeamsController < ApplicationController
     if @team.save
       @team.authorized!(current_user)
     else
-      render json: @team.errors.messages, status: :unprocessable_entity
+      render json: format_error_message(@team), status: :unprocessable_entity
     end
   end
 
@@ -45,7 +45,7 @@ class TeamsController < ApplicationController
     if @team.update(team_params)
       # Do nothing
     else
-      render json: @team.errors.messages, status: :unprocessable_entity
+      render json: format_error_message(@team), status: :unprocessable_entity
     end
   end
 

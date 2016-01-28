@@ -26,6 +26,6 @@ $(document).ready ->
 
   $(document).on "click", '.collapse-btn', (e) ->
     if $(this).hasClass("collapsed")
-      $(this).text(I18n.t("js.collapse.expand"))
+      $(this).text(I18n.t("js.common.collapse.expand"))
     else
-      $(this).text(I18n.t("js.collapse.close"))
+      $(this).text(I18n.t("js.common.collapse.close"))

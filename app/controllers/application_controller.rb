@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
     dashboard_path
   end
 
+  def format_error_message(object)
+    msgs = object.errors.full_messages
+    object.errors.messages.each_with_index.map { |(k, v), i| [k, msgs[i]] }.to_h
+  end
+
   private
     def set_locale
       client_locale = http_accept_language.compatible_language_from(I18n.available_locales)

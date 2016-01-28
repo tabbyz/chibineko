@@ -1,20 +1,19 @@
 $(document).ready ->
-  $(document).on "keyup", ".form-control.validation", ->
-    $(this).popover("destroy")
+  $(document).on "keydown", ".form-control.validation", (e) ->
+    if (e.keyCode != 13)
+      $(this).popover("destroy")
 
 
   $(document).on "ajax:beforeSend", "form", (e, xhr, settings) ->
-    console.log "ajax:beforeSend"
-    $(".form-control.validation").popover("destroy")
-    $(".form-group").removeClass("has-error")
+    # console.log "ajax:beforeSend"
 
 
   $(document).on "ajax:success", "form", (e, data, status, xhr) ->
-    console.log "ajax:success"
+    # console.log "ajax:success"
 
 
   $(document).on "ajax:error", "form", (e, xhr, status, error) ->
-    console.log("ajax:error")
+    # console.log("ajax:error")
     errors = $.parseJSON(xhr.responseText)
     form = $(e.currentTarget)
     name = form.find(".form-control").attr("name")
@@ -22,7 +21,7 @@ $(document).ready ->
 
     for k, v of errors
       field = $("##{model}_#{k}")
-      msg = "#{k} #{v[0]}"
+      msg = v
       group = field.parent(".form-group")
 
       if group.find(".form-control-feedback").length == 0

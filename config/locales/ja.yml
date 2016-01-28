@@ -1,91 +1,66 @@
 ja:
   language_name: "日本語"
 
-
   helpers:
     submit:
       create: "作成"
       submit: "保存"
       update: "更新"
 
-
   dialog:
     done: "完了"
     close: "閉じる"
     cancel: "キャンセル"
 
-
-  # activerecord:
-  #   attributes:
-  #     team:
-  #       name: チーム名
-  #   errors:
-  #     models:
-  #       team:
-  #         too_short: "は%{count}文字以上で記入してください。X"
-  #     messages:
-  #       inclusion: "は一覧にありません。"
-  #       exclusion: "は予約されています。"
-  #       invalid: "が不正な値です。"
-  #       confirmation: "が一致しません。"
-  #       accepted: "を承諾してください。"
-  #       empty: "が記入されていません。"
-  #       blank: "が記入されていません。"
-  #       too_long: "は{{count}}文字以内で記入してください。"
-  #       too_short: "は{{count}}文字以上で記入してください。"
-        # 
-  # activerecord:
-  #   models:
-  #     team: "チーム"
-  #     project: "プロジェクト"
-  #     test: "テスト"
-  #     user: "ユーザー"
-  #   attributes:
-  #     team:
-  #       name: "チーム名"
-  #     project:
-  #       name: "プロジェクト名"
-  #     user:
-  #       email: "Email"
-  #       name: "ユーザー名"
-  #   errors:
-  #     format: "%{attribute}%{message}"
-  #     messages:
-  #       too_short: は%{count}文字以上で入力してください
-
-
   activerecord:
     models:
-      user: Dude
+      user: "ユーザー"
+      team: "チーム"
+      project: "プロジェクト"
     attributes:
       user:
-        login: "HandleZ"
+        email: "メールアドレス"
+        name: "ユーザー名"
       team:
-        name: NameJ
+        name: "チーム名"
+      project:
+        name: "プロジェクト名"
     errors:
+      models:
+        team:
+          invalid: "は半角英数字かアンダースコアで入力してください"
+        project:
+          invalid: "は半角英数字かアンダースコアで入力してください"
       messages:
-        too_short: は%{count}文字以上で入力してください
+        too_short: "は%{count}文字以上で入力してください"
+        too_long: "は%{count}文字以内で入力してください"
+        taken: "はすでに存在します"
+        invalid: "に使用できない文字が含まれています"
 
-  attributes:
-    name: "名前"
+  errors:
+    format: "%{attribute}%{message}"
 
-
-  root_sidebar:
-    create_team: "新しいチームを作成"
-
-
-  team_sidebar:
-    menu:
+  layouts:
+    navbar:
+      github_page: "GitHubページ"
+    root_sidebar:
+      create_team: "新しいチームを作成"
+    main_menu:
       account_settings: "アカウント設定"
-      sign_out: "ログアウト"
       rename_team: "チーム名を変更"
+      edit_members: "チームメンバーを編集"
       delete_team: "このチームを削除"
 
-    edit_members:
-      title: "チームメンバーを編集"
-      search_user: "Chibinekoユーザーを検索:"
-      add_user: "ユーザーをチームに追加"
-
+  static_pages:
+    top:
+      title: "世界で最もシンプルなテスト支援ツール"
+      sub_title_html: "chibineko.jp は <a href='#' target='_blank'>Chibineko-OSS</a> のホスティングサービスです"
+      get_started: "今すぐはじめる"
+      sign_up_free: "無料でサインアップ"
+      support: "サポート"
+      terms: "利用規約"
+      releases: "リリースノート"
+      roadmap: "ロードマップ"
 
   teams:
     modal:
@@ -96,7 +71,6 @@ ja:
     show:
       empty_message: "プロジェクトがありません"
       empty_sub_message: "プロジェクトを作成するとテストの管理がより快適になります"
-
 
   projects:
     show:
@@ -112,7 +86,6 @@ ja:
         edit: "プロジェクト名を変更"
       enter_name: "プロジェクト名を入力"
 
-
   tests:
     show:
       blank_description: "説明が入力されていません"
@@ -127,6 +100,8 @@ ja:
       markdown_placeholder: "テスト内容を入力"
     description:
       title: "説明を編集"
+    testcase:
+      note: "メモ"
     move:
       title: "テストを移動"
       submit: "移動"
@@ -143,7 +118,6 @@ ja:
       customize_result_label: "結果ラベルをカスタマイズ"
       delete_test: "テストを削除"
 
-
   dashboard:
     index:
       title: "ダッシュボード"
@@ -154,6 +128,12 @@ ja:
         updated_at: "更新日時"
         team: "チーム"
 
+  team_users:
+    index:
+      title: "チームメンバーを編集"
+      search_user: "Chibinekoユーザーを検索:"
+      add_user: "ユーザーをチームに追加"
+      delete_confirm: "チームメンバーから削除しますか？"
 
   user_settings:
     modal:
@@ -179,7 +159,6 @@ ja:
         title: "言語"
         current_value_html: "現在の言語: <strong>%{language}</strong>"
 
-
   common:
     team: "チーム"
     project: "プロジェクト"
@@ -196,9 +175,11 @@ ja:
       create_new_project: "新しいプロジェクトを作成"
       new_test: "新規テスト"
       create_new_test: "新しいテストを作成"
+      sign_in: "ログイン"
+      sign_out: "ログアウト"
+      sign_up: "サインアップ"
     message:
       delete_confirm: "本当に削除しますか？この操作は取り消せません。"
-
 
   time:
     formats:

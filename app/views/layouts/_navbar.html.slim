@@ -3,18 +3,17 @@
     = link_to "Chibineko", root_url, class: "logo"
 
     ul.nav.navbar-nav.pull-right
-      li = link_to fa_icon("github-alt", text: "GitHub page"), "#", target: "blank"
+      li = link_to fa_icon("github-alt", text: t(".github_page")), "#", target: "blank"
       - if user_signed_in?
         li.dropdown
           a href="#" class="dropdown-toggle" data-toggle="dropdown" data-container="body" role="button" aria-expanded="false"
             = current_user.display_name
             span.caret
           ul.dropdown-menu.dropdown-menu-right role="menu"
-            li = link_to "Dashboard", dashboard_path
-            li.divider
-            li = link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link"
+            li = link_to fa_icon("home", text: t("dashboard.index.title")), dashboard_path
+            li = render "layouts/sign_out_link"
       - else
-        li = link_to "Sign in", new_user_session_path
+        li = render "layouts/sign_in_link"
       
 
 - else
@@ -23,7 +22,7 @@
 
     ul.nav.navbar-nav.pull-right
       - if user_signed_in?
-        li = link_to "Sign out", destroy_user_session_path, class: "navbar-link", method: :delete
+        li = render "layouts/sign_out_link"
       - else
-        li = link_to "Sign in", new_user_session_path, class: "navbar-link"
-        li = link_to "Sign up", new_user_registration_path, class: "btn color-blue sign-up"
+        li = render "layouts/sign_in_link"
+        li = link_to t("common.button.sign_up"), new_user_registration_path, class: "btn color-blue sign-up"

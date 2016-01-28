@@ -1,8 +1,18 @@
 en:
   js:
-    collapse:
-      expand: "expand"
-      close: "close"
-    ladda:
-      saving: "saving..."
-      processing: "processing..."
+    team_sidebar:
+      edit_members:
+        search_user: "Search user..."
+        add_user: "Add user to team"
+        not_found: "User not found"
+        unknown_error: "Unknown error"
+    tests:
+      navbar:
+        total: "Total"
+    common:
+      collapse:
+        expand: "expand"
+        close: "close"
+      ladda:
+        saving: "saving..."
+        processing: "processing..."

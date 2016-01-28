@@ -4,10 +4,7 @@
       = t("dashboard.index.title")
       = fa_icon "angle-down"
       span.username = current_user.display_name
-    ul.dropdown-menu style="top: 50px; left: 20px;"
-      li.dropdown-header = t("common.you")
-      li = link_to t("team_sidebar.menu.account_settings"), user_settings_edit_path, remote: true
-      li = link_to t("team_sidebar.menu.sign_out"), destroy_user_session_path, method: :delete
+    = render "layouts/main_menu"
 
   ul.sidebar-list
     li class="sidebar-list-item active"

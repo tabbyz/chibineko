@@ -22,20 +22,20 @@ $(".projects, .teams, .tests").ready ->
         email: email
       })
       beforeSend: (jqXHR, settings) ->
-        label.text("Search user...")
+        label.text(I18n.t("js.team_sidebar.edit_members.search_user"))
         btn.ladda("start")
       error: (jqXHR, textStatus, errorThrown) ->
         console.log "AJAX Error: #{textStatus}"
         btn.ladda("stop")
-        label.text("Unknown error")
+        label.text(I18n.t("js.team_sidebar.edit_members.unknown_error"))
         btn.prop("disabled", true)
       success: (data, textStatus, jqXHR) ->
         if data
-          label.text("Add user to team")
+          label.text(I18n.t("js.team_sidebar.edit_members.add_user"))
           btn.ladda("stop")
           btn.prop("disabled", false)
         else
-          label.text("User not found")
+          label.text(I18n.t("js.team_sidebar.edit_members.not_found"))
           btn.ladda("stop")
           btn.prop("disabled", true)
 

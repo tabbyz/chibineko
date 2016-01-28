@@ -127,6 +127,7 @@ $hilight-color: #63A0C3;
     width: $team-sidebar-width;
     border-right: 1px solid #DDD;
     background-color: #FFF;
+    overflow: visible;  // So as not hidden dropdown
 
     .sidebar-title {
       .dropdown-toggle {
@@ -175,6 +176,8 @@ $hilight-color: #63A0C3;
       }
 
       .sidebar-list-item {
+        overflow-x: hidden;
+
         a {
           display: inline-block;
           width: 100%;

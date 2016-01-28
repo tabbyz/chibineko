@@ -4,15 +4,7 @@
       = current_team.try(:name)
       = fa_icon "angle-down"
       span.username = current_user.display_name
-    ul.dropdown-menu style="top: 50px; left: 17px;"
-      li.dropdown-header = t("common.you")
-      li = link_to t("team_sidebar.menu.account_settings"), user_settings_edit_path, remote: true
-      li = link_to t("team_sidebar.menu.sign_out"), destroy_user_session_path, method: :delete
-      li.dropdown-header = t("common.team")
-      li = link_to t("team_sidebar.edit_members.title"), team_team_users_path(current_team), remote: true
-      li = link_to t("team_sidebar.menu.rename_team"), edit_team_path(current_team), remote: true
-      li.divider role="separator"
-      li = link_to t("team_sidebar.menu.delete_team"), current_team, data: { confirm: t("common.message.delete_confirm") }, :method => :delete
+    = render "layouts/main_menu"
 
   ul.sidebar-list
     li.sidebar-list-header

@@ -12,7 +12,6 @@ textarea {
   border-radius: 2px;
 }
 
-
 button.btn.ladda-button {
   &:focus {
     outline: none;
@@ -52,6 +51,18 @@ button.btn.ladda-button {
     }
   }
 }
+
+.dropdown-menu {
+  .dropdown-header {
+    padding: 8px 12px 4px 12px;
+  }
+
+  .divider {
+    margin: 4px 0;
+  }
+}
+
+
 
 // TODO:
 .navbar-nav > li {

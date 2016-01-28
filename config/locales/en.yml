@@ -1,61 +1,66 @@
 en:
   language_name: "English"
 
-
   helpers:
     submit:
       create: "Create"
       submit: "Save"
       update: "Update"
 
-
   dialog:
     done: "Done"
     close: "Close"
     cancel: "Cancel"
 
-
-  # activerecord:
-  #   models:
-  #     team: "team"
-  #     project: "project"
-  #     test: "test"
-  #     user: "user"
-  #   attributes:
-  #     team:
-  #       name: "name"
-  #     project:
-  #       name: "name"
-  #     user:
-  #       email: "email"
-  #       name: "name"
-
   activerecord:
     models:
-      user: Dude
+      user: "User"
+      team: "Team"
+      project: "Project"
     attributes:
       user:
-        login: "HandleX"
+        email: "Email"
+        name: "Username"
       team:
-        name: "NameE"
+        name: "Team name"
+      project:
+        name: "Project name"
+    errors:
+      models:
+        team:
+          invalid: "may only contain letters (a-z), numbers, and underscores."
+        project:
+          invalid: "may only contain letters (a-z), numbers, and underscores."
+      messages:
+        too_long: "is too long (maximum is %{count} characters)."
+        too_short: "is too short (minimum is %{count} characters)."
+        taken: "has already been taken."
+        invalid: "is invalid."
 
+  errors:
+    format: "%{attribute} %{message}"
 
-  root_sidebar:
-    add_team: "Create a new team"
-
-
-  team_sidebar:
-    menu:
+  layouts:
+    navbar:
+      github_page: "GitHub page"
+    root_sidebar:
+      create_team: "Create a new team"
+    main_menu:
       account_settings: "Account settings"
-      sign_out: "Sign out"
+      edit_members: "Edit team members"
       rename_team: "Rename team"
       delete_team: "Delete this team"
 
-      edit_members:
-        title: "Edit team members"
-        search_user: "Search Chibineko user:"
-        add_user: "Add user to team"
-
+  static_pages:
+    top:
+      title: "The simplest test supporting tool"
+      sub_title_html: "chibineko.jp is a hosting service of <a href='#' target='_blank'>Chibineko-OSS</a>"
+      get_started: "Get Started"
+      sign_up_free: "Sign Up for Free"
+      support: "Support"
+      terms: "Terms of Service"
+      releases: "Releases"
+      roadmap: "Roadmap"
 
   teams:
     modal:
@@ -66,7 +71,6 @@ en:
     show:
       empty_message: "No Projects"
       empty_sub_message: "When you create a project which helps to classify test."
-
 
   projects:
     show:
@@ -82,7 +86,6 @@ en:
         edit: "Edit project"
       enter_name: "Enter project name"
 
-
   tests:
     show:
       blank_description: "Description is blank"
@@ -97,6 +100,8 @@ en:
       markdown_placeholder: "Enter markdown text"
     description:
       title: "Edit description"
+    testcase:
+      note: "Note"
     move:
       title: "Move to"
       submit: "Move"
@@ -113,7 +118,6 @@ en:
       customize_result_label: "Customize result label"
       delete_test: "Delete this test"
 
-
   dashboard:
     index:
       title: "Dashboard"
@@ -124,6 +128,12 @@ en:
         updated_at: "Updated at"
         team: "Team"
 
+  team_users:
+    index:
+      title: "Edit team members"
+      search_user: "Search Chibineko user:"
+      add_user: "Add user to team"
+      delete_confirm: "Do you remove it from the team members?"
 
   user_settings:
     modal:
@@ -149,11 +159,11 @@ en:
         title: "Language"
         current_value_html: "Your language is currently set to: <strong>%{language}</strong>"
 
-
   common:
     team: "Team"
     project: "Project"
     you: "You"
+    dashboard: "Dashboard"
     table_header:
       title: "Title"
       updated_at: "Updated at"
@@ -166,5 +176,8 @@ en:
       create_new_project: "Create a new project"
       new_test: "New test"
       create_new_test: "Create a new test"
+      sign_in: "Sign in"
+      sign_out: "Sign out"
+      sign_up: "Sign up"
     message:
       delete_confirm: "Are you sure?You can't undo this."

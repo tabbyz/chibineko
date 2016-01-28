@@ -1,13 +1,11 @@
 section.branding.text-center
-  h1 The simplest test supporting tool
-  p
-    | chibineko.jp is a hosting service of 
-    a href="#" target="_blank" Chibineko-OSS
+  h1 = t(".title")
+  p = t(".sub_title_html")
 
   - if user_signed_in?
-    = link_to "Get Started", dashboard_path, class: "btn-ghost"
+    = link_to t(".get_started"), dashboard_path, class: "btn-ghost"
   - else
-    = link_to "Sign Up for Free", new_user_registration_path, class: "btn-ghost"
+    = link_to t(".sign_up_free"), new_user_registration_path, class: "btn-ghost"
 
   .browser-outline
     .browser-header
@@ -33,7 +31,7 @@ section.branding.text-center
 
 
 section.support
-  h2 Support
+  h2 = t(".support")
   ul
     li = link_to fa_icon("envelope-o", text: "support@chibineko.jp"), "#"
     li = link_to fa_icon("github-alt", text: "GitHub Issues"), "#"
@@ -42,9 +40,9 @@ section.support
 
 section.footer
   ul.list-inline
-    li = link_to "Terms of Service", "#"
-    li = link_to "Releases", "#"
-    li = link_to "Roadmap", "#"
+    li = link_to t(".terms"), "#"
+    li = link_to t(".releases"), "#"
+    li = link_to t(".roadmap"), "#"
   span.powered-by
     | Powerd by
     = link_to image_tag("company_logo.png"), "http://www.shiftinc.jp/", target: "blank"

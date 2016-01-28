@@ -46,7 +46,7 @@ $(".tests.show").ready ->
     total = countAll()
     tag += """
     <li class='count-total'>
-      <span>Total</span>
+      <span>#{I18n.t("js.tests.navbar.total")}</span>
       <span class='pull-right count-value'>#{total}</span>
     </li>
     </ul>

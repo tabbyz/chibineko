@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
     if @project.save
       # Do nothing
     else
-      render json: @project.errors.messages, status: :unprocessable_entity
+      render json: format_error_message(@project), status: :unprocessable_entity
     end
   end
 
@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       # Do nothing
     else
-      render json: @project.errors.messages, status: :unprocessable_entity
+      render json: format_error_message(@project), status: :unprocessable_entity
     end
   end
 

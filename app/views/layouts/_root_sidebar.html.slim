@@ -8,6 +8,6 @@
           .hilight-bar
           span.symbol = team.name.first.upcase
           span.description = team.name
-  = link_to fa_icon("plus-circle", right: true), new_team_path, class: "add-team-btn", data: { toggle: "tooltip", placement: "right", title: t("root_sidebar.create_team") }, remote: true
+  = link_to fa_icon("plus-circle", right: true), new_team_path, class: "add-team-btn", data: { toggle: "tooltip", placement: "right", title: t(".create_team") }, remote: true
 
 .modal.fade tabindex="-1" role="dialog" aria-hidden="true"
