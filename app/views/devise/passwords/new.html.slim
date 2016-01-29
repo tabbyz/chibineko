@@ -1,8 +1,8 @@
 .card.text-center
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-    h1.card-title Forgot your password?
+    h1.card-title = t(".forgot_password")
     .card-body
       .form-group
-        = f.email_field :email, class: "form-control input-lg", autofocus: true, placeholder: "Email", required: true
+        = f.email_field :email, class: "form-control input-lg", autofocus: true, placeholder: t("activerecord.attributes.user.email"), required: true
 
-      = f.submit "Send email", class: "btn btn-lg btn-block color-primary", data: { disable_with: "Processing" }
+      = f.submit t(".send_mail"), class: "btn btn-lg btn-block color-primary", data: { disable_with: "Processing" }

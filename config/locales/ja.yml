@@ -20,6 +20,8 @@ ja:
     attributes:
       user:
         email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
         name: "ユーザー名"
       team:
         name: "チーム名"
@@ -177,7 +179,7 @@ ja:
       create_new_test: "新しいテストを作成"
       sign_in: "ログイン"
       sign_out: "ログアウト"
-      sign_up: "サインアップ"
+      sign_up: "ユーザー登録"
     message:
       delete_confirm: "本当に削除しますか？この操作は取り消せません。"
 

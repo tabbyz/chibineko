@@ -1,14 +1,14 @@
 .card.text-center
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    h1.card-title Sign in
+    h1.card-title = t(".sign_in")
     .card-body
       .form-group
-        = f.email_field :email, class: "form-control input-lg", autofocus: true, placeholder: "Email", required: true
+        = f.email_field :email, class: "form-control input-lg", autofocus: true, placeholder: t("activerecord.attributes.user.email"), required: true
 
       .form-group
-        = f.password_field :password, class: "form-control input-lg", autocomplete: "off", placeholder: "Password", required: true
+        = f.password_field :password, class: "form-control input-lg", autocomplete: "off", placeholder: t("activerecord.attributes.user.password"), required: true
 
-      = f.submit "Sign in", class: "btn btn-lg color-primary btn-block"
+      = f.submit t(".sign_in"), class: "btn btn-lg color-primary btn-block"
       
     .text-left
-      = link_to "Remember password", new_password_path(resource_name)
+      = link_to t(".remember_password"), new_password_path(resource_name)

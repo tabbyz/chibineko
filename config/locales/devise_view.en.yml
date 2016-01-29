@@ -1,0 +1,18 @@
+en:
+  devise:
+    registrations:
+      new:
+        sign_up: "Sign up"
+        not_receive: "Didn't receive confirmation instructions?"
+    confirmations:
+      new:
+        resend_confirmation: "Resend confirmation instructions"
+        send_mail: "Send mail"
+    sessions:
+      new:
+        sign_in: "Sign in"
+        remember_password: "Remember password"
+    passwords:
+      new:
+        forgot_password: "Forgot password"
+        send_mail: "Send mail"

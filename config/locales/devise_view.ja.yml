@@ -1,0 +1,18 @@
+ja:
+  devise:
+    registrations:
+      new:
+        sign_up: "ユーザー登録"
+        not_receive: "登録確認メールが届かない方はこちら"
+    confirmations:
+      new:
+        resend_confirmation: "登録確認メールを再送信"
+        send_mail: "メールを送信"
+    sessions:
+      new:
+        sign_in: "ログイン"
+        remember_password: "パスワードを忘れた場合はこちら"
+    passwords:
+      new:
+        forgot_password: "パスワードを再設定"
+        send_mail: "メールを送信"
