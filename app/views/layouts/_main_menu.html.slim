@@ -4,7 +4,5 @@ ul.dropdown-menu style="top: 44px; left: 18px;"
   li = render "layouts/sign_out_link"
   - if current_team
     li.dropdown-header = t("common.team")
+    li = link_to fa_icon("cog", text: t(".team_settings")), settings_team_path(current_team), remote: true
     li = link_to fa_icon("smile-o", text: t(".edit_members")), team_team_users_path(current_team), remote: true
-    li = link_to fa_icon("pencil-square-o", text: t(".rename_team")), edit_team_path(current_team), remote: true
-    li.divider role="separator"
-    li = link_to fa_icon("trash-o", text: t(".delete_team")), current_team, data: { confirm: t("common.message.delete_confirm") }, :method => :delete

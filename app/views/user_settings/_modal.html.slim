@@ -6,9 +6,9 @@
       h4.modal-title = t(".title")
 
     .modal-body
-      ul
+      ul.setting-list
         li
-          = link_to t(".expand"), "#editUsername", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editUsername" }
+          = link_to t("common.button.expand"), "#editUsername", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editUsername" }
           p.accordion-title = t(".username.title")
           p.accordion-description
             - if @user.username.blank?
@@ -18,12 +18,12 @@
           .collapse#editUsername
             = form_for @user, url: user_settings_update_path, remote: true do |f|
               .form-group.inline-block
-                = f.text_field :username, class: "form-control validation", style: "width:200px;", placeholder: "Enter username", maxlength: 255, required: true
+                = f.text_field :username, class: "form-control validation", style: "width:200px;", maxlength: 255, required: true
               = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
                 = content_tag :span, t("helpers.submit.submit"), class: "ladda-label"
 
         li
-          = link_to t(".expand"), "#editPassword", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editPassword" }
+          = link_to t("common.button.expand"), "#editPassword", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editPassword" }
           p.accordion-title = t(".password.title")
           p.accordion-description = t(".password.change_password")
           .collapse#editPassword
@@ -44,7 +44,7 @@
                 = content_tag :span, t(".password.update"), class: "ladda-label"
 
         li
-          = link_to t(".expand"), "#editTimezone", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editTimezone" }
+          = link_to t("common.button.expand"), "#editTimezone", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editTimezone" }
           p.accordion-title = t(".timezone.title")
           p.accordion-description
             = t(".timezone.current_value_html", timezone: @user.timezone)
@@ -56,7 +56,7 @@
                 = content_tag :span, t(".timezone.update"), class: "ladda-label"
 
         li
-          = link_to t(".expand"), "#editLanguage", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editLanguage" }
+          = link_to t("common.button.expand"), "#editLanguage", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editLanguage" }
           p.accordion-title = t(".language.title")
           p.accordion-description
             = t(".language.current_value_html", language: t("language_name"))

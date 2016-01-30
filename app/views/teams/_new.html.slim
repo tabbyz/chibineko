@@ -4,7 +4,7 @@
       .modal-header
         button.close type="button" data-dismiss="modal" aria-label="Close"
           span aria-hidden="true" &times;
-        h4.modal-title = t(".title.#{action_name}")
+        h4.modal-title = t(".title")
       .modal-body
         .form-group
           = f.text_field :name, class: "form-control input-lg validation", placeholder: t(".enter_name"), autofocus: true, maxlength: 30, required: true

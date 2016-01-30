@@ -31,12 +31,21 @@ Rails.application.routes.draw do
   end
   
   resources :teams, param: 'name', path: '', except: ['index'] do
+    member do
+      get 'settings'
+    end
+
     resources :team_users do
       collection do
         get 'ajax_search_user'
       end
     end
-    resources :projects, param: 'project_name', except: ['index']
+
+    resources :projects, param: 'project_name', except: ['index'] do
+      member do
+        get 'settings'
+      end
+    end
   end
 
 

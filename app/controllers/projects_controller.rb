@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_project!
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :settings]
 
   # GET /projects
   # GET /projects.json
@@ -58,6 +58,9 @@ class ProjectsController < ApplicationController
       format.html { redirect_to team_path(params[:team_name]), notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def settings
   end
 
   private

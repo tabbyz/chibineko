@@ -53,9 +53,8 @@ ja:
       create_team: "新しいチームを作成"
     main_menu:
       account_settings: "アカウント設定"
-      rename_team: "チーム名を変更"
+      team_settings: "チーム設定"
       edit_members: "チームメンバーを編集"
-      delete_team: "このチームを削除"
 
   static_pages:
     top:
@@ -69,28 +68,41 @@ ja:
       roadmap: "ロードマップ"
 
   teams:
-    modal:
-      title:
-        new: "新しいチーム"
-        edit: "チーム名を変更"
-      enter_name: "チーム名を入力"
     show:
       empty_message: "プロジェクトがありません"
       empty_sub_message: "プロジェクトを作成するとテストの管理がより快適になります"
+    new:
+      title: "新しいチーム"
+      enter_name: "チーム名を入力"
+    settings:
+      title: "チーム設定"
+      name:
+        title: "チーム名"
+        current_value_html: "現在のチーム名: <strong>%{name}</strong>"
+      delete:
+        title: "チームを削除"
+        description: "チームを削除すると、チームに含まれるプロジェクトおよびテストもすべて削除されます。"
+        delete_team: "このチームを削除する"
 
   projects:
+    navbar:
+      menu:
+        project_settings: "プロジェクト設定"
     show:
       empty_message: "テストがありません"
       empty_sub_message: "今すぐテストを作成してみましょう！"
-    navbar:
-      menu:
-        rename_project: "プロジェクト名を変更"
-        delete_project: "このプロジェクトを削除"
-    modal:
-      title:
-        new: "新しいプロジェクト"
-        edit: "プロジェクト名を変更"
+    new:
+      title: "新しいプロジェクト"
       enter_name: "プロジェクト名を入力"
+    settings:
+      title: "プロジェクト設定"
+      name:
+        title: "プロジェクト名"
+        current_value_html: "現在のプロジェクト名: <strong>%{name}</strong>"
+      delete:
+        title: "プロジェクトを削除"
+        description: "プロジェクトを削除すると、プロジェクトに含まれるテストもすべて削除されます。"
+        delete_project: "このプロジェクトを削除する"
 
   tests:
     show:
@@ -183,6 +195,8 @@ ja:
       sign_in: "ログイン"
       sign_out: "ログアウト"
       sign_up: "ユーザー登録"
+      expand: "編集"
+      close: "閉じる"
     message:
       delete_confirm: "本当に削除しますか？この操作は取り消せません。"
 

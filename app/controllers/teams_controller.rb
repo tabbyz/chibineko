@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_team!, except: [:new, :create]
-  before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :set_team, only: [:show, :edit, :update, :destroy, :settings]
 
   # GET /teams
   # GET /teams.json
@@ -54,6 +54,9 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     redirect_to dashboard_path
+  end
+
+  def settings
   end
 
   private

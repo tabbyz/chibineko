@@ -7,8 +7,6 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
           = fa_icon "angle-down"
         ul.dropdown-menu
           li.dropdown-header = t("common.project")
-          li = link_to fa_icon("pencil-square-o", text: t(".menu.rename_project")), edit_team_project_path(current_team, current_project), remote: true
-          li.divider role="separator"
-          li = link_to fa_icon("trash-o", text: t(".menu.delete_project")), team_project_path(team_name: current_team.name, project_name: current_project.name), data: { confirm: t("common.message.delete_confirm") }, :method => :delete
+          li = link_to fa_icon("cog", text: t(".menu.project_settings")), settings_team_project_path(current_team, current_project), remote: true
 
     = link_to fa_icon("plus", text: t("common.button.new_test")), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn color-blue new-test-btn pull-right", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.create_new_test") }

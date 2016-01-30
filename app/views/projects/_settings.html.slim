@@ -1,0 +1,30 @@
+.project-settings-modal.modal-dialog
+  .modal-content
+    .modal-header
+      button.close type="button" data-dismiss="modal" aria-label="Close"
+        span aria-hidden="true" &times;
+      h4.modal-title = t(".title")
+
+    .modal-body
+      ul.setting-list
+        li
+          = link_to t("common.button.expand"), "#editName", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "editName" }
+          p.accordion-title = t(".name.title")
+          p.accordion-description
+            = t(".name.current_value_html", name: current_project.name)
+          .collapse#editName
+            = form_for current_project, url: team_project_path, remote: true do |f|
+              .form-group.inline-block
+                = f.text_field :name, class: "form-control validation", style: "width:250px;", maxlength: 255, required: true
+              = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
+                = content_tag :span, t("helpers.submit.update"), class: "ladda-label"
+
+        li
+          = link_to t("common.button.expand"), "#deleteProject", class: "btn color-lightgray collapse-btn", data: { toggle: "collapse" }, aria: { expanded: "false", controls: "deleteProject" }
+          p.accordion-title.text-red = t(".delete.title")
+          .collapse#deleteProject
+            p.accordion-description = t(".delete.description")
+            = link_to t(".delete.delete_project"), team_project_path(current_team.name, current_project.name), class: "btn btn-sm btn-danger", data: { confirm: t("common.message.delete_confirm") }, :method => :delete
+
+    .modal-footer
+      button.btn.btn-lg.btn-default type="button" data-dismiss="modal" = t("dialog.close")

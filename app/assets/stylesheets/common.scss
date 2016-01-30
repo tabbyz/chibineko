@@ -29,7 +29,7 @@
   }
 }
 
-.link-red {
+.text-red {
   color: #d32f2f !important;
 }
 
@@ -156,6 +156,45 @@
 
     .btn[type='submit'] {
       margin-bottom: 20px;
+    }
+  }
+}
+
+.setting-list {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DDD;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    .collapse-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .accordion-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .accordion-description {
+      margin-bottom: 20px;
+      padding-right: 100px;
+      color: #555;
+    }
+
+    .form-control {
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 5px;
     }
   }
 }

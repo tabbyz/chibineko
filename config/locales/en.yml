@@ -6,6 +6,9 @@ en:
       create: "Create"
       submit: "Save"
       update: "Update"
+      test:
+        create: "Create test"
+        update: "Update test"
 
   dialog:
     done: "Done"
@@ -50,9 +53,8 @@ en:
       create_team: "Create a new team"
     main_menu:
       account_settings: "Account settings"
+      team_settings: "Team settings"
       edit_members: "Edit team members"
-      rename_team: "Rename team"
-      delete_team: "Delete this team"
 
   static_pages:
     top:
@@ -66,28 +68,41 @@ en:
       roadmap: "Roadmap"
 
   teams:
-    modal:
-      title:
-        new: "New team"
-        edit: "Edit team"
-      enter_name: "Enter team name"
     show:
       empty_message: "No Projects"
       empty_sub_message: "When you create a project which helps to classify test."
+    new:
+      title: "New team"
+      enter_name: "Enter team name"
+    settings:
+      title: "Team settings"
+      name:
+        title: "Team name"
+        current_value_html: "Current team naeme: <strong>%{name}</strong>"
+      delete:
+        title: "Delete team"
+        description: "When you delete a team, you also delete all projects and test is included in the team."
+        delete_team: "Delete this team"
 
   projects:
+    new:
+      title: "New project"
+      enter_name: "Enter project name"
     show:
       empty_message: "No Tests"
       empty_sub_message: "Let's immediately create a test!"
     navbar:
       menu:
-        rename_project: "Rename project"
+        project_settings: "Project settings"
+    settings:
+      title: "Project settings"
+      name:
+        title: "Project name"
+        current_value_html: "Current project naeme: <strong>%{name}</strong>"
+      delete:
+        title: "Delete project"
+        description: "When you delete a project, it also deletes all the tests that are included in the project."
         delete_project: "Delete this project"
-    modal:
-      title:
-        new: "New project"
-        edit: "Edit project"
-      enter_name: "Enter project name"
 
   tests:
     show:
@@ -182,5 +197,7 @@ en:
       sign_in: "Sign in"
       sign_out: "Sign out"
       sign_up: "Sign up"
+      expand: "expand"
+      close: "close"
     message:
       delete_confirm: "Are you sure?You can't undo this."

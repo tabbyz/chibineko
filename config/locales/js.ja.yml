@@ -11,7 +11,7 @@ ja:
         total: "合計"
     common:
       collapse:
-        expand: "展開"
+        expand: "編集"
         close: "閉じる"
       ladda:
         saving: "保存中..."
