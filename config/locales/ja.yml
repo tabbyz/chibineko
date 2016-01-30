@@ -38,6 +38,7 @@ ja:
         too_long: "は%{count}文字以内で入力してください"
         taken: "はすでに存在します"
         invalid: "に使用できない文字が含まれています"
+        confirmation: "が一致しません"
 
   errors:
     format: "%{attribute}%{message}"

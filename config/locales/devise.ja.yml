@@ -3,8 +3,8 @@
 ja:
   devise:
     confirmations:
-      confirmed: "アカウントを登録しました"
-      send_instructions: "アカウントの有効化について数分以内にメールでご連絡します"
+      confirmed: "メールアドレスの確認が完了しました"
+      send_instructions: "アカウントの有効化についてメールを送信しました"
       send_paranoid_instructions: "あなたのメールアドレスが登録済みの場合、本人確認用のメールが数分以内に送信されます"
     failure:
       already_authenticated: "すでにログインしています"
@@ -55,8 +55,6 @@ ja:
       already_confirmed: "は既に登録済みです。ログインしてください"
       confirmation_period_expired: "の期限が切れました。%{period} までに確認する必要があります。 新しくリクエストしてください"
       expired: "の有効期限が切れました。新しくリクエストしてください"
-      not_found: "は見つかりませんでした"
+      not_found: "が見つかりませんでした"
       not_locked: "は凍結されていません"
-      not_saved:
-        one: "エラーが発生したため %{resource} は保存されませんでした:"
-        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした:"
+      not_saved: "処理できませんでした"

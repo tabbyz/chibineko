@@ -1,4 +1,8 @@
-.card.text-center
+- if devise_error_messages!.present?
+  .card.card-alert
+    = devise_error_messages!
+        
+.card.card-form
   = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
     h1.card-title = t(".resend_confirmation")
     .card-body

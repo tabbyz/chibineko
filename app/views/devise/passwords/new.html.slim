@@ -1,4 +1,4 @@
-.card.text-center
+.card.card-form
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
     h1.card-title = t(".forgot_password")
     .card-body

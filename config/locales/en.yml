@@ -38,6 +38,7 @@ en:
         too_short: "is too short (minimum is %{count} characters)."
         taken: "has already been taken."
         invalid: "is invalid."
+        confirmation: "do not match."
 
   errors:
     format: "%{attribute} %{message}"

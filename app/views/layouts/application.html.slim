@@ -13,6 +13,12 @@ html
     = csrf_meta_tags
 
   body class="#{controller_name} #{action_name}"
+    - if flash
+      - flash.each do |f|
+        - type = f[0].to_s.gsub("alert", "warning").gsub("notice", "info")
+        javascript:
+          toastr["#{type}"]("#{f[1]}")
+
     - if %w"dashboard teams projects tests".include?(controller_name)
       .page.page-with-sidebar
         .content

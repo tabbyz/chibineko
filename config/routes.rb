@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   get 'dashboard' => 'dashboard#index'
 
-  # devise_for :users
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users
+  # devise_for :users, controllers: { registrations: "users/registrations" }
   # devise_for :users, controllers: {
     # sessions: 'users/sessions'
   # }
