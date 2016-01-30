@@ -1,22 +1,23 @@
 nav.navbar.navbar-fixed-top.navbar-with-sidebar
   .navbar-content
     - if action_name == "show"
-      = link_to fa_icon("pencil", text: t(".edit_test")), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: t(".edit_current_test") }, remote: true
-    - if action_name == "new"
+      = link_to fa_icon("pencil", text: t(".edit_test")), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: t(".edit_current_test") }
+    - if %w"new edit".include?(action_name)
       .navbar-title
-        span = t("tests.new.title")
+        span = t("tests.form.title.#{action_name}")
 
     ul.nav.navbar-nav.navbar-right
       - if action_name == "show"
         li = link_to fa_icon("line-chart"), "#", class: "btn progress-count", data: { toggle: "popover", placement: "bottom", trigger: "hover", html: "true", content: "" }
         li = link_to fa_icon("download"), test_path(format: :csv), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: t(".export_csv") }
         li = link_to fa_icon("copy"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name), source: @test.slug), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: t(".duplicate_test") }
+        li = link_to fa_icon("file-o"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.create_new_test") }
         li.dropdown
           a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
             = fa_icon "cog"
           ul.dropdown-menu
             li.dropdown-header = t(".test_settings")
-            li = link_to t(".move_to"), move_test_path(@test), remote: true
-            li = link_to t(".customize_result_label"), result_label_test_path(@test), remote: true
+            li = link_to fa_icon("external-link", text: t(".move_to")), move_test_path(@test), remote: true
+            li = link_to fa_icon("pencil", text: t(".customize_result_label")), result_label_test_path(@test), remote: true
             li.divider role="separator"
-            li = link_to t(".delete_test"), "", data: { confirm: t("common.message.delete_confirm") }, :method => :delete
+            li = link_to fa_icon("trash-o", text: t(".delete_test")), "", class: "link-red", data: { confirm: t("common.message.delete_confirm") }, :method => :delete

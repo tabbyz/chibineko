@@ -1,4 +1,4 @@
-$(".tests.show, .tests.new").ready ->
+$(".tests.new, .tests.edit").ready ->
 # ==================================================
 # Function
 # ==================================================
@@ -70,8 +70,8 @@ $(".tests.show, .tests.new").ready ->
     if e.length
       markdown = e.val()
       tag = caseTag(markdown)
-      $(".test-preview").empty()
-      $(".test-preview").append(tag)
+      $(".test-preview-content").empty()
+      $(".test-preview-content").append(tag)
 
 
 # ==================================================
@@ -90,7 +90,7 @@ $(".tests.show, .tests.new").ready ->
 # TODO: Global
 @syncScroll = (e) ->
   source = e
-  target = $(".test-preview")
+  target = $(".test-preview-content")
   sourceScrollMax = source.get(0).scrollHeight - source.get(0).offsetHeight
   targetScrollMax = target.get(0).scrollHeight - target.get(0).offsetHeight
   scrollRatio = source.scrollTop()/ sourceScrollMax

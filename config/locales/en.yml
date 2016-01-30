@@ -92,15 +92,15 @@ en:
   tests:
     show:
       blank_description: "Description is blank"
-    new:
-      title: "Create test"
+    form:
+      title:
+        new: "Create a new test"
+        edit: "Edit test"
       title_placeholder: "Enter test title"
+      markdown_header: "Test contents"
       markdown_placeholder: "Enter markdown text"
+      preview_header: "Preview"
       submit: "Create test"
-    edit:
-      title: "Edit Test"
-      title_placeholder: "Enter test title"
-      markdown_placeholder: "Enter markdown text"
     description:
       title: "Edit description"
     testcase:

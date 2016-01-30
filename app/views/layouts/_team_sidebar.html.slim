@@ -6,10 +6,10 @@
       span.username = current_user.display_name
     = render "layouts/main_menu"
 
-  ul.sidebar-list
-    li.sidebar-list-header
-      span = t("common.project")
-      = link_to fa_icon("plus-circle"), new_team_project_path(current_team), class: "add-project-btn", data: { toggle: "tooltip", placement: "top", title: t("common.button.create_new_project") }, remote: true
+  .list-header
+    span = t("common.project")
+    = link_to fa_icon("plus-circle"), new_team_project_path(current_team), class: "add-project-btn", data: { toggle: "tooltip", placement: "top", title: t("common.button.create_new_project") }, remote: true
+  ul.sidebar-list.hover-scroll
     - current_team.projects.each do |project|
-      li class="sidebar-list-item #{'active' if project == current_project}"
+      li class="#{'active' if project == current_project}"
         = link_to project.name, team_project_path(team_name: current_team.name, project_name: project.name)

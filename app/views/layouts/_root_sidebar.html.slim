@@ -1,13 +1,12 @@
 .sidebar.root-sidebar
-  ul
-    li
-      = link_to fa_icon("home 2x"), dashboard_path, class: "home-btn", data: { toggle: "tooltip", placement: "right", title: t("dashboard.index.title") }
+  = link_to fa_icon("home 2x"), dashboard_path, class: "home-btn", data: { toggle: "tooltip", placement: "right", title: t("dashboard.index.title") }
+
+  ul.hover-scroll
     - current_user.teams.each do |team|
       li class="#{'active' if team == current_team}"
         = link_to team_path(team), class: "team-btn", data: { toggle: "tooltip", placement: "right", title: team.name } do
           .hilight-bar
           span.symbol = team.name.first.upcase
           span.description = team.name
-  = link_to fa_icon("plus-circle", right: true), new_team_path, class: "add-team-btn", data: { toggle: "tooltip", placement: "right", title: t(".create_team") }, remote: true
 
-.modal.fade tabindex="-1" role="dialog" aria-hidden="true"
+  = link_to fa_icon("plus-circle", right: true), new_team_path, class: "add-team-btn", data: { toggle: "tooltip", placement: "right", title: t(".create_team") }, remote: true

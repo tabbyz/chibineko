@@ -6,6 +6,9 @@ ja:
       create: "作成"
       submit: "保存"
       update: "更新"
+      test:
+        create: "テストを作成"
+        update: "テストを更新"
 
   dialog:
     done: "完了"
@@ -92,15 +95,14 @@ ja:
   tests:
     show:
       blank_description: "説明が入力されていません"
-    new:
-      title: "テストを作成"
+    form:
+      title:
+        new: "新しいテストを作成"
+        edit: "テストを編集"
       title_placeholder: "タイトルを入力"
-      markdown_placeholder: "テスト内容を入力"
-      submit: "テストを作成"
-    edit:
-      title: "テストを編集"
-      title_placeholder: "タイトルを入力"
-      markdown_placeholder: "テスト内容を入力"
+      markdown_header: "テスト項目"
+      markdown_placeholder: "テスト項目を箇条書きで入力"
+      preview_header: "プレビュー"
     description:
       title: "説明を編集"
     testcase:
@@ -119,7 +121,7 @@ ja:
       duplicate_test: "テストを複製"
       move_to: "別プロジェクトへ移動"
       customize_result_label: "結果ラベルをカスタマイズ"
-      delete_test: "テストを削除"
+      delete_test: "このテストを削除"
 
   dashboard:
     index:

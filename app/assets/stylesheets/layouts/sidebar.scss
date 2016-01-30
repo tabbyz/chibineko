@@ -1,47 +1,23 @@
-$root-sidebar-width: 60px;
-$team-sidebar-width: 200px;
-$hilight-color: #63A0C3;
-
 .page-with-sidebar {
-  .content {
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    margin-left: $root-sidebar-width + $team-sidebar-width;
-    overflow: scroll;
+  .sidebar {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
   }
 
-  .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    overflow-y: scroll;
-    z-index: 1031;
-
-    a {
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
   }
 
   .root-sidebar {
-    left: 0;
-    width: $root-sidebar-width;
     background-color: #192637;
 
     a {
       color: #C5D0DE;
-      display: inline-block;
-      width: 100%;
+      display: block;
 
       &:hover, &:focus {
         background-color: #364760;
@@ -49,49 +25,55 @@ $hilight-color: #63A0C3;
       }
     }
 
+    .home-btn, .add-team-btn {
+      height: 60px;
+      text-align: center;
+      .fa { margin-top: 16px; }  // TODO
+    }
+
+    .home-btn {
+      background-color: #01AB52;
+      color: #FFF;
+
+      &:hover {
+        background-color: #01AB52;
+      }
+    }
+
+    .add-team-btn {
+      background-color: #192637;
+      font-size: 28px;
+    }
+
     ul {
-      padding-bottom: 50px;
-      
+      flex: 1;
+
       li {
         text-align: center;
 
-        .home-btn {
-          background-color: #01AB52;
-          color: #FFF;
-          height: 60px;
-
-          .fa {
-            margin-top: 16px;
-          }
-        }
-
         .team-btn {
-          position: relative;
-          display: inline-block;
           height: 60px;
-          padding-top: 5px;
-          border-radius: 2px;
+          text-align: center;
 
           .hilight-bar {
-            display: none;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
+            display: inline-block;
+            float: left;
             width: 4px;
-            background-color: #01AB52;
+            height: 60px;
+            background-color: transparent;
           }
 
           .symbol {
             display: block;
             font-size: 20px;
             font-weight: bold;
+            padding-top: 6px;
           }
 
           .description {
             display: inline-block;
             overflow: hidden;
-            max-width: 50px;
+            width: 46px;  // sidebar-width - hilight-bar-width - (margin-left + margin-right)
             font-size: 11px;
           }
         }
@@ -103,38 +85,22 @@ $hilight-color: #63A0C3;
           color: #FFF;
         }
 
-        .hilight-bar {
-          display: inline-block;
-        }
+        .hilight-bar { background-color: #01AB52; }
       }
-    }
-
-    .add-team-btn {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: $root-sidebar-width;
-      display: inline-block;
-      padding: 5px 0;
-      background-color: #192637;
-      font-size: 28px;
-      text-align: center;
     }
   }
 
   .team-sidebar {
-    left: $root-sidebar-width;
-    width: $team-sidebar-width;
     border-right: 1px solid #DDD;
     background-color: #FFF;
-    overflow: visible;  // So as not hidden dropdown
 
     .sidebar-title {
       .dropdown-toggle {
         display: inline-block;
+        height: 75px;
         width: 100%;
-        padding: 10px 20px;
         margin-bottom: 10px;
+        padding: 10px 20px;
         font-size: 20px;
         font-weight: bold;
         white-space: nowrap;
@@ -160,22 +126,24 @@ $hilight-color: #63A0C3;
       }
     }
 
+    .list-header {
+      padding: 0 20px;
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #555;
+
+      .add-project-btn {
+        float: right;
+        padding: 0 4px;
+      }
+    }
+
     .sidebar-list {
       padding: 0 20px;
+      flex: 1;
 
-      .sidebar-list-header {
-        margin-bottom: 5px;
-        font-size: 14px;
-        font-weight: bold;
-        color: #555;
-
-        .add-project-btn {
-          float: right;
-          padding: 0 4px;
-        }
-      }
-
-      .sidebar-list-item {
+      li {
         overflow-x: hidden;
 
         a {

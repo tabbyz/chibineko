@@ -1,0 +1,20 @@
+= render "navbar"
+
+= form_for @test, remote: true do |f|
+  = f.hidden_field :source
+  = f.hidden_field :team_name, value: current_team.try(:name)
+  = f.hidden_field :project_name, value: current_project.try(:name)
+  .test-title
+    = f.text_field :title, class: "form-control input-lg", placeholder: t(".title_placeholder"), autofocus: (action_name == "new" ? true : false), maxlength: 255, required: true
+  .test-editor
+    .test-markdown
+      .test-editor-header
+        p = t(".markdown_header")
+      = f.text_area :markdown, class: "form-control", placeholder: t(".markdown_placeholder"), autofocus: (action_name == "edit" ? true : false), required: true
+    .test-preview
+      .test-editor-header
+        p = t(".preview_header")
+      .test-preview-content
+
+  footer
+    = f.submit class: "btn btn-lg color-primary pull-right"

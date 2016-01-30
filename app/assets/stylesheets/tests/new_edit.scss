@@ -1,57 +1,66 @@
-.tests.new {
-  .content {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    padding-top: 8px;
-    padding-left: 280px;
-    padding-right: 20px;
-  }
-}
-
-.edit-test-modal {
-  .modal-body {
-    padding-top: 0 !important;
-  }
-}
-
-.tests.new, .edit-test-modal {
-  .new_test, .edit_test {
-    height: 100%;
-    padding-bottom: 60px;
-  }
-
-  .test-title {
-  }
-
-  .test-body {
-    height: calc(100% - 40px);
-    padding-top: 10px;
-
-    .test-markdown, .test-preview {
-      display: inline-block;
-      height: 100%;
-      width: 50%;
+.tests.new, .tests.edit {
+  .contents {
+    position: relative;
+  
+    .test-title {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 55px;
+      height: 44px;
     }
 
-    .test-markdown {
-      textarea {
+    .test-editor {
+      position: absolute;
+      top: 110px;
+      left: 10px;
+      right: 10px;
+      bottom: 65px;
+      border: 1px solid #DDD;
+
+      .test-markdown, .test-preview {
+        display: inline-block;
         height: 100%;
-        resize: none;
+        width: 50%;
+
+        .test-editor-header {
+          padding: 5px 10px;
+          height: 30px;
+          background-color: #EEE;
+          color: #AAA;
+        }
+      }
+
+      .test-markdown {
+        border-right: 1px solid #DDD;
+
+        textarea {
+          border: none;
+          width: 100%;
+          height: calc(100% - 30px);
+          box-shadow: none;
+          -moz-box-shadow: none;
+          -webkit-box-shadow: none;
+        }
+      }
+
+      .test-preview {
+        float: right;
+
+        .test-preview-content {
+          width: 100%;
+          height: calc(100% - 30px);
+          overflow-y: scroll;
+          padding:  10px;
+        }
       }
     }
 
-    .test-preview {
-      float: right;
-      padding-left: 15px;
-      overflow: scroll;
+    footer {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
     }
   }
 }

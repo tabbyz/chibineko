@@ -3,7 +3,7 @@
 = render "navbar"
 
 - if @project.tests.size == 0
-  .center
+  .empty-data
     h3 = t(".empty_message")
     p = t(".empty_sub_message")
 
