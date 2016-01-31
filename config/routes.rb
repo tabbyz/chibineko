@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
+  get 'terms' => 'static_pages#terms'
   get 'dashboard' => 'dashboard#index'
 
   devise_for :users
