@@ -31,25 +31,32 @@ $(".tests.show").ready ->
 
 
   updateProgressCount = () ->
-    tag = "<ul class='nav progress-count-list'>"
+    tag = """
+    <table class='tableX table-condensedX progress-count-list'>
+    <tbody>
+    """
+    total = countAll()
 
     for text in gon.resultLabelTexts
       count = countLabel(text)
+      ratio = (count / total * 100).toFixed(1)
       color = gon.resultLabels[text]
       tag += """
-      <li>
-        <span class='label color-#{color}'>#{text}</span>
-        <span class='pull-right count-value'>#{count}</span>
-      </li>
+      <tr>
+        <td><span class='label color-#{color}'>#{text}</span></td>
+        <td><strong>#{count}</strong></td>
+        <td>(#{ratio}%)</td>
+      </tr>
       """
 
-    total = countAll()
     tag += """
-    <li class='count-total'>
-      <span>#{I18n.t("js.tests.navbar.total")}</span>
-      <span class='pull-right count-value'>#{total}</span>
-    </li>
-    </ul>
+    <tr class='count-total'>
+      <td>#{I18n.t("js.tests.navbar.total")}</td>
+      <td><strong>#{total}</strong></td>
+      <td></td>
+    </tr>
+    </tbody>
+    </table>
     """
 
     $(".progress-count").attr("data-content", tag)

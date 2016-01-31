@@ -1,23 +1,51 @@
 .tests.show {
   .progress-count-list {
-    padding: 0;
+    margin-bottom: 0;
+    td {
+      text-align: right;
+      padding: 4px;
 
-    li {
-      margin-bottom: 5px;
+      &:first-child {
+        padding-right: 8px;
+      }
 
-      .count-value {
-        margin-left: 30px;
-        font-weight: bold;
+      &:last-child {
+        color: #777;
+      }
+
+      .label {
+        display: block;
       }
     }
 
-    .count-total {
-      margin-top: 10px;
-      margin-bottom: 0;
-      padding-top: 2px;
-      border-top: 1px solid #CCC;
+    tr:nth-last-child(2) > td {
+      padding-bottom: 10px;
+    }
+
+    tr:last-child {
+      border-top: 1px solid #AAA;
     }
   }
+
+  // .progress-count-list {
+  //   padding: 0;
+
+  //   li {
+  //     margin-bottom: 5px;
+
+  //     .count-value {
+  //       margin-left: 30px;
+  //       font-weight: bold;
+  //     }
+  //   }
+
+  //   .count-total {
+  //     margin-top: 10px;
+  //     margin-bottom: 0;
+  //     padding-top: 2px;
+  //     border-top: 1px solid #CCC;
+  //   }
+  // }
 
   .contents {
     .progress.progress-animation {
