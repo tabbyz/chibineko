@@ -96,21 +96,17 @@ $(".tests.show").ready ->
 
   ajaxPostResult = (caseId, result) ->
     $.ajax
-      url: "#{gon.test.slug}/#{caseId}"
+      url: "#{gon.test.slug}/cases/#{caseId}"
       type: 'PATCH'
       dataType: 'json'
       data: $.param({
         testcase: { result: result }
       })
-      beforeSend: (jqXHR, settings) ->
-        # loading true
       error: (jqXHR, textStatus, errorThrown) ->
-        console.log "AJAX Error: #{textStatus}"
-        # toastr.error("ページをリロードしてから再度操作してください", "エラーが発生しました")
+        toastr.warning(I18n.t("js.tests.show.errors.conflict"), I18n.t("js.tests.show.errors.please_reload"))
+        # console.log "Ajax Error: #{textStatus}"
       success: (data, textStatus, jqXHR) ->
-        console.log "Successful AJAX call: #{data}"
-      complete: (jqXHR, textStatus) ->
-        # loading false
+        # console.log "Ajax Successful: #{data}"
 
 
 # ==================================================
@@ -191,3 +187,7 @@ $(".tests.show").ready ->
 
   $(document).on "blur", ".testcase-list .note input", ->
     $(this).parents(".best_in_place").attr("data-original-title", $(this).val())
+
+
+  $(document).on "ajax:error", ".best_in_place", () ->
+    toastr.warning(I18n.t("js.tests.show.errors.conflict"), I18n.t("js.tests.show.errors.please_reload"))

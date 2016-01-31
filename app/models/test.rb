@@ -75,14 +75,12 @@ class Test < ActiveRecord::Base
   def make_testcase
     self.testcases.delete_all
 
-    case_id = 0
     self.markdown.each_line do |line|
       level  = Testcase.heading_level(line)
       body   = Testcase.body(line)
       result = Testcase.result(line)
       note   = Testcase.note(line)
-      case_id += 1 if level == 0
-      self.testcases.create(case_id: case_id, heading_level: level, body: body, result: result, note: note)
+      self.testcases.create(heading_level: level, body: body, result: result, note: note)
     end
   end
 

@@ -7,6 +7,10 @@ ja:
         not_found: "ユーザーが見つかりません"
         unknown_error: "エラーが発生しました"
     tests:
+      show:
+        errors:
+          conflict: "テスト項目が他のユーザーによって変更された可能性があります"
+          please_reload: "ページをリロードしてください"
       navbar:
         total: "合計"
     common:

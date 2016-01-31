@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       patch 'update_result_label'
     end
 
-    resources :testcases, path: '', param: 'case_id', only: ['update']
+    resources :testcases, path: 'cases', only: ['update']
   end
   
   resources :teams, param: 'name', path: '', except: ['index'] do

@@ -3,9 +3,9 @@
 = render "navbar"
 
 - if @tests.size == 0
-  .center
-    h3 No Tests
-    p Let's immediately create a test.
+  .empty-data
+    h3 = t("projects.show.empty_message")
+    p = t("projects.show.empty_sub_message")
 
     = link_to fa_icon("plus", text: t(".navbar.new_test")), new_test_path, class: "btn btn-lg color-blue"
 

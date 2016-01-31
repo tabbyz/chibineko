@@ -4,10 +4,6 @@ class Testcase < ActiveRecord::Base
   validates :result, length: { maximum: 255 }
   validates :note, length: { maximum: 1024 }
 
-  def to_param
-    case_id
-  end
-
   def type
     case self.heading_level
     when -1

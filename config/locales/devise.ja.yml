@@ -15,7 +15,7 @@ ja:
       not_found_in_database: "%{authentication_keys} もしくはパスワードが不正です"
       timeout: "セッションがタイムアウトしました。もう一度ログインしてください"
       unauthenticated: "アカウント登録もしくはログインしてください"
-      unconfirmed: "メールアドレスの本人確認が必要です"
+      unconfirmed: "メールアドレスの認証が完了していません。送信されたメールの内容を確認してください"
     mailer:
       confirmation_instructions:
         subject: "アカウントの有効化について"
