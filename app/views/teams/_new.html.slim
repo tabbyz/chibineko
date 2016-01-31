@@ -10,5 +10,5 @@
           = f.text_field :name, class: "form-control input-lg validation", placeholder: t(".enter_name"), autofocus: true, maxlength: 30, required: true
           p.text-danger.error-message
       .modal-footer
-        = f.submit class: "btn btn-lg color-primary"
         button.btn.btn-lg.btn-default type="button" data-dismiss="modal" = t("dialog.cancel")
+        = f.submit class: "btn btn-lg color-primary"

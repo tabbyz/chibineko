@@ -16,5 +16,5 @@
                   li data-project-id="#{project.id}" class="project-name #{'active' if project == current_project}"
                     = project.name
       .modal-footer
-        = f.submit t(".submit"), class: "btn btn-lg color-primary"
         button.btn.btn-lg.btn-default type="button" data-dismiss="modal" = t("dialog.cancel")
+        = f.submit t(".submit"), class: "btn btn-lg color-primary"
