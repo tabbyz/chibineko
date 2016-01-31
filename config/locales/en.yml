@@ -51,6 +51,8 @@ en:
       github_page: "GitHub page"
     root_sidebar:
       create_team: "Create a new team"
+    dashboard_sidebar:
+      your_test: "Your test"
     main_menu:
       account_settings: "Account settings"
       team_settings: "Team settings"
