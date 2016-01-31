@@ -12,7 +12,7 @@
           p.accordion-title = t(".username.title")
           p.accordion-description
             - if @user.username.blank?
-              | = t(".username.blank")
+              = t(".username.blank")
             - else
               = t(".username.current_value_html", username: @user.username)
           .collapse#editUsername

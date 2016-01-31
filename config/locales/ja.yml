@@ -167,7 +167,7 @@ ja:
       close: "閉じる"
       username:
         title: "ユーザー名"
-        blank: "ユーザー名が設定されていない場合はメールアドレスがユーザー名として使用されます"
+        blank: "ユーザー名が未設定の場合、メールアドレスがユーザー名として表示されます"
         current_value_html: "あなたのユーザー名: <strong>%{username}</strong>"
       password:
         title: "パスワード"
