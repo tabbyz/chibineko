@@ -124,12 +124,7 @@ class TestsController < ApplicationController
     project = view_context.current_project
 
     @test.destroy
-    redirect_to team_project_path(team_name: team.name, project_name: project.name)
-    
-    # respond_to do |format|
-    #   format.html { redirect_to tests_url, notice: 'Test was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
+    redirect_to team_project_path(team_name: team.name, project_name: project.name), notice: t("tests.messages.destroy")
   end
 
   def move

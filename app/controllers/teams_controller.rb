@@ -53,7 +53,7 @@ class TeamsController < ApplicationController
   # DELETE /teams/1.json
   def destroy
     @team.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path, notice: t("teams.messages.destroy")
   end
 
   def settings

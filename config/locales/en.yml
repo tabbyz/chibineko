@@ -83,6 +83,8 @@ en:
         title: "Delete team"
         description: "When you delete a team, you also delete all projects and test is included in the team."
         delete_team: "Delete this team"
+    messages:
+      destroy: "Team was successfully destroyed."
 
   projects:
     new:
@@ -103,6 +105,8 @@ en:
         title: "Delete project"
         description: "When you delete a project, it also deletes all the tests that are included in the project."
         delete_project: "Delete this project"
+    messages:
+      destroy: "Project was successfully destroyed."
 
   tests:
     show:
@@ -135,6 +139,8 @@ en:
       move_to: "Move to"
       customize_result_label: "Customize result label"
       delete_test: "Delete this test"
+    messages:
+      destroy: "Test was successfully destroyed."
 
   dashboard:
     index:

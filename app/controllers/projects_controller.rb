@@ -54,10 +54,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
-    respond_to do |format|
-      format.html { redirect_to team_path(params[:team_name]), notice: 'Project was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to team_path(params[:team_name]), notice: t("projects.messages.destroy")
   end
 
   def settings

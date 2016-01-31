@@ -83,6 +83,8 @@ ja:
         title: "チームを削除"
         description: "チームを削除すると、チームに含まれるプロジェクトおよびテストもすべて削除されます。"
         delete_team: "このチームを削除する"
+    messages:
+      destroy: "チームを削除しました"
 
   projects:
     navbar:
@@ -103,6 +105,8 @@ ja:
         title: "プロジェクトを削除"
         description: "プロジェクトを削除すると、プロジェクトに含まれるテストもすべて削除されます。"
         delete_project: "このプロジェクトを削除する"
+    messages:
+      destroy: "プロジェクトを削除しました"
 
   tests:
     show:
@@ -134,6 +138,8 @@ ja:
       move_to: "別プロジェクトへ移動"
       customize_result_label: "結果ラベルをカスタマイズ"
       delete_test: "このテストを削除"
+    messages:
+      destroy: "テストを削除しました"
 
   dashboard:
     index:
