@@ -8,9 +8,8 @@ body {
 }
 
 body {
-  &.registrations, &.sessions, &.passwords, &.confirmations {
+  &.registrations, &.sessions, &.passwords, &.confirmations, &.static_pages.terms {
     padding-top: 50px;
-    padding-bottom: 50px;
     background-color: #F3F3F3;
 
     .navbar {
@@ -25,6 +24,10 @@ body {
         margin-top: 9px;
         margin-left: 9px;
       }
+    }
+
+    .page {
+      padding: 40px;
     }
   }
 }

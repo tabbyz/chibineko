@@ -114,12 +114,18 @@
 }
 
 .card {
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px 60px;
   background-color: #FFF;
+  border: 1px solid #e8e8e8;
   border-radius: .25rem;
   box-shadow: 0 1px 0 rgba(0,0,0,.25);
-  position: relative;
-  border: 1px solid #e8e8e8;
-  width: 500px;
+
+  &.card-lg {
+    width: 800px;
+  }
 
   &.card-alert {
     margin: 20px auto -20px;

@@ -97,17 +97,25 @@
     .sidebar-title {
       .dropdown-toggle {
         display: inline-block;
-        height: 75px;
         width: 100%;
         margin-bottom: 10px;
         padding: 10px 20px;
         font-size: 20px;
         font-weight: bold;
-        white-space: nowrap;
 
-        .fa-angle-down {
-          padding: 0 10px;
-          font-size: 85%;
+        .team-name {
+          > span {
+            display: inline-block;
+            word-wrap: break-word;
+            max-width: 135px;
+          }
+
+          .fa-angle-down {
+            padding-top: 0;
+            width: 20px;
+            font-size: 85%;
+            text-align: right;
+          }
         }
 
         &:hover {

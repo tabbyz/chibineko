@@ -10,7 +10,7 @@
     = link_to fa_icon("plus", text: t(".navbar.new_test")), new_test_path, class: "btn btn-lg color-blue"
 
 - else
-  table.table.table-condensed
+  table.table.table-condensed.table-hover
     thead
       tr
         th style="width:60%;" = t("common.table_header.title")
@@ -19,6 +19,6 @@
     tbody
       - @tests.each do |test|
         tr
-          td = link_to test.title, test
+          td = link_to test.title, test, style: "display:block;"
           td = l(test.updated_at, format: :short)
           td = test.project.try(:team).try(:name)

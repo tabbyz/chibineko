@@ -1,8 +1,9 @@
 .sidebar.team-sidebar
   .sidebar-title.dropdown
     a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
-      = current_team.try(:name)
-      = fa_icon "angle-down"
+      .team-name
+        span = current_team.try(:name)
+        = fa_icon "angle-down"
       span.username = current_user.display_name
     = render "layouts/main_menu"
 
