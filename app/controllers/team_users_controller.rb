@@ -1,4 +1,5 @@
 class TeamUsersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @team = Team.find_by(name: params[:team_name])
@@ -25,7 +26,7 @@ class TeamUsersController < ApplicationController
   end
 
   def ajax_search_user
-    sleep 1
+    sleep 1  # TODO
     @user = User.find_by(email: params[:email])
     render json: @user.present?
   end

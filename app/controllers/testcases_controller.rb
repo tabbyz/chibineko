@@ -1,21 +1,12 @@
 class TestcasesController < ApplicationController
   before_action :set_testcase, only: [:update]
 
-  # def update
-  #   if @testcase.update(testcase_params)
-  #     render json: @testcase, status: 200
-  #   else
-  #     render json: @testcase.errors, status: :unprocessable_entity
-  #   end
-  # end
-
    def update
     test = Test.find_by(slug: params[:test_slug])
     if @testcase.update(testcase_params)
       render json: @testcase, status: 200
     else
-      puts "Soutaaaaaa"
-      render json: @testcase.errors, status: :unprocessable_entity, notice: "そうた！"
+      render json: @testcase.errors, status: :unprocessable_entity, notice: "Unknown error"
     end
   end
 
@@ -25,8 +16,7 @@ class TestcasesController < ApplicationController
       if test.testcases.exists?(id: params[:id])
         @testcase = test.testcases.find(params[:id])
       else
-        puts "NotFound...."
-        render json: nil, status: :unprocessable_entity, notice: "そうた？"
+        render json: nil, status: :unprocessable_entity, notice: "Unknown error"
       end
     end
 

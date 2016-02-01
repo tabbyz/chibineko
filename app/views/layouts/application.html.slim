@@ -21,8 +21,9 @@ html
 
     - if %w"dashboard teams projects tests".include?(controller_name)
       .page.page-with-sidebar
-        = render "layouts/root_sidebar"
-        = current_team ? render("layouts/team_sidebar") : render("layouts/dashboard_sidebar")
+        - if user_signed_in?
+          = render "layouts/root_sidebar"
+          = current_team ? render("layouts/team_sidebar") : render("layouts/dashboard_sidebar")
         .contents.hover-scroll
           == yield
     - else
