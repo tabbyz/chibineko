@@ -128,6 +128,7 @@ ja:
       note: "メモ"
     move:
       title: "テストを移動"
+      unset_project: "プロジェクト未設定"
       submit: "移動"
     result_label:
       title: "結果ラベルをカスタマイズ"
@@ -186,6 +187,7 @@ ja:
         current_value_html: "現在の言語: <strong>%{language}</strong>"
 
   common:
+    dashboard: "ダッシュボード"
     team: "チーム"
     project: "プロジェクト"
     you: "あなた"

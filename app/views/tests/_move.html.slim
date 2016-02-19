@@ -8,12 +8,14 @@
         h4.modal-title = t(".title")
       .modal-body
         .project-list
+          ul.nav
+            li class="unset-project clickable #{'active' if current_project.nil?}" = t(".unset_project")
           - @teams.each do |team|
             - if team.projects.size != 0
               p.team-name = team.name
               ul.nav
                 - team.projects.each do |project|
-                  li data-project-id="#{project.id}" class="project-name #{'active' if project == current_project}"
+                  li data-project-id="#{project.id}" class="project-name clickable #{'active' if project == current_project}"
                     = project.name
       .modal-footer
         button.btn.btn-lg.btn-default type="button" data-dismiss="modal" = t("dialog.cancel")

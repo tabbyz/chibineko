@@ -129,6 +129,7 @@ en:
       note: "Note"
     move:
       title: "Move to"
+      unset_project: "Unset project"
       submit: "Move"
     result_label:
       title: "Customize result label"
@@ -187,6 +188,7 @@ en:
         current_value_html: "Your language is currently set to: <strong>%{language}</strong>"
 
   common:
+    dashboard: "Dashboard"
     team: "Team"
     project: "Project"
     you: "You"
