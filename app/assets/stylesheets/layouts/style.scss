@@ -15,21 +15,21 @@ body {
     .navbar {
       background-color: #FFF;
       box-shadow: 0 1px 1px rgba(0,0,0,.1);
-
-      .logo {
-        background: url(/images/header_logo.png);
-        height: 30px;
-        width: 150px;
-        float: left;
-        margin-top: 9px;
-        margin-left: 9px;
-      }
     }
 
     .page {
       padding: 40px;
     }
   }
+}
+
+.logo {
+  background: url(/images/header_logo.png);
+  height: 30px;
+  width: 150px;
+  float: left;
+  margin-top: 9px;
+  margin-left: 9px;
 }
 
 .page-with-sidebar {
@@ -48,7 +48,7 @@ body {
   }
 
   .team-sidebar {
-    width: 200px;
+    width: 220px;
     z-index: 3;
   }
 
@@ -60,7 +60,6 @@ body {
 
     .navbar {
       z-index: 2;
-      padding-left: 260px;
     }
   }
 }

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'description'
       get 'result_label'
       patch 'update_result_label'
+      patch 'user_association'
     end
 
     resources :testcases, path: 'cases', only: ['update']

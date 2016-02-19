@@ -113,6 +113,7 @@ ja:
   tests:
     show:
       blank_description: "説明が入力されていません"
+      created_by: "このテストは %{username} によって作成されました（更新日時: %{updated_at}）"
     form:
       title:
         new: "新しいテストを作成"
@@ -188,6 +189,7 @@ ja:
     team: "チーム"
     project: "プロジェクト"
     you: "あなた"
+    guest: "ゲスト"
     table_header:
       title: "タイトル"
       updated_at: "更新日時"

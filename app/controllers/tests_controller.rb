@@ -96,6 +96,11 @@ class TestsController < ApplicationController
     @teams = current_user.teams
   end
 
+  def user_association
+    @test.update(user_id: current_user.id) unless @test.user
+    redirect_to @test
+  end
+
   private
     def set_test
       @test = Test.find_by(slug: params[:slug])

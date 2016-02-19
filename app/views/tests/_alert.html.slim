@@ -1,0 +1,10 @@
+- if @test.user && @test.project.nil?
+  .alert.alert-info
+    p このテストは<strong>URLを知っているユーザーなら誰でもアクセスできます</strong>。アクセスできるユーザーを制限したい場合は<strong>チーム機能</strong>をご利用ください。
+
+- if @test.user.nil?
+  .alert.alert-warning
+    p このテストはゲストユーザーによって作成されたため、<strong>テスト項目の編集や削除など一部機能が制限</strong>されています。
+    p
+      span すべての機能を使用したい場合は、ログインして<strong>ユーザーとの紐付け</strong>を行ってください。
+      = link_to "現在のユーザーに紐付ける", user_association_test_path, class: "btn btn-sm color-primary", :method => :patch if user_signed_in?

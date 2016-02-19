@@ -19,10 +19,9 @@
 - else
   nav.navbar.navbar-fixed-top
     = link_to "", root_url, class: "logo"
-
     ul.nav.navbar-nav.pull-right
       - if user_signed_in?
         li = render "layouts/sign_out_link"
       - else
         li = render "layouts/sign_in_link"
-        li = link_to t("common.button.sign_up"), new_user_registration_path, class: "btn color-blue sign-up"
+        li = render "layouts/sign_up_link"

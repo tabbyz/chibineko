@@ -113,6 +113,7 @@ en:
   tests:
     show:
       blank_description: "Description is blank"
+      created_by: "このテストは %{username} によって作成されました（更新日時: %{updated_at}）"
     form:
       title:
         new: "Create a new test"
@@ -189,6 +190,7 @@ en:
     team: "Team"
     project: "Project"
     you: "You"
+    guest: "Guest user"
     dashboard: "Dashboard"
     table_header:
       title: "Title"
