@@ -21,7 +21,7 @@ class Testcase < ActiveRecord::Base
   end
 
   def result_color
-    color = self.test.result_labels[self.result]
+    color = self.test.result_labels_or_default[self.result]
     color ||= "white"  # Default value
   end
 

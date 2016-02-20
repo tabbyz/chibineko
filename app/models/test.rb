@@ -12,9 +12,8 @@ class Test < ActiveRecord::Base
     slug
   end
 
-  def result_labels
-    hash = super
-    hash ||= {
+  def result_labels_or_default
+    result_labels || {
       "未実行" => "white",
       "OK" => "green",
       "NG" => "red",
@@ -24,11 +23,11 @@ class Test < ActiveRecord::Base
   end
 
   def result_label_texts
-    result_labels.keys
+    result_labels_or_default.keys
   end
 
   def result_label_colors
-    result_labels.values
+    result_labels_or_default.values
   end
 
   def testcase_groups

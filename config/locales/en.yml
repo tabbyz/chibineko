@@ -139,7 +139,7 @@ en:
       edit_current_test: "Edit current test"
       export_csv: "Export CSV"
       test_settings: "Test settings"
-      duplicate_test: "Duplicate test"
+      duplicate_test: "Duplicate this test"
       move_to: "Move to"
       customize_result_label: "Customize result label"
       delete_test: "Delete this test"

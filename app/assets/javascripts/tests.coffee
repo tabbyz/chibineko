@@ -115,7 +115,7 @@ $(".tests.show").ready ->
   updateProgressBar()
   updateProgressCount()
 
-
+  # Color picker
   $(document).on "click", ".color-picker .color-item", ->
     radio = $(this).prev()
     color = radio.val()
@@ -125,6 +125,20 @@ $(".tests.show").ready ->
     removeColorClass(triggerElement)
     triggerElement.addClass("color-#{color}")
     triggerElement.val(color)
+
+
+  # Use default label
+  $(document).on "click", ".user-default-result-label", ->
+    modalBody = $(this).parents(".modal-body")
+    table = modalBody.find("table")
+    tableFooter = modalBody.find(".table-footer")
+
+    if $(this).is(":checked")
+      table.hide()
+      tableFooter.hide()
+    else
+      table.show()
+      tableFooter.show()
 
 
   # Remove result label

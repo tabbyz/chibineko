@@ -12,7 +12,7 @@ class TestsController < ApplicationController
       format.html do
         gon.test = @test
         gon.resultLabelTexts = @test.result_label_texts
-        gon.resultLabels = @test.result_labels
+        gon.resultLabels = @test.result_labels_or_default
       end
       format.csv do
         encode = "UTF-16LE"
@@ -81,14 +81,13 @@ class TestsController < ApplicationController
   end
 
   def update_result_label
-    keys = params[:result_label_texts]
-    vals = params[:result_label_colors]
-    hash = Hash[*keys.zip(vals).flatten]
-    
     @test.result_labels = nil
-    @test.save
-
-    @test.result_labels = hash
+    if params[:test][:use_default] == "0"
+      keys = params[:test][:result_label_texts]
+      vals = params[:test][:result_label_colors]
+      hash = Hash[*keys.zip(vals).flatten]
+      @test.result_labels = hash
+    end
     @test.save
   end
 

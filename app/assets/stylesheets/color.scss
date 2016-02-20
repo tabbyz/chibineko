@@ -1,31 +1,61 @@
-.color-white {
-  background-color: #FFF;
-  color: #333;
+// http://www.materialui.co/colors
+// background-color:        400
+// background-color(hover): 500
+// border-color:            600
 
-  &.label {
-    border: 1px solid #BDBDBD;
+.color-red {
+  background-color: #F44336;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #E53935;
+    color: #FFF;
   }
 
-  &.btn {
-    border: 1px solid #BDBDBD;
-
-    &:hover, &:focus {
-      background-color: #EEEEEE;
-    }
+  &.btn, &.label {
+    border: 1px solid #C62828;
   }
 }
 
-.color-green, .color-primary {
-  background-color: #4CAF50;
+.color-pink {
+  background-color: #E91E63;
   color: #FFF;
 
-  &.btn {
-    border: 1px solid #388E3C;
+  &.btn:hover, &.btn:focus {
+    background-color: #D81B60;
+    color: #FFF;
+  }
 
-    &:hover, &:focus {
-      background-color: #43A047;
-      color: #FFF;
-    }
+  &.btn, &.label {
+    border: 1px solid #AD1457;
+  }
+}
+
+.color-purple {
+  background-color: #9C27B0;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #8E24AA;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #6A1B9A;
+  }
+}
+
+.color-deeppurple {
+  background-color: #673AB7;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #5E35B1;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #4527A0;
   }
 }
 
@@ -33,13 +63,13 @@
   background-color: #3F51B5;
   color: #FFF;
 
-  &.btn {
-    border: 1px solid #303F9F;
+  &.btn:hover, &.btn:focus {
+    background-color: #3949AB;
+    color: #FFF;
+  }
 
-    &:hover, &:focus {
-      background-color: #3949AB;
-      color: #FFF;
-    }
+  &.btn, &.label {
+    border: 1px solid #283593;
   }
 }
 
@@ -48,27 +78,111 @@
   color: #FFF;
   outline: 0;
 
-  &.btn {
-    border: 1px solid #1976D2;
+  &.btn:hover, &.btn:focus {
+    background-color: #1E88E5;
+    color: #FFF;
+  }
 
-    &:hover, &:focus {
-      background-color: #1E88E5;
-      color: #FFF;
-    }
+  &.btn, &.label {
+    border: 1px solid #1565C0;
   }
 }
 
-.color-red {
-  background-color: #F44336;
+.color-cyan {
+  background-color: #00BCD4;
   color: #FFF;
 
-  &.btn {
-    border: 1px solid #D32f2f;
+  &.btn:hover, &.btn:focus {
+    background-color: #00ACC1;
+    color: #FFF;
+  }
 
-    &:hover, &:focus {
-      background-color: #E53935;
-      color: #FFF;
-    }
+  &.btn, &.label {
+    border: 1px solid #00838F;
+  }
+}
+
+.color-teal {
+  background-color: #009688;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #00897B;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #00695C;
+  }
+}
+
+.color-green, .color-primary {
+  background-color: #4CAF50;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #43A047;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #2E7D32;
+  }
+}
+
+.color-lightgreen {
+  background-color: #8BC34A;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #7CB342;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #558B2F;
+  }
+}
+
+.color-lime {
+  background-color: #CDDC39;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #C0CA33;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #9E9D24;
+  }
+}
+
+.color-yellow {
+  background-color: #FFEB3B;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #FDD835;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #F9A825;
+  }
+}
+
+.color-amber {
+  background-color: #FFC107;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #FFB300;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #FF8F00;
   }
 }
 
@@ -76,13 +190,41 @@
   background-color: #FF9800;
   color: #FFF;
 
-  &.btn {
-    border: 1px solid #F57C00;
+  &.btn:hover, &.btn:focus {
+    background-color: #FB8C00;
+    color: #FFF;
+  }
 
-    &:hover, &:focus {
-      background-color: #FB8C00;
-      color: #FFF;
-    }
+  &.btn, &.label {
+    border: 1px solid #EF6C00;
+  }
+}
+
+.color-deeporange {
+  background-color: #FF5722;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #F4511E;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #D84315;
+  }
+}
+
+.color-brown {
+  background-color: #795548;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #6D4C41;
+    color: #FFF;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #4E342E;
   }
 }
 
@@ -90,26 +232,54 @@
   background-color: #9E9E9E;
   color: #FFF;
 
-  &.btn {
-    border: 1px solid #757575;
+  &.btn:hover, &.btn:focus {
+    background-color: #757575;
+    color: #FFF;
+  }
 
-    &:hover, &:focus {
-      background-color: #757575;
-      color: #FFF;
-    }
+  &.btn, &.label {
+    border: 1px solid #616161;
+  }
+}
+
+.color-bluegray {
+  background-color: #607D8B;
+  color: #FFF;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #546E7A;
+    color: #FFF;
+  }
+  
+  &.btn, &.label {
+    border: 1px solid #37474F;
   }
 }
 
 .color-lightgray {
-  background-color: #EEEEEE;
+  background-color: #DDD;
   color: #424242;
 
-  &.btn {
-    border: 1px solid #E0E0E0;
+  &.btn:hover, &.btn:focus {
+    background-color: #CCC;
+    color: #424242;
+  }
 
-    &:hover, &:focus {
-      background-color: #E0E0E0;
-      color: #424242;
-    }
+  &.btn, &.label {
+    border: 1px solid #AAA;
+  }
+}
+
+.color-white {
+  background-color: #FFF;
+  color: #333;
+
+  &.btn:hover, &.btn:focus {
+    background-color: #EEE;
+    color: #333;
+  }
+
+  &.btn, &.label {
+    border: 1px solid #BDBDBD;
   }
 }

@@ -138,7 +138,7 @@ ja:
       edit_current_test: "現在のテストを編集"
       export_csv: "CSVエクスポート"
       test_settings: "テスト設定"
-      duplicate_test: "テストを複製"
+      duplicate_test: "このテストを複製"
       move_to: "別プロジェクトへ移動"
       customize_result_label: "結果ラベルをカスタマイズ"
       delete_test: "このテストを削除"
