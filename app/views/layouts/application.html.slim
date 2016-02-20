@@ -3,6 +3,7 @@ html
   head
     title = page_title(yield :title)
     = stylesheet_link_tag 'application', media: 'all'
+    = favicon_link_tag
     = include_gon
     = javascript_include_tag 'application'
     = javascript_include_tag 'translations'
