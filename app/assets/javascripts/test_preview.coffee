@@ -65,19 +65,22 @@ $(".tests.new, .tests.edit").ready ->
         if r then r[1] else text
 
 
+  preUpdatePreview = null
   updatePreview = () ->
-    e = $("#test_markdown")
-    if e.length
-      markdown = e.val()
-      if markdown
-        tag = caseTag(markdown)
-        $(".test-preview-content").empty()
-        $(".test-preview-content").append(tag)
-        $(".test-preview-content").show()
-        $(".test-cheatsheet").hide()
-      else
-        $(".test-preview-content").hide()
-        $(".test-cheatsheet").show()
+    clearTimeout(preUpdatePreview)
+    preUpdatePreview = setTimeout (-> 
+      e = $("#test_markdown")
+      if e.length
+        if markdown = e.val()
+          tag = caseTag(markdown)
+          $(".test-preview-content").empty()
+          $(".test-preview-content").append(tag)
+          $(".test-preview-content").show()
+          $(".test-cheatsheet").hide()
+        else
+          $(".test-preview-content").hide()
+          $(".test-cheatsheet").show()
+    ), 200
 
 
 # ==================================================
