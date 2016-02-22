@@ -20,7 +20,7 @@ html
         javascript:
           toastr["#{type}"]("#{f[1]}")
 
-    - if %w"dashboard teams projects tests".include?(controller_name)
+    - if controller_name.in?(%w"dashboard teams projects tests")
       .page.page-with-sidebar
         - if user_signed_in?
           = render "layouts/root_sidebar"

@@ -4,8 +4,8 @@
   
     .test-title {
       position: absolute;
-      left: 10px;
-      right: 10px;
+      left: 20px;
+      right: 20px;
       top: 55px;
       height: 44px;
     }
@@ -13,8 +13,8 @@
     .test-editor {
       position: absolute;
       top: 110px;
-      left: 10px;
-      right: 10px;
+      left: 20px;
+      right: 20px;
       bottom: 65px;
       border: 1px solid #DDD;
 
@@ -47,19 +47,46 @@
       .test-preview {
         float: right;
 
-        .test-preview-content {
+        .test-preview-content, .test-cheatsheet {
           width: 100%;
           height: calc(100% - 30px);
           overflow-y: scroll;
           padding:  10px;
+        }
+
+        .test-cheatsheet {
+          color: #AAA;
+          padding: 20px;
+
+          .cheatsheet-header {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          .cheatsheet-block {
+            margin-bottom: 20px;
+
+            .cheatsheet-title {
+              font-size: 14px;
+              font-weight: bold;
+            }
+
+            .cheatsheet-body {
+              padding: 10px 15px;
+              background-color: #FAFAFA;
+              border-radius: 4px;
+              line-height: 22px;
+            }
+          }
         }
       }
     }
 
     footer {
       position: absolute;
-      left: 10px;
-      right: 10px;
+      left: 20px;
+      right: 20px;
       bottom: 10px;
     }
   }

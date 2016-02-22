@@ -69,9 +69,15 @@ $(".tests.new, .tests.edit").ready ->
     e = $("#test_markdown")
     if e.length
       markdown = e.val()
-      tag = caseTag(markdown)
-      $(".test-preview-content").empty()
-      $(".test-preview-content").append(tag)
+      if markdown
+        tag = caseTag(markdown)
+        $(".test-preview-content").empty()
+        $(".test-preview-content").append(tag)
+        $(".test-preview-content").show()
+        $(".test-cheatsheet").hide()
+      else
+        $(".test-preview-content").hide()
+        $(".test-cheatsheet").show()
 
 
 # ==================================================
@@ -82,7 +88,7 @@ $(".tests.new, .tests.edit").ready ->
   $(document).on "keyup", "#test_markdown", ->
     updatePreview()
 
-  # $(document).on "scroll", "#test_markdown", ->  # TODO: Doesn't work...
+  # $(document).on "scroll", "#test_markdown", ->  # TODO: Doesn't work
   $("#test_markdown").scroll ->
     syncScroll($(this))
 

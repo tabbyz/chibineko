@@ -1,12 +1,11 @@
 nav.navbar.navbar-fixed-top.navbar-with-sidebar
   .navbar-content
-    - if @test.user
-      - if action_name == "show"
-        = link_to fa_icon("pencil", text: t(".edit_test")), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: t(".edit_current_test") }
-        
-      - if %w"new edit".include?(action_name)
-        .navbar-title
-          span = t("tests.form.title.#{action_name}")
+    - if action_name == "show"
+      = link_to fa_icon("pencil", text: t(".edit_test")), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: t(".edit_current_test") }
+      
+    - elsif action_name.in?(%w"new edit")
+      .navbar-title
+        span = t("tests.form.title.#{action_name}")
 
     ul.nav.navbar-nav.navbar-right
       - if action_name == "show"
