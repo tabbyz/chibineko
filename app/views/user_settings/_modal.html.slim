@@ -30,15 +30,15 @@
             = form_for @user, as: "user", url: registration_path("user"), html: { method: :put }, remote: true do |f| 
               .form-group.inline-block
                 label for="user_current_password" = t(".password.current_password")
-                = f.text_field :current_password, class: "form-control validation", style: "width:200px; display:block;", required: true
+                = f.password_field :current_password, class: "form-control validation", style: "width:200px; display:block;", required: true
               br
               .form-group.inline-block
                 label for="user_password" = t(".password.new_password")
-                = f.text_field :password, class: "form-control validation", style: "width:200px; display:block;", autocomplete: "off", required: true
+                = f.password_field :password, class: "form-control validation", style: "width:200px; display:block;", autocomplete: "off", required: true
               br
               .form-group.inline-block
                 label for="user_password" = t(".password.confirm_password")
-                = f.text_field :password_confirmation, class: "form-control validation", style: "width:200px; display:block;", autocomplete: "off", required: true
+                = f.password_field :password_confirmation, class: "form-control validation", style: "width:200px; display:block;", autocomplete: "off", required: true
               br
               = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
                 = content_tag :span, t(".password.update"), class: "ladda-label"
@@ -50,7 +50,6 @@
             = t(".timezone.current_value_html", timezone: @user.timezone)
           .collapse#editTimezone
             = form_for @user, url: user_settings_update_path, remote: true do |f|
-              / = f.time_zone_select :timezone, nil, { default: nil, prompt: "Please select..." }, { class: "form-control", required: true }
               = f.time_zone_select :timezone, nil, { include_blank: false }, { class: "form-control", required: true }
               = button_tag class: "btn color-green ladda-button", data: { style: "expand-right" } do
                 = content_tag :span, t(".timezone.update"), class: "ladda-label"

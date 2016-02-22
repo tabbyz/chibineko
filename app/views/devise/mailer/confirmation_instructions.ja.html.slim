@@ -1,0 +1,5 @@
+p = "ようこそ #{@email} さん。"
+
+p 下記のリンクをクリックして、ユーザ登録を完了してください。
+
+p = link_to "メールアドレスを認証", confirmation_url(@resource, confirmation_token: @token)

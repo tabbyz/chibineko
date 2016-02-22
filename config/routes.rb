@@ -3,20 +3,11 @@ Rails.application.routes.draw do
   get 'terms' => 'static_pages#terms'
   get 'dashboard' => 'dashboard#index'
 
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+  
   devise_for :users
-  # devise_for :users, controllers: { registrations: "users/registrations" }
-  # devise_for :users, controllers: {
-    # sessions: 'users/sessions'
-  # }
-  # get 'users/edit/timezone' => 'users#edit_timezone', as: 'edit_user_timezone'
-  # patch 'users/edit/timezone' => 'users#update_timezone', as: 'update_user_timezone'
-
-  # resources :user_settings, only: nil do
-  #   collection do
-  #     get 'edit'
-  #     patch 'update'
-  #   end
-  # end
   get 'user_settings/edit'
   patch 'user_settings/update'
 
