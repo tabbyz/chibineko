@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get 'dashboard' => 'dashboard#index'
 
   if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    mount LetterOpenerWeb::Engine, at: '/letter_opener'
   end
   
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   get 'user_settings/edit'
   patch 'user_settings/update'
 

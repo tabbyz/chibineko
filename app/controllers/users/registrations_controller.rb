@@ -1,11 +1,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   def edit
-    # invalidate a "/users/edit"
-    redirect_to root_url
+    redirect_to root_url  # Invalidate a "/users/edit"
   end
 
   def update
-    sleep 1
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
@@ -23,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       # respond_with resource
-      render json: resource.errors.messages, status: :unprocessable_entity
+      render json: format_error_message(resource), status: :unprocessable_entity
     end
   end
  

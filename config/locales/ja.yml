@@ -23,6 +23,7 @@ ja:
     attributes:
       user:
         email: "メールアドレス"
+        current_password: "現在のパスワード"
         password: "パスワード"
         password_confirmation: "パスワード（確認）"
         name: "ユーザー名"
@@ -40,7 +41,7 @@ ja:
         too_short: "は%{count}文字以上で入力してください"
         too_long: "は%{count}文字以内で入力してください"
         taken: "はすでに存在します"
-        invalid: "に使用できない文字が含まれています"
+        invalid: "は不正な値です"
         confirmation: "が一致しません"
 
   errors:
