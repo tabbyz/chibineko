@@ -1,2 +1,2 @@
 $(".modal").modal("hide")
-$(window.location.replace("/<%= @team.name %>"))
+$(window.location.replace("<%= team_path(@team.name) %>"))

@@ -32,7 +32,8 @@ Rails.application.routes.draw do
     resources :testcases, path: 'cases', only: ['update']
   end
   
-  resources :teams, param: 'name', path: '', except: ['index'] do
+  # resources :teams, param: 'name', path: '', except: ['index'] do
+  resources :teams, param: 'name', except: ['index'] do
     member do
       get 'settings'
     end

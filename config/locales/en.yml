@@ -45,6 +45,7 @@ en:
 
   errors:
     format: "%{attribute} %{message}"
+    forbidden: "You don't have permission to view this directory or page. Please contact team admin."
 
   layouts:
     navbar:
@@ -113,7 +114,7 @@ en:
   tests:
     show:
       blank_description: "Description is blank"
-      created_by: "このテストは %{username} によって作成されました（更新日時: %{updated_at}）"
+      created_by: "This test was created by %{username} (Updated at: %{updated_at})"
     form:
       title:
         new: "Create a new test"
@@ -133,6 +134,7 @@ en:
       submit: "Move"
     result_label:
       title: "Customize result label"
+      use_default_label: "Use the default label"
       label_placeholder: "Enter label text"
     navbar:
       edit_test: "Edit test"
@@ -211,5 +213,10 @@ en:
       sign_up: "Sign up"
       expand: "expand"
       close: "close"
-    message:
-      delete_confirm: "Are you sure?You can't undo this."
+
+  messages:
+    delete_confirm: "Are you sure? You can't undo this."
+    public_test_html: "This test <strong>can be accessible by anyone who know the URL</strong>. Please use the <strong>team functions</strong> If you want to limit the users who can access."
+    created_by_guest_html: "This test is because it was created by a guest user, some features, such as <strong>editing or deleting of the test item is limited.</strong>"
+    please_association_html: "If you want to use all the features, please go to the <strong>association of the user</strong> logged in. "
+    attach_current_user: "Attach to the current user"

@@ -113,7 +113,7 @@ class TestsController < ApplicationController
         # Private
         team = @project.team
         team ||= Team.find_by(name: params[:team_name])
-        routing_error if team.nil? || !team.authorized?(current_user)
+        forbidden_error if team.nil? || !team.authorized?(current_user)
       else
         # Plublic
       end

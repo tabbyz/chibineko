@@ -45,6 +45,7 @@ ja:
 
   errors:
     format: "%{attribute}%{message}"
+    forbidden: "アクセスする権限がありません。チーム管理者に問い合わせてください。"
 
   layouts:
     navbar:
@@ -132,6 +133,7 @@ ja:
       submit: "移動"
     result_label:
       title: "結果ラベルをカスタマイズ"
+      use_default_label: "デフォルトラベルを使用"
       label_placeholder: "ラベルを入力"
     navbar:
       edit_test: "テストを編集"
@@ -209,8 +211,13 @@ ja:
       sign_up: "ユーザー登録"
       expand: "編集"
       close: "閉じる"
-    message:
-      delete_confirm: "本当に削除しますか？この操作は取り消せません。"
+
+  messages:
+    delete_confirm: "本当に削除しますか？この操作は取り消せません。"
+    public_test_html: "このテストは<strong>URLを知っているユーザーなら誰でもアクセスできます</strong>。アクセスできるユーザーを制限したい場合は<strong>チーム機能</strong>をご利用ください。"
+    created_by_guest_html: "このテストはゲストユーザーによって作成されたため、<strong>テスト項目の編集や削除など一部機能が制限</strong>されています。"
+    please_association_html: "すべての機能を使用したい場合は、ログインして<strong>ユーザーとの紐付け</strong>を行ってください。"
+    attach_current_user: "現在のユーザーに紐付ける"
 
   time:
     formats:

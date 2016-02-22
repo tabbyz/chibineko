@@ -1,2 +1,2 @@
 $(".modal").modal("hide")
-$(window.location.replace("/t/<%= @test.slug %>"))
+$(window.location.replace("<%= test_path(@test.slug) %>"))

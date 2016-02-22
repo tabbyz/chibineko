@@ -25,11 +25,20 @@ body {
 
 .logo {
   // background: url(/images/header_logo.png);
-  height: 30px;
-  width: 150px;
-  float: left;
-  margin-top: 9px;
-  margin-left: 9px;
+  // height: 30px;
+  // width: 150px;
+  // float: left;
+  // margin-top: 7px;
+  // margin-left: 10px;
+  display: inline-block;
+  padding: 6px 20px;
+  color: #555;
+  font-size: 24px;
+  font-weight: bold;
+
+  &:hover, &:focus {
+    color: #555;
+  }
 }
 
 .page-with-sidebar {

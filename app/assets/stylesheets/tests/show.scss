@@ -35,12 +35,15 @@
       bottom: 0;
       height: 7px;
       padding-top: 1px;
-      padding-left: 280px;
       margin-bottom: 0;
       z-index: 1030;
       border-radius: 0;
       box-shadow: none;
       background-color: #DDD;
+
+      &.margin-sidebar {
+        padding-left: 280px;
+      }
     }
 
     .test-title {

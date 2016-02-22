@@ -4,8 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :set_locale, :set_timezone
 
+  class Forbidden < ActionController::ActionControllerError; end
+
   def routing_error
     raise ActionController::RoutingError.new("No route matches #{request.path.inspect}")
+  end
+
+  def forbidden_error
+    redirect_to root_url, flash: { warning: t("errors.forbidden") }
   end
 
   def after_sign_in_path_for(resource)

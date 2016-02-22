@@ -10,7 +10,7 @@
         .checkbox
           = f.label :use_default do
             = f.check_box :use_default, class: "user-default-result-label", checked: (@test.result_labels.nil? ? true : false)
-            = "デフォルトラベルを使用"
+            = t(".use_default_label")
         table style=("display: none;" if @test.result_labels.nil?)
           tbody#resultLabelList
             - @test.result_labels_or_default.each do |k, v|

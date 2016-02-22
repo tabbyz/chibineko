@@ -14,11 +14,10 @@
             li = render "layouts/sign_out_link"
       - else
         li = render "layouts/sign_in_link"
-      
 
 - else
   nav.navbar.navbar-fixed-top
-    = link_to "", root_url, class: "logo"
+    = link_to "Chibineko", root_url, class: "logo"
     ul.nav.navbar-nav.pull-right
       - if user_signed_in?
         li = render "layouts/sign_out_link"

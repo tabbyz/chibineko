@@ -7,6 +7,7 @@ body {
 .dialog {
   display: inline-block;
   text-align: left;
+  padding-bottom: 50px;
 }
 
 .icon {

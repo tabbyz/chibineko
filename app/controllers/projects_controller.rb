@@ -50,7 +50,11 @@ class ProjectsController < ApplicationController
   private
     def authenticate_project!
       team = Team.find_by(name: params[:team_name])
-      routing_error if team.nil? || !team.authorized?(current_user)
+      if team.nil?
+        routing_error
+      elsif !team.authorized?(current_user)
+        forbidden_error
+      end
 
       @project = team.projects.find_by(name: params[:project_name])
       routing_error if @project.nil?

@@ -16,12 +16,13 @@ nav.navbar.navbar-fixed-top.navbar-with-sidebar
         li = link_to fa_icon("file-o"), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn", data: { toggle: "tooltip", placement: "bottom", title: t("common.button.create_new_test") }
 
         - if @test.user
-          li.dropdown
-            a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-              = fa_icon "cog"
-            ul.dropdown-menu
-              li.dropdown-header = t(".test_settings")
-              li = link_to fa_icon("external-link", text: t(".move_to")), move_test_path(@test), remote: true
-              li = link_to fa_icon("pencil", text: t(".customize_result_label")), result_label_test_path(@test), remote: true
-              li.divider role="separator"
-              li = link_to fa_icon("trash-o", text: t(".delete_test")), "", class: "text-red", data: { confirm: t("common.message.delete_confirm") }, :method => :delete
+          - if @test.project || @test.user == current_user
+            li.dropdown
+              a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                = fa_icon "cog"
+              ul.dropdown-menu
+                li.dropdown-header = t(".test_settings")
+                li = link_to fa_icon("external-link", text: t(".move_to")), move_test_path(@test), remote: true
+                li = link_to fa_icon("pencil", text: t(".customize_result_label")), result_label_test_path(@test), remote: true
+                li.divider role="separator"
+                li = link_to fa_icon("trash-o", text: t(".delete_test")), "", class: "text-red", data: { confirm: t("messages.delete_confirm") }, :method => :delete

@@ -24,7 +24,7 @@
           p.accordion-title.text-red = t(".delete.title")
           .collapse#deleteProject
             p.accordion-description = t(".delete.description")
-            = link_to t(".delete.delete_project"), team_project_path(current_team.name, current_project.name), class: "btn btn-sm btn-danger", data: { confirm: t("common.message.delete_confirm") }, :method => :delete
+            = link_to t(".delete.delete_project"), team_project_path(current_team.name, current_project.name), class: "btn btn-sm btn-danger", data: { confirm: t("messages.delete_confirm") }, :method => :delete
 
     .modal-footer
       button.btn.btn-lg.btn-default type="button" data-dismiss="modal" = t("dialog.close")
