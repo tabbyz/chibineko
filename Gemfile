@@ -36,3 +36,8 @@ group :development do
   gem 'sqlite3'
   gem "letter_opener_web"
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
