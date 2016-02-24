@@ -1,6 +1,27 @@
 en:
   language_name: "English"
 
+  common:
+    created_by: "Created by"
+    updated_at: "Updated at"
+    dashboard: "Dashboard"
+    team: "Team"
+    project: "Project"
+    you: "You"
+    guest: "Guest user"
+    button:
+      new_team: "New team"
+      create_new_team: "Create a new team"
+      new_project: "New project"
+      create_new_project: "Create a new project"
+      new_test: "New test"
+      create_new_test: "Create a new test"
+      sign_in: "Sign in"
+      sign_out: "Sign out"
+      sign_up: "Sign up"
+      expand: "expand"
+      close: "close"
+
   helpers:
     submit:
       create: "Create"
@@ -14,6 +35,12 @@ en:
     done: "Done"
     close: "Close"
     cancel: "Cancel"
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
 
   activerecord:
     models:
@@ -31,6 +58,8 @@ en:
         name: "Team name"
       project:
         name: "Project name"
+      test:
+        title: "Title"
     errors:
       models:
         team:
@@ -38,8 +67,8 @@ en:
         project:
           invalid: "may only contain letters (a-z), numbers, and underscores."
       messages:
-        too_long: "is too long (maximum is %{count} characters)."
         too_short: "is too short (minimum is %{count} characters)."
+        too_long: "is too long (maximum is %{count} characters)."
         taken: "has already been taken."
         invalid: "is invalid."
         confirmation: "do not match."
@@ -47,6 +76,13 @@ en:
   errors:
     format: "%{attribute} %{message}"
     forbidden: "You don't have permission to view this directory or page. Please contact team admin."
+
+  messages:
+    delete_confirm: "Are you sure? You can't undo this."
+    public_test_html: "This test <strong>can be accessible by anyone who know the URL</strong>. Please use the <strong>team functions</strong> If you want to limit the users who can access."
+    created_by_guest_html: "This test is because it was created by a guest user, some features, such as <strong>editing or deleting of the test item is limited.</strong>"
+    please_association_html: "If you want to use all the features, please go to the <strong>association of the user</strong> logged in. "
+    attach_current_user: "Attach to the current user"
 
   layouts:
     navbar:
@@ -62,19 +98,39 @@ en:
 
   static_pages:
     top:
-      title: "The simplest test supporting tool"
-      sub_title_html: "chibineko.jp is a hosting service of <a href='#' target='_blank'>Chibineko-OSS</a>"
-      get_started: "Get Started"
-      sign_up_free: "Sign Up for Free"
+      branding:
+        title: "The simplest test supporting tool"
+        sub_title: "Chibineko is a simple test tool that specializes in the management of the manual test"
+        get_started: "Get Started"
+        sign_up_free: "Sign Up for Free"
+      feature:
+        title: "Feature"
+        test_management_title: "Test Management"
+        test_management_body: "テストケース作成、テスト実行、進捗管理など、マニュアルテストに必要な一通りの機能を提供します。シンプルがゆえに自由度が高いため、様々なシーンで活用いただけます。"
+        team_management_title: "Team"
+        team_management_body: "チームを作成してユーザーをアサインすれば、限られたユーザーのみでテスト内容を共有することができます。セキュリティを保ちつつ効率的にテストケースを管理することができます。"
+        share_result_title: "Share"
+        share_result_body: "テストケースにはユニークなURLが割り当てられるため、他のユーザーとテスト結果を共有したい場合はURLをシェアするだけ。面倒なファイルのやり取りなどは不要です。"
+        oss_title: "OSS"
+        oss_body: "このサービスのソースコードはすべてGitHub上で公開されています。もし足りない機能がある場合は、自由に拡張してください。issueやPull Requestも歓迎します。"
       support: "Support"
       terms: "Terms of Service"
       releases: "Releases"
       roadmap: "Roadmap"
 
+  dashboard:
+    index:
+      title: "Dashboard"
+      navbar:
+        new_test: "Create a new test"
+      table_header:
+        title: "Title"
+        updated_at: "Updated at"
+        team: "Team"
+
   teams:
     show:
       empty_message: "No Projects"
-      empty_sub_message: "When you create a project which helps to classify test."
     new:
       title: "New team"
       enter_name: "Enter team name"
@@ -90,16 +146,22 @@ en:
     messages:
       destroy: "Team was successfully destroyed."
 
+  team_users:
+    index:
+      title: "Edit team members"
+      search_user: "Search Chibineko user:"
+      add_user: "Add user to team"
+      delete_confirm: "Do you remove it from the team members?"
+
   projects:
-    new:
-      title: "New project"
-      enter_name: "Enter project name"
-    show:
-      empty_message: "No Tests"
-      empty_sub_message: "Let's immediately create a test!"
     navbar:
       menu:
         project_settings: "Project settings"
+    show:
+      empty_message: "No Tests"
+    new:
+      title: "New project"
+      enter_name: "Enter project name"
     settings:
       title: "Project settings"
       name:
@@ -124,7 +186,6 @@ en:
       markdown_header: "Test contents"
       markdown_placeholder: "Enter markdown text"
       preview_header: "Preview"
-      submit: "Create test"
     description:
       title: "Edit description"
     testcase:
@@ -148,23 +209,12 @@ en:
       delete_test: "Delete this test"
     messages:
       destroy: "Test was successfully destroyed."
-
-  dashboard:
-    index:
-      title: "Dashboard"
-      navbar:
-        new_test: "Create a new test"
-      table_header:
-        title: "Title"
-        updated_at: "Updated at"
-        team: "Team"
-
-  team_users:
-    index:
-      title: "Edit team members"
-      search_user: "Search Chibineko user:"
-      add_user: "Add user to team"
-      delete_confirm: "Do you remove it from the team members?"
+    result_labels:
+      unexecuted: "UNEXECUTED"
+      pass: "PASS"
+      fail: "FAIL"
+      blocked: "BLOCKED"
+      na: "N/A"
 
   user_settings:
     modal:
@@ -189,35 +239,3 @@ en:
       language:
         title: "Language"
         current_value_html: "Your language is currently set to: <strong>%{language}</strong>"
-
-  common:
-    dashboard: "Dashboard"
-    team: "Team"
-    project: "Project"
-    you: "You"
-    guest: "Guest user"
-    dashboard: "Dashboard"
-    table_header:
-      title: "Title"
-      updated_at: "Updated at"
-      created_by: "Created by"
-      team: "Team"
-    button:
-      new_team: "New team"
-      create_new_team: "Create a new team"
-      new_project: "New project"
-      create_new_project: "Create a new project"
-      new_test: "New test"
-      create_new_test: "Create a new test"
-      sign_in: "Sign in"
-      sign_out: "Sign out"
-      sign_up: "Sign up"
-      expand: "expand"
-      close: "close"
-
-  messages:
-    delete_confirm: "Are you sure? You can't undo this."
-    public_test_html: "This test <strong>can be accessible by anyone who know the URL</strong>. Please use the <strong>team functions</strong> If you want to limit the users who can access."
-    created_by_guest_html: "This test is because it was created by a guest user, some features, such as <strong>editing or deleting of the test item is limited.</strong>"
-    please_association_html: "If you want to use all the features, please go to the <strong>association of the user</strong> logged in. "
-    attach_current_user: "Attach to the current user"

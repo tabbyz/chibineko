@@ -9,10 +9,10 @@ ja:
     failure:
       already_authenticated: "すでにログインしています"
       inactive: "アカウントが有効化されていません。メールに記載された手順にしたがって、アカウントを有効化してください"
-      invalid: "%{authentication_keys} もしくはパスワードが不正です"
+      invalid: "メールアドレスもしくはパスワードが正しくありません"
       locked: "あなたのアカウントは凍結されています"
       last_attempt: "あなたのアカウントが凍結される前に、複数回の操作がおこなわれています"
-      not_found_in_database: "%{authentication_keys} もしくはパスワードが不正です"
+      not_found_in_database: "メールアドレスもしくはパスワードが正しくありません"
       timeout: "セッションがタイムアウトしました。もう一度ログインしてください"
       unauthenticated: "アカウント登録もしくはログインしてください"
       unconfirmed: "メールアドレスの認証が完了していません。送信されたメールの内容を確認してください"

@@ -4,8 +4,8 @@
 
 - if @tests.size == 0
   .empty-data
+    = fa_icon("inbox", class: "symbol")
     h3 = t("projects.show.empty_message")
-    p = t("projects.show.empty_sub_message")
 
     = link_to fa_icon("plus", text: t(".navbar.new_test")), new_test_path, class: "btn btn-lg color-blue"
 
@@ -13,9 +13,9 @@
   table.table.table-condensed.table-hover
     thead
       tr
-        th style="width:60%;" = t("common.table_header.title")
-        th style="width:20%; min-width:150px;" = t("common.table_header.updated_at")
-        th style="width:20%; min-width:150px;" = t("common.table_header.team")
+        th style="width:60%;" = t("activerecord.attributes.test.title")
+        th style="width:20%; min-width:150px;" = t("common.updated_at")
+        th style="width:20%; min-width:150px;" = t("common.team")
     tbody
       - @tests.each do |test|
         tr

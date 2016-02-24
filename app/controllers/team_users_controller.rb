@@ -8,7 +8,6 @@ class TeamUsersController < ApplicationController
   end
 
   def create
-    sleep 1
     @team = Team.find_by(name: params[:team_name])
     user = User.find_by(email: params[:email])
 
@@ -26,7 +25,6 @@ class TeamUsersController < ApplicationController
   end
 
   def ajax_search_user
-    sleep 1  # TODO
     @user = User.find_by(email: params[:email])
     render json: @user.present?
   end

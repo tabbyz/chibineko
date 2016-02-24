@@ -96,7 +96,7 @@ $(".tests.new, .tests.edit").ready ->
     syncScroll($(this))
 
 
-# TODO: Global
+# TODO: To local methods
 @syncScroll = (e) ->
   source = e
   target = $(".test-preview-content")

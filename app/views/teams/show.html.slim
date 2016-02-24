@@ -2,7 +2,7 @@
 
 - if @team.projects.size == 0
   .empty-data
+    = fa_icon("inbox", class: "symbol")
     h3 = t(".empty_message")
-    p = t(".empty_sub_message")
 
     = link_to fa_icon("plus", text: t("common.button.create_new_project")), new_team_project_path(current_team), class: "btn btn-lg color-blue add-project-btn", remote: true

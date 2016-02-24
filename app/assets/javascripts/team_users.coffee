@@ -15,7 +15,7 @@ $(".projects, .teams, .tests").ready ->
     label = btn.find(".ladda-label")
     
     $.ajax
-      url: "/#{team}/team_users/ajax_search_user"
+      url: "/teams/#{team}/team_users/ajax_search_user"
       type: 'GET'
       dataType: 'json'
       data: $.param({

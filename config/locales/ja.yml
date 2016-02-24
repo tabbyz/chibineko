@@ -1,6 +1,27 @@
 ja:
   language_name: "日本語"
 
+  common:
+    created_by: "作成者"
+    updated_at: "更新日時"
+    dashboard: "ダッシュボード"
+    team: "チーム"
+    project: "プロジェクト"
+    you: "あなた"
+    guest: "ゲスト"
+    button:
+      new_team: "新規チーム"
+      create_new_team: "新しいチームを作成"
+      new_project: "新規プロジェクト"
+      create_new_project: "新しいプロジェクトを作成"
+      new_test: "新規テスト"
+      create_new_test: "新しいテストを作成"
+      sign_in: "ログイン"
+      sign_out: "ログアウト"
+      sign_up: "ユーザー登録"
+      expand: "編集"
+      close: "閉じる"
+
   helpers:
     submit:
       create: "作成"
@@ -14,6 +35,12 @@ ja:
     done: "完了"
     close: "閉じる"
     cancel: "キャンセル"
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"
 
   activerecord:
     models:
@@ -31,6 +58,8 @@ ja:
         name: "チーム名"
       project:
         name: "プロジェクト名"
+      test:
+        title: "タイトル"
     errors:
       models:
         team:
@@ -48,6 +77,13 @@ ja:
     format: "%{attribute}%{message}"
     forbidden: "アクセスする権限がありません。チーム管理者に問い合わせてください。"
 
+  messages:
+    delete_confirm: "本当に削除しますか？この操作は取り消せません。"
+    public_test_html: "このテストは<strong>URLを知っているユーザーなら誰でもアクセスできます</strong>。アクセスできるユーザーを制限したい場合は<strong>チーム機能</strong>をご利用ください。"
+    created_by_guest_html: "このテストはゲストユーザーによって作成されたため、<strong>テスト項目の編集や削除など一部機能が制限</strong>されています。"
+    please_association_html: "すべての機能を使用したい場合は、ログインして<strong>ユーザーとの紐付け</strong>を行ってください。"
+    attach_current_user: "現在のユーザーに紐付ける"
+
   layouts:
     navbar:
       github_page: "GitHubページ"
@@ -62,19 +98,39 @@ ja:
 
   static_pages:
     top:
-      title: "世界で最もシンプルなテスト支援ツール"
-      sub_title_html: "chibineko.jp は <a href='#' target='_blank'>Chibineko-OSS</a> のホスティングサービスです"
-      get_started: "今すぐはじめる"
-      sign_up_free: "無料でサインアップ"
+      branding:
+        title: "世界で最もシンプルなテスト支援ツール"
+        sub_title: "Chibinekoはマニュアルテストの管理に特化したシンプルなテストツールです"
+        get_started: "今すぐはじめる"
+        sign_up_free: "無料でサインアップ"
+      feature:
+        title: "機能"
+        test_management_title: "テスト管理"
+        test_management_body: "テストケース作成、テスト実行、進捗管理など、マニュアルテストに必要な一通りの機能を提供します。シンプルがゆえに自由度が高いため、様々なシーンで活用いただけます。"
+        team_management_title: "チーム管理"
+        team_management_body: "チームを作成してユーザーをアサインすれば、限られたユーザーのみでテスト内容を共有することができます。セキュリティを保ちつつ効率的にテストケースを管理することができます。"
+        share_result_title: "結果の共有"
+        share_result_body: "テストケースにはユニークなURLが割り当てられるため、他のユーザーとテスト結果を共有したい場合はURLをシェアするだけ。面倒なファイルのやり取りなどは不要です。"
+        oss_title: "OSS"
+        oss_body: "このサービスのソースコードはすべてGitHub上で公開されています。もし足りない機能がある場合は、自由に拡張してください。issueやPull Requestも歓迎します。"
       support: "サポート"
       terms: "利用規約"
       releases: "リリースノート"
       roadmap: "ロードマップ"
 
+  dashboard:
+    index:
+      title: "ダッシュボード"
+      navbar:
+        new_test: "新しいテストを作成"
+      table_header:
+        title: "タイトル"
+        updated_at: "更新日時"
+        team: "チーム"
+
   teams:
     show:
-      empty_message: "プロジェクトがありません"
-      empty_sub_message: "プロジェクトを作成するとテストの管理がより快適になります"
+      empty_message: "プロジェクトがまだありません"
     new:
       title: "新しいチーム"
       enter_name: "チーム名を入力"
@@ -90,13 +146,19 @@ ja:
     messages:
       destroy: "チームを削除しました"
 
+  team_users:
+    index:
+      title: "チームメンバーを編集"
+      search_user: "Chibinekoユーザーを検索:"
+      add_user: "ユーザーをチームに追加"
+      delete_confirm: "チームメンバーから削除しますか？"
+
   projects:
     navbar:
       menu:
         project_settings: "プロジェクト設定"
     show:
-      empty_message: "テストがありません"
-      empty_sub_message: "今すぐテストを作成してみましょう！"
+      empty_message: "テストがまだありません"
     new:
       title: "新しいプロジェクト"
       enter_name: "プロジェクト名を入力"
@@ -147,23 +209,12 @@ ja:
       delete_test: "このテストを削除"
     messages:
       destroy: "テストを削除しました"
-
-  dashboard:
-    index:
-      title: "ダッシュボード"
-      navbar:
-        new_test: "新しいテストを作成"
-      table_header:
-        title: "タイトル"
-        updated_at: "更新日時"
-        team: "チーム"
-
-  team_users:
-    index:
-      title: "チームメンバーを編集"
-      search_user: "Chibinekoユーザーを検索:"
-      add_user: "ユーザーをチームに追加"
-      delete_confirm: "チームメンバーから削除しますか？"
+    result_labels:
+      unexecuted: "未実行"
+      pass: "OK"
+      fail: "NG"
+      blocked: "保留"
+      na: "対象外"
 
   user_settings:
     modal:
@@ -188,40 +239,3 @@ ja:
       language:
         title: "言語"
         current_value_html: "現在の言語: <strong>%{language}</strong>"
-
-  common:
-    dashboard: "ダッシュボード"
-    team: "チーム"
-    project: "プロジェクト"
-    you: "あなた"
-    guest: "ゲスト"
-    table_header:
-      title: "タイトル"
-      updated_at: "更新日時"
-      created_by: "作成者"
-      team: "チーム"
-    button:
-      new_team: "新規チーム"
-      create_new_team: "新しいチームを作成"
-      new_project: "新規プロジェクト"
-      create_new_project: "新しいプロジェクトを作成"
-      new_test: "新規テスト"
-      create_new_test: "新しいテストを作成"
-      sign_in: "ログイン"
-      sign_out: "ログアウト"
-      sign_up: "ユーザー登録"
-      expand: "編集"
-      close: "閉じる"
-
-  messages:
-    delete_confirm: "本当に削除しますか？この操作は取り消せません。"
-    public_test_html: "このテストは<strong>URLを知っているユーザーなら誰でもアクセスできます</strong>。アクセスできるユーザーを制限したい場合は<strong>チーム機能</strong>をご利用ください。"
-    created_by_guest_html: "このテストはゲストユーザーによって作成されたため、<strong>テスト項目の編集や削除など一部機能が制限</strong>されています。"
-    please_association_html: "すべての機能を使用したい場合は、ログインして<strong>ユーザーとの紐付け</strong>を行ってください。"
-    attach_current_user: "現在のユーザーに紐付ける"
-
-  time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
-      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
-      short: "%y/%m/%d %H:%M"

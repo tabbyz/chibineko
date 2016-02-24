@@ -13,13 +13,14 @@ class Test < ActiveRecord::Base
   end
 
   def result_labels_or_default
+    labels = I18n.t("tests.result_labels")
     result_labels || {
-      "未実行" => "white",
-      "OK" => "green",
-      "NG" => "red",
-      "保留" => "orange",
-      "対象外" => "gray",
-    }  # TODO: localize
+      labels[:unexecuted] => "white",
+      labels[:pass] => "green",
+      labels[:fail] => "red",
+      labels[:blocked] => "orange",
+      labels[:na] => "gray",
+    }
   end
 
   def result_label_texts

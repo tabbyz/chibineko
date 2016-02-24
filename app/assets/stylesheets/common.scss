@@ -77,19 +77,20 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: inline-block;
+  padding-bottom: 25px;
   text-align: center;
+
+  .symbol {
+    margin-bottom: 10px;
+    font-size: 150px;
+    color: #BBB;
+  }
 
   h3 {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     color: #BBB;
     font-size: 26px;
-  }
-
-  p {
-    color: #BBB;
-    font-size: 18px;
-    margin-bottom: 30px;
   }
 }
 

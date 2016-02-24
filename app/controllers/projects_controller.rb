@@ -24,17 +24,13 @@ class ProjectsController < ApplicationController
     team = Team.find_by(name: params[:team_name])
     @project.team_id = team.id
 
-    if @project.save
-      # Do nothing
-    else
+    unless @project.save
       render json: format_error_message(@project), status: :unprocessable_entity
     end
   end
 
   def update
-    if @project.update(project_params)
-      # Do nothing
-    else
+    unless @project.update(project_params)
       render json: format_error_message(@project), status: :unprocessable_entity
     end
   end

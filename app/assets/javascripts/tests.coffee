@@ -20,7 +20,7 @@ $(".tests.show").ready ->
     for text in gon.resultLabelTexts
       color = gon.resultLabels[text]
       ratio = countLabel(text) / count * 100
-      $(".progress-animation .progress-bar[data-result-text=#{text}]").css({
+      $(".progress-animation .progress-bar[data-result-text='#{text}']").css({
         width: "#{ratio}%",
         WebkitTransition: transition,
         MozTransition: transition,

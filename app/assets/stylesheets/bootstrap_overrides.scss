@@ -72,6 +72,14 @@ button.btn.ladda-button {
   float: left;
 }
 
+.navbar-nav {
+  margin: 0;
+}
+
+.navbar-nav .open .dropdown-menu {
+  background-color: #FFF;
+}
+
 // TODO:
 .navbar-right {
   float: right !important;

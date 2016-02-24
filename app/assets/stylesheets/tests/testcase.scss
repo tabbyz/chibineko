@@ -95,9 +95,11 @@
         }
 
         .result-btn {
-          width: 90px;
+          width: 110px;
+          overflow: hidden;
           border-top-left-radius: 3px;
           border-bottom-left-radius: 3px;
+          font-size: 12px;
         }
 
         .dropdown-toggle {
@@ -109,7 +111,7 @@
   }
 
   .result {
-    width: 140px;
+    width: 150px;
     text-align: center;
 
     .result-item, .result-bulk-item {

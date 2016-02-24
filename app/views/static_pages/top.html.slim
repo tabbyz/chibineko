@@ -1,50 +1,67 @@
-= console
+.container-fluid
+  .row.branding.text-center
+    h1 = t(".branding.title")
+    p = t(".branding.sub_title")
 
-section.branding.text-center
-  h1 = t(".title")
-  p = t(".sub_title_html")
+    - if user_signed_in?
+      = link_to t(".branding.get_started"), dashboard_path, class: "btn-ghost"
+    - else
+      = link_to t(".branding.sign_up_free"), new_user_registration_path, class: "btn-ghost"
 
-  - if user_signed_in?
-    = link_to t(".get_started"), dashboard_path, class: "btn-ghost"
-  - else
-    = link_to t(".sign_up_free"), new_user_registration_path, class: "btn-ghost"
+    .browser-outline
+      .browser-header
+        ul.nav.browser-btn
+          - %w(red yellow green).each do |color|
+            li = fa_icon("circle", class: color)
+      #carousel-screenshot.carousel.slide data-ride="carousel"
+        ol.carousel-indicators
+          li.active data-slide-to="0" data-target="#carousel-screenshot" 
+          li data-slide-to="1" data-target="#carousel-screenshot" 
+          li data-slide-to="2" data-target="#carousel-screenshot" 
+        .carousel-inner role="listbox" 
+          - %w(screenshot_1.png screenshot_2.png screenshot_3.png).each_with_index do |file, i|
+            div class="item #{'active' if i == 1}"
+              img alt=("First") data-holder-rendered="true" data-src=("First slide") src="images/#{file}" /
+        a.left.carousel-control data-slide="prev" href="#carousel-screenshot" role="button" 
+          span.glyphicon.glyphicon-chevron-left aria-hidden="true"
+          span.sr-only Previous
+        a.right.carousel-control data-slide="next" href="#carousel-screenshot" role="button" 
+          span.glyphicon.glyphicon-chevron-right aria-hidden="true" 
+          span.sr-only Next
 
-  .browser-outline
-    .browser-header
-      ul.browser-btn
-        li.red
-        li.yellow
-        li.green
-    #carousel-screenshot.carousel.slide data-ride="carousel" 
-      ol.carousel-indicators
-        li.active data-slide-to="0" data-target="#carousel-screenshot" 
-        li data-slide-to="1" data-target="#carousel-screenshot" 
-        li data-slide-to="2" data-target="#carousel-screenshot" 
-      .carousel-inner role="listbox" 
-        - (1..3).each do |i|
-          div class="item #{'active' if i == 1}"
-            img alt=("First") data-holder-rendered="true" data-src=("First slide") src="images/screenshot_1.png" /
-      a.left.carousel-control data-slide="prev" href="#carousel-screenshot" role="button" 
-        span.glyphicon.glyphicon-chevron-left aria-hidden="true" 
-        span.sr-only Previous
-      a.right.carousel-control data-slide="next" href="#carousel-screenshot" role="button" 
-        span.glyphicon.glyphicon-chevron-right aria-hidden="true" 
-        span.sr-only Next
+  section.row.feature
+    h2 = t(".feature.title")
+    .container
+      row
+        .col-md-3.col-sm-6.col-xs-12.feature-item
+          .feature-icon = fa_icon("bar-chart")
+          .feature-title = t(".feature.test_management_title")
+          .feature-content = t(".feature.test_management_body")
+        .col-md-3.col-sm-6.col-xs-12.feature-item
+          .feature-icon = fa_icon("group")
+          .feature-title = t(".feature.team_management_title")
+          .feature-content = t(".feature.team_management_body")
+        .col-md-3.col-sm-6.col-xs-12.feature-item
+          .feature-icon = fa_icon("share")
+          .feature-title = t(".feature.share_result_title")
+          .feature-content = t(".feature.share_result_body")
+        .col-md-3.col-sm-6.col-xs-12.feature-item
+          .feature-icon = fa_icon("code-fork")
+          .feature-title = t(".feature.oss_title")
+          .feature-content = t(".feature.oss_body")
 
+  section.row.section.support
+    h2 = t(".support")
+    ul
+      li = link_to fa_icon("envelope-o", text: "support@chibineko.jp"), "#"
+      li = link_to fa_icon("github-alt", text: "GitHub Issues"), "#"
+      li = link_to fa_icon("twitter", text: "Twitter"), "#"
 
-section.support
-  h2 = t(".support")
-  ul
-    li = link_to fa_icon("envelope-o", text: "support@chibineko.jp"), "#"
-    li = link_to fa_icon("github-alt", text: "GitHub Issues"), "#"
-    li = link_to fa_icon("twitter", text: "Twitter"), "#"
-
-
-section.footer
-  ul.list-inline
-    li = link_to t(".terms"), terms_path
-    li = link_to t(".releases"), "#"
-    li = link_to t(".roadmap"), "#"
-  span.powered-by
-    | Powerd by
-    = link_to image_tag("company_logo.png"), "http://www.shiftinc.jp/", target: "blank"
+  .row.footer
+    ul.list-inline
+      li = link_to t(".terms"), terms_path
+      li = link_to t(".releases"), "#"
+      li = link_to t(".roadmap"), "#"
+    span.powered-by
+      | Powerd by
+      = link_to image_tag("company_logo.png"), "http://www.shiftinc.jp/", target: "blank"

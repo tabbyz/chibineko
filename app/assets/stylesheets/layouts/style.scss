@@ -4,6 +4,7 @@ body, html {
 }
 
 body {
+  -webkit-text-size-adjust: 100%;
   margin: 0;
 }
 
@@ -31,7 +32,6 @@ body {
   // margin-top: 7px;
   // margin-left: 10px;
   display: inline-block;
-  padding: 6px 20px;
   color: #555;
   font-size: 24px;
   font-weight: bold;

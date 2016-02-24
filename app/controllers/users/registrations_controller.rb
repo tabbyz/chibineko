@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   def edit
-    redirect_to root_url  # Invalidate a "/users/edit"
+    routing_error  # Invalidate a "/users/edit"
   end
 
   def update

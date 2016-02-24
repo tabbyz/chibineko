@@ -18,7 +18,7 @@
                 td.drag-handle style="width:30px;"
                   = fa_icon "bars", class: "drag-handle-icon"
                 td.result-label-text
-                  = text_field_tag "test[result_label_texts][]", k, { id: nil, placeholder: t(".label_placeholder"), maxlength: 128, required: true }
+                  = text_field_tag "test[result_label_texts][]", k, { id: nil, placeholder: t(".label_placeholder"), maxlength: 10, required: true }
                 td.result-label-color style="width:40px;"
                   input class="btn select-color color-#{v}" name="test[result_label_colors][]" value="#{v}" type="text" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left"
                 td.delete-result-label style="width:40px;"

@@ -29,9 +29,7 @@ class TeamsController < ApplicationController
   end
 
   def update
-    if @team.update(team_params)
-      # Do nothing
-    else
+    unless @team.update(team_params)
       render json: format_error_message(@team), status: :unprocessable_entity
     end
   end
