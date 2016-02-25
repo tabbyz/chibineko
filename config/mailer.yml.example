@@ -11,12 +11,14 @@ test:
     port: "3000"
 
 production:
+  default_url_options:
+    host: "example.com"
   delivery_method: :smtp
   smtp_settings:
     enable_starttls_auto: true
     address: "smtp.gmail.com"
     port: 587
-    domain: "smtp.gmail.com"
+    domain: "example.com"
     authentication: "plain"
-    user_name: "<YOUR_NAME>@gmail.com"
-    password: "<YOUR_PASSWORD>"
+    user_name: "<yourname>@gmail.com"
+    password: "<yourpassword>"
