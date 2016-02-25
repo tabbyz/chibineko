@@ -1,0 +1,22 @@
+defaults: &defaults
+
+development:
+  default_url_options:
+    host: "localhost"
+    port: "3000"
+
+test:
+  default_url_options:
+    host: "localhost"
+    port: "3000"
+
+production:
+  delivery_method: :smtp
+  smtp_settings:
+    enable_starttls_auto: true
+    address: "smtp.gmail.com"
+    port: 587
+    domain: "smtp.gmail.com"
+    authentication: "plain"
+    user_name: "<YOUR_NAME>@gmail.com"
+    password: "<YOUR_PASSWORD>"
