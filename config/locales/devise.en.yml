@@ -18,13 +18,13 @@ en:
       unconfirmedX: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "[Chibineko] Confirmation instructions"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "[Chibineko] Reset password instructions"
       unlock_instructions:
-        subject: "Unlock instructions"
+        subject: "[Chibineko] Unlock instructions"
       password_change:
-        subject: "Password Changed"
+        subject: "[Chibineko] Password Changed"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
