@@ -6,5 +6,8 @@ class CreateTeamUsers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :team_users, :team_id
+    add_index :team_users, :user_id
+    add_index :team_users, [:team_id, :user_id], unique: true
   end
 end

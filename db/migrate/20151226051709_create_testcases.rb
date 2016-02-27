@@ -9,5 +9,6 @@ class CreateTestcases < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :testcases, [:result, :test_id]
   end
 end
