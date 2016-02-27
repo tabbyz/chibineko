@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20160109162956) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "projects", ["name", "team_id"], name: "index_projects_on_name_and_team_id", unique: true
+  add_index "projects", ["name"], name: "index_projects_on_name"
+
   create_table "team_users", force: :cascade do |t|
     t.integer  "team_id"
     t.integer  "user_id"
@@ -28,12 +31,18 @@ ActiveRecord::Schema.define(version: 20160109162956) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "team_users", ["team_id", "user_id"], name: "index_team_users_on_team_id_and_user_id", unique: true
+  add_index "team_users", ["team_id"], name: "index_team_users_on_team_id"
+  add_index "team_users", ["user_id"], name: "index_team_users_on_user_id"
+
   create_table "teams", force: :cascade do |t|
     t.string   "name",       null: false
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "teams", ["name"], name: "index_teams_on_name"
 
   create_table "testcases", force: :cascade do |t|
     t.integer  "heading_level"
@@ -44,6 +53,8 @@ ActiveRecord::Schema.define(version: 20160109162956) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  add_index "testcases", ["result", "test_id"], name: "index_testcases_on_result_and_test_id"
 
   create_table "tests", force: :cascade do |t|
     t.string   "slug",          null: false
