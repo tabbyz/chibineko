@@ -10,15 +10,8 @@ class Team < ActiveRecord::Base
     length: { in: 4..30 },
     format: { with: /\A[a-z0-9_]+\z/i }
 
-  class << self
-    def find_by_user(user)
-      user.teams  # TODO: Also an authorized team
-      user.authorized_teams
-    end
-  end
-
   def authorized?(user)
-    self.users.include?(user)
+    user && self.team_users.find_by(user_id: user.id) ? true : false
   end
 
   def authorized!(user)

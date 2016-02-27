@@ -1,7 +1,6 @@
 class TestsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :set_test, except: [:index, :new, :create]
-  before_action :authenticate_test!, except: [:index, :new, :create]
+  before_action :authorize!, except: [:index, :new, :create]
 
   def index
     @tests = Test.all
@@ -26,8 +25,7 @@ class TestsController < ApplicationController
     @test = Test.new
 
     # Duplicate test
-    source = Test.find_by(slug: params[:source])
-    if source
+    if source = Test.find_by(slug: params[:source])
       @test.project_id = source.project_id
       @test.title = source.title
       @test.source = source.slug
@@ -49,8 +47,7 @@ class TestsController < ApplicationController
     @test.project_id = project.id if project
 
     # Duplicate test
-    source = Test.find_by(slug: @test.source)
-    if source
+    if source = Test.find_by(slug: @test.source)
       @test.description = source.description
       @test.result_labels = source.result_labels
     end
@@ -83,6 +80,7 @@ class TestsController < ApplicationController
   def update_result_label
     @test.result_labels = nil
     if params[:test][:use_default] == "0"
+      # Use default label
       keys = params[:test][:result_label_texts]
       vals = params[:test][:result_label_colors]
       hash = Hash[*keys.zip(vals).flatten]
@@ -103,19 +101,14 @@ class TestsController < ApplicationController
   private
     def set_test
       @test = Test.find_by(slug: params[:slug])
+      routing_error if @test.nil?
     end
 
-    def authenticate_test!
-      routing_error if @test.nil?
-
-      @project = @test.project
-      if @project
-        # Private
-        team = @project.team
-        team ||= Team.find_by(name: params[:team_name])
-        forbidden_error if team.nil? || !team.authorized?(current_user)
-      else
-        # Plublic
+    def authorize!
+      @test || set_test
+      if @project = @test.project
+        team = @project.team || Team.find_by(name: params[:team_name])
+        forbidden_error unless team.authorized?(current_user)
       end
     end
 

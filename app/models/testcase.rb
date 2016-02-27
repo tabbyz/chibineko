@@ -16,13 +16,11 @@ class Testcase < ActiveRecord::Base
   end
 
   def result
-    s = super
-    s ||= self.test.result_label_texts.first  # Default value
+    super || self.test.result_label_texts.first  # Default value
   end
 
   def result_color
-    color = self.test.result_labels_or_default[self.result]
-    color ||= "white"  # Default value
+    self.test.result_labels_or_default[self.result] || "white"  # Default value
   end
 
   class << self
@@ -45,8 +43,7 @@ class Testcase < ActiveRecord::Base
 
       if level == 0
         text =~ /(.*)(?:,\s\[.*\])/
-        body = $1
-        body ||= text
+        body = $1 || text
       else
         body = text[level..-1]
         body.strip

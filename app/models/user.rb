@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
          :confirmable
 
   def display_name
-    s = username
-    s ||= email
+    username || email
   end
 end

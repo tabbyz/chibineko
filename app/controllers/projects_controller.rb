@@ -1,10 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :authenticate_project!, except: [:index, :new, :create]
-
-  def index
-    @projects = Project.all
-  end
+  before_action :authorize!, except: [:new, :create]
 
   def show
     @tests = @project.tests
@@ -44,16 +40,15 @@ class ProjectsController < ApplicationController
   end
 
   private
-    def authenticate_project!
+    def set_project
       team = Team.find_by(name: params[:team_name])
-      if team.nil?
-        routing_error
-      elsif !team.authorized?(current_user)
-        forbidden_error
-      end
-
       @project = team.projects.find_by(name: params[:project_name])
       routing_error if @project.nil?
+    end
+
+    def authorize!
+      @project || set_project
+      forbidden_error unless @project.team.authorized?(current_user)
     end
 
     def project_params

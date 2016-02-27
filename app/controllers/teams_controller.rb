@@ -1,14 +1,11 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :authenticate_team!, except: [:index, :new, :create]
-
-  def index
-    @teams = Team.find_by_user(current_user)
-  end
+  before_action :authorize!, except: [:new, :create]
 
   def show
-    project = @team.projects.first
-    redirect_to team_project_path(@team, project) if project
+    if project = @team.projects.first
+      redirect_to team_project_path(@team, project)
+    end
   end
 
   def new
@@ -43,13 +40,14 @@ class TeamsController < ApplicationController
   end
 
   private
-    def authenticate_team!
+    def set_team
       @team = Team.find_by(name: params[:name])
-      if @team.nil?
-        routing_error 
-      elsif !@team.authorized?(current_user)
-        forbidden_error
-      end
+      routing_error if @team.nil?
+    end
+
+    def authorize!
+      @team || set_team
+      forbidden_error unless @team.authorized?(current_user)
     end
 
     def team_params

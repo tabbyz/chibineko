@@ -84,12 +84,6 @@ class Test < ActiveRecord::Base
     end
   end
 
-  class << self
-    def find_by_user(user)
-      user.tests  # TODO: Also an authorized test
-    end
-  end
-
   private
     def set_slug
       self.slug = self.slug.blank? ? generate_slug : self.slug
