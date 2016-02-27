@@ -91,6 +91,7 @@ ja:
       create_team: "新しいチームを作成"
     dashboard_sidebar:
       your_test: "あなたのテスト"
+      coach_mark: "チーム作成はこちら"
     main_menu:
       account_settings: "アカウント設定"
       team_settings: "チーム設定"

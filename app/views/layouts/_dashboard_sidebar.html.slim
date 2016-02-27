@@ -10,3 +10,6 @@
   ul.sidebar-list
     li class="sidebar-list-item active"
       = link_to t(".your_test"), dashboard_path
+
+  - if current_user.teams.size == 0
+    .coach-mark = fa_icon("hand-o-left", text: t(".coach_mark"))

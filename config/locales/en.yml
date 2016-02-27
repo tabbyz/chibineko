@@ -91,6 +91,7 @@ en:
       create_team: "Create a new team"
     dashboard_sidebar:
       your_test: "Your test"
+      coach_mark: "Team created here"
     main_menu:
       account_settings: "Account settings"
       team_settings: "Team settings"
