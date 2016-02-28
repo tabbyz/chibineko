@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   validates :name,
     presence: true,
     uniqueness: { case_sensitive: false, :scope => :team_id },
-    length: { in: 4..30 },
+    length: { maximum: 30 },
     format: { with: /\A[a-z0-9_]+\z/i }
 
   def to_param

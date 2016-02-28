@@ -7,6 +7,7 @@ class Test < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, length: { maximum: 4096 }
   attr_accessor :markdown, :source
+  default_scope { order("updated_at DESC") }
 
   def to_param
     slug
