@@ -95,6 +95,11 @@ $(".tests.new, .tests.edit").ready ->
   $("#test_markdown").scroll ->
     syncScroll($(this))
 
+  $("#test_markdown").overlay( {
+    match: /^#.*|\n#.*/g,
+    css: {"background-color": "#DDD"}
+  })
+
 
 # TODO: To local methods
 @syncScroll = (e) ->

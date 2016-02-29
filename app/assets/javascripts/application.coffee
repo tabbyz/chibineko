@@ -10,6 +10,7 @@
 #= require ladda/spin.min
 #= require ladda/ladda.min
 #= require ladda/ladda.jquery.min
+#= require jquery.overlay.min
 #= require jquery.readyselector
 #= require i18n
 #= require i18n/translations

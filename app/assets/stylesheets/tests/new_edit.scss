@@ -34,10 +34,14 @@
       .test-markdown {
         border-right: 1px solid #DDD;
 
+        .textoverlay-wrapper {
+          height: calc(100% - 30px);
+        }
+
         textarea {
           border: none;
           width: 100%;
-          height: calc(100% - 30px);
+          height: 100%;
           box-shadow: none;
           -moz-box-shadow: none;
           -webkit-box-shadow: none;
