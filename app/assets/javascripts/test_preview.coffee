@@ -6,6 +6,7 @@ $(".tests.new, .tests.edit").ready ->
     tag = ""
     array = markdown.split(/\r\n|\r|\n/)
     for line in array
+      line = escapeHtml(line)
       switch caseType(line)
         when "heading"
           lv = caseHeadingLevel(line)
@@ -81,6 +82,9 @@ $(".tests.new, .tests.edit").ready ->
           $(".test-preview-content").hide()
           $(".test-cheatsheet").show()
     ), 200
+
+  escapeHtml = (text) ->
+    text.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
 
 
 # ==================================================

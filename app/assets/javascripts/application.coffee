@@ -17,16 +17,16 @@
 #= require_tree .
 
 $(document).ready ->
-  $("[data-toggle='popover']").popover({ container: 'body' })
-  $("[data-toggle='tooltip']").tooltip({ container: 'body' })
+  $("[data-toggle='popover']").popover({ container: "body" })
+  $("[data-toggle='tooltip']").tooltip({ container: "body" })
   $(".dropdown-toggle").dropdown()
   $(".best_in_place").best_in_place()
   $(".carousel").carousel()
 
-  $(document).on 'shown.bs.modal', (e) ->
-    $('[autofocus]', e.target).focus()
+  $(document).on "shown.bs.modal", (e) ->
+    $("[autofocus]", e.target).focus()
 
-  $(document).on "click", '.collapse-btn', (e) ->
+  $(document).on "click", ".collapse-btn", (e) ->
     if $(this).hasClass("collapsed")
       $(this).text(I18n.t("js.common.collapse.expand"))
     else
