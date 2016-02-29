@@ -104,6 +104,14 @@ $(".tests.new, .tests.edit").ready ->
     css: {"background-color": "#DDD"}
   })
 
+  # Leave this page
+  $("#test_markdown").change ->
+    $(window).on "beforeunload", ->
+      return I18n.t("js.tests.new.messages.unsaved_changes")
+
+  $("input[type=submit]").click ->
+    $(window).off("beforeunload")
+
 
 # TODO: To local methods
 @syncScroll = (e) ->

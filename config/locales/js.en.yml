@@ -11,6 +11,9 @@ en:
         errors:
           conflict: "Test case might have been changed by another user."
           please_reload: "Please reload"
+      new:
+        messages:
+          unsaved_changes: "You have unsaved changes."
       navbar:
         total: "Total"
     common:

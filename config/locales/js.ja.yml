@@ -11,6 +11,9 @@ ja:
         errors:
           conflict: "テスト項目が他のユーザーによって変更された可能性があります"
           please_reload: "ページをリロードしてください"
+      new:
+        messages:
+          unsaved_changes: "変更内容が保存されていません。"
       navbar:
         total: "合計"
     common:
