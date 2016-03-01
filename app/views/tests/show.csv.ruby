@@ -1,3 +1,5 @@
+require 'csv'
+
 testcases = @test.testcases
 
 # Examine the maximum heading level
@@ -9,9 +11,13 @@ testcases.each do |c|
 end
 headings = Array.new(max_level)
 
+# Header
+header = Array.new(max_level, "-")
+header << I18n.t("tests.csv.case") << I18n.t("tests.csv.result") << I18n.t("tests.csv.note")
+
 # Generate csv
-# CSV.generate({col_sep: '\t', force_quotes: true}) do |csv|
-CSV.generate({col_sep: "\t", force_quotes: true}) do |csv|
+CSV.generate(headers: header, write_headers: true, force_quotes: true) do |csv|
+# CSV.generate do |csv|
   testcases.each do |c|
     case c.type
       when :heading

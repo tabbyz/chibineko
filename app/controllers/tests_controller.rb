@@ -14,9 +14,10 @@ class TestsController < ApplicationController
         gon.resultLabels = @test.result_labels_or_default
       end
       format.csv do
-        encode = "UTF-16LE"
-        bom = "\xFF\xFE".force_encoding(encode)
-        send_data bom + render_to_string.encode(encode), type: :csv, filename: "testcase.csv"
+        encode = "UTF-8"
+        encode = "Windows-31J" if I18n.locale == :ja
+        csv_data = render_to_string.encode(encode, :invalid => :replace, :undef => :replace)
+        send_data csv_data, type: "text/csv; charset=#{encode}", filename: "testcase.csv"
       end
     end
   end

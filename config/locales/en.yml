@@ -190,7 +190,7 @@ en:
     description:
       title: "Edit description"
     testcase:
-      note: "Note"
+      note: "Notes"
     move:
       title: "Move to"
       unset_project: "Unset project"
@@ -216,6 +216,10 @@ en:
       fail: "FAIL"
       blocked: "BLOCKED"
       na: "N/A"
+    csv:
+      case: "Cases"
+      result: "Result"
+      note: "Notes"
 
   user_settings:
     modal:

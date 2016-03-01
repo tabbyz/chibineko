@@ -216,6 +216,10 @@ ja:
       fail: "NG"
       blocked: "保留"
       na: "対象外"
+    csv:
+      case: "テスト項目"
+      result: "結果"
+      note: "備考"
 
   user_settings:
     modal:
