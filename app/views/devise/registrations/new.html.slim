@@ -1,3 +1,6 @@
+- if devise_error_messages!.present?
+  .card.card-alert = devise_error_messages!
+
 .card.card-form
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     h1.card-title = t(".sign_up")
