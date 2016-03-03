@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :teams, :through => :team_users
   validates :email, length: { maximum: 255 }
   validates :username, length: { maximum: 30 }
+  default_scope { order("id ASC") }
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

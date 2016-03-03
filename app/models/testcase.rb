@@ -3,7 +3,8 @@ class Testcase < ActiveRecord::Base
   validates :body, length: { maximum: 1024 }
   validates :result, length: { maximum: 255 }
   validates :note, length: { maximum: 1024 }
-
+  default_scope { order("id ASC") }
+  
   def type
     case self.heading_level
     when -1

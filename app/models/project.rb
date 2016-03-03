@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
     uniqueness: { case_sensitive: false, :scope => :team_id },
     length: { maximum: 30 },
     format: { with: /\A[a-z0-9_]+\z/i }
+  default_scope { order("id ASC") }
 
   def to_param
     name
