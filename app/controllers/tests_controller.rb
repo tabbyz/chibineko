@@ -59,6 +59,7 @@ class TestsController < ApplicationController
   end
 
   def update
+    @test.updated_at = Time.now
     if @test.update(test_params)
       @test.make_testcase if @test.markdown
     end
