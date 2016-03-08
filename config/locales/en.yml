@@ -19,7 +19,7 @@ en:
       sign_in: "Sign in"
       sign_out: "Sign out"
       sign_up: "Sign up"
-      expand: "expand"
+      expand: "edit"
       close: "close"
 
   helpers:
@@ -53,7 +53,7 @@ en:
         current_password: "Current password"
         password: "Password"
         password_confirmation: "Password confirmation"
-        name: "Username"
+        name: "User name"
       team:
         name: "Team name"
       project:
@@ -71,18 +71,18 @@ en:
         too_long: "is too long (maximum is %{count} characters)."
         taken: "has already been taken."
         invalid: "is invalid."
-        confirmation: "do not match."
+        confirmation: "doesn't match."
 
   errors:
     format: "%{attribute} %{message}"
-    forbidden: "You don't have permission to view this directory or page. Please contact team admin."
+    forbidden: "You are not authorized to view this directory or page. Please contact team admin."
 
   messages:
-    delete_confirm: "Are you sure? You can't undo this."
-    public_test_html: "This test <strong>can be accessible by anyone who know the URL</strong>. Please use the <strong>team functions</strong> If you want to limit the users who can access."
-    created_by_guest_html: "This test is because it was created by a guest user, some features, such as <strong>editing or deleting of the test item is limited.</strong>"
+    delete_confirm: "Are you sure? You can't undo the operation."
+    public_test_html: "This test <strong>can be accessed by anyone who knows the URL</strong>. Use the <strong>team features</strong> If you need to limit the access."
+    created_by_guest_html: "Because this test was created by a guest user, some features such as <strong>editing and deleting of the test items are limited.</strong>"
     please_association_html: "If you want to use all the features, please go to the <strong>association of the user</strong> logged in. "
-    attach_current_user: "Attach to the current user"
+    attach_current_user: "Correlate to the current user"
 
   layouts:
     navbar:
@@ -101,19 +101,20 @@ en:
     top:
       branding:
         title: "The simplest test supporting tool"
-        sub_title: "Chibineko is a simple test tool that specializes in the management of the manual test"
+        sub_title: "Chibineko is a simple test supporting tool specializing in the management of manual tests"
         get_started: "Get Started"
         sign_up_free: "Sign Up for Free"
       feature:
         title: "Feature"
         test_management_title: "Test Management"
-        test_management_body: "テストケース作成、テスト実行、進捗管理など、マニュアルテストに必要な一通りの機能を提供します。シンプルがゆえに自由度が高いため、様々なシーンで活用いただけます。"
+        test_management_body: "Chibineko supports your manual testing with its useful functions like test case creation, test execution, and progress management. Its simple design expands the usability in various situations."
+
         team_management_title: "Team"
-        team_management_body: "チームを作成してユーザーをアサインすれば、限られたユーザーのみでテスト内容を共有することができます。セキュリティを保ちつつ効率的にテストケースを管理することができます。"
+        team_management_body: "With \"Team\" feature, you can share your test data among limited users. It enables you to secure your data information and manage test cases effectively."
         share_result_title: "Share"
-        share_result_body: "テストケースにはユニークなURLが割り当てられるため、他のユーザーとテスト結果を共有したい場合はURLをシェアするだけ。面倒なファイルのやり取りなどは不要です。"
+        share_result_body: "Each test case has its individual URL. How do you share your test data with other users? All you need is to share the URL, you don't need to exchange any files any more."
         oss_title: "OSS"
-        oss_body: "このサービスのソースコードはすべてGitHub上で公開されています。もし足りない機能がある場合は、自由に拡張してください。issueやPull Requestも歓迎します。"
+        oss_body: "Our sourse code is available on GitHub. If you want to add some functions, feel free to extend. Issue and Pull Request will also be welcome."
       support: "Support"
       terms: "Terms of Service"
       releases: "Releases"
@@ -139,20 +140,20 @@ en:
       title: "Team settings"
       name:
         title: "Team name"
-        current_value_html: "Current team naeme: <strong>%{name}</strong>"
+        current_value_html: "Current team name: <strong>%{name}</strong>"
       delete:
-        title: "Delete team"
-        description: "When you delete a team, you also delete all projects and test is included in the team."
+        title: "Delete a team"
+        description: "When you delete a team, all of the related data such as projects and tests are also deleted."
         delete_team: "Delete this team"
     messages:
-      destroy: "Team was successfully destroyed."
+      destroy: "The team has been successfully deleted."
 
   team_users:
     index:
       title: "Edit team members"
       search_user: "Search Chibineko user:"
       add_user: "Add user to team"
-      delete_confirm: "Do you remove it from the team members?"
+      delete_confirm: "Do you remove the user from the team members?"
 
   projects:
     navbar:
@@ -162,29 +163,29 @@ en:
       empty_message: "No Tests"
     new:
       title: "New project"
-      enter_name: "Enter project name"
+      enter_name: "Enter project name"
     settings:
       title: "Project settings"
       name:
         title: "Project name"
-        current_value_html: "Current project naeme: <strong>%{name}</strong>"
+        current_value_html: "Current project name:: <strong>%{name}</strong>"
       delete:
-        title: "Delete project"
-        description: "When you delete a project, it also deletes all the tests that are included in the project."
+        title: "Delete a project"
+        description: "When you delete a project, all of the related tests are also deleted."
         delete_project: "Delete this project"
     messages:
-      destroy: "Project was successfully destroyed."
+      destroy: "Project has been successfully deleted."
 
   tests:
     show:
-      blank_description: "Description is blank"
+      blank_description: "No description"
       created_by: "This test was created by %{username} (Updated at: %{updated_at})"
     form:
       title:
         new: "Create a new test"
         edit: "Edit test"
       title_placeholder: "Enter test title"
-      markdown_header: "Test contents"
+      markdown_header: "Test items"
       markdown_placeholder: "Enter markdown text"
       preview_header: "Preview"
     description:
@@ -193,25 +194,25 @@ en:
       note: "Notes"
     move:
       title: "Move to"
-      unset_project: "Unset project"
+      unset_project: "No projects"
       submit: "Move"
     result_label:
-      title: "Customize result label"
-      use_default_label: "Use the default label"
-      label_placeholder: "Enter label text"
+      title: "Customize result labels"
+      use_default_label: "Use the default labels"
+      label_placeholder: "Enter labels"
     navbar:
       edit_test: "Edit test"
-      edit_current_test: "Edit current test"
+      edit_current_test: "Edit the current test"
       export_csv: "Export CSV"
       test_settings: "Test settings"
-      duplicate_test: "Duplicate this test"
+      duplicate_test: "Replicate this test"
       move_to: "Move to"
-      customize_result_label: "Customize result label"
+      customize_result_label: "Customize result labels"
       delete_test: "Delete this test"
     messages:
-      destroy: "Test was successfully destroyed."
+      destroy: "The test has been successfully deleted."
     result_labels:
-      unexecuted: "UNEXECUTED"
+      unexecuted: "NOT RUN"
       pass: "PASS"
       fail: "FAIL"
       blocked: "BLOCKED"
@@ -224,12 +225,12 @@ en:
   user_settings:
     modal:
       title: "Account settings"
-      expand: "expand"
+      expand: "edit"
       close: "close"
       username:
-        title: "Username"
-        blank: "Username has not been set. In this case email address is used."
-        current_value_html: "Your username is <strong>%{username}</strong>"
+        title: "User name"
+        blank: "E-mail address is used as an user name until a new name is entered."
+        current_value_html: "Your user name is <strong>%{username}</strong>"
       password:
         title: "Password"
         change_password: "Change signin password."
@@ -239,8 +240,8 @@ en:
         update: "Update Password"
       timezone:
         title: "Time Zone"
-        current_value_html: "Your time zone is currently set to: <strong>%{timezone}</strong>"
-        update: "Save Time Zone"
+        current_value_html: "Your current time zone: <strong>%{timezone}</strong>"
+        update: "Save the time zone"
       language:
         title: "Language"
-        current_value_html: "Your language is currently set to: <strong>%{language}</strong>"
+        current_value_html: "Your current language: <strong>%{language}</strong>"

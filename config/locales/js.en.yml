@@ -9,8 +9,8 @@ en:
     tests:
       show:
         errors:
-          conflict: "Test case might have been changed by another user."
-          please_reload: "Please reload"
+          conflict: "Test cases might have been editted by other uses."
+          please_reload: "Reload the page"
       new:
         messages:
           unsaved_changes: "You have unsaved changes."
@@ -18,7 +18,7 @@ en:
         total: "Total"
     common:
       collapse:
-        expand: "expand"
+        expand: "edit"
         close: "close"
       ladda:
         saving: "saving..."
