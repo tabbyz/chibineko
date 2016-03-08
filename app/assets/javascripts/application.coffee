@@ -11,7 +11,7 @@
 #= require ladda/ladda.min
 #= require ladda/ladda.jquery.min
 #= require jquery.overlay.min
-#= require jquery.nicescroll.min
+#= require perfect-scrollbar.jquery.min
 #= require jquery.readyselector
 #= require i18n
 #= require i18n/translations
@@ -23,7 +23,7 @@ $(document).ready ->
   $(".dropdown-toggle").dropdown()
   $(".best_in_place").best_in_place()
   $(".carousel").carousel()
-  $(".hover-scroll").niceScroll({ smoothscroll: false })
+  $(".hover-scroll").perfectScrollbar()
 
   $(document).on "shown.bs.modal", (e) ->
     $("[autofocus]", e.target).focus()
