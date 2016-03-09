@@ -3,7 +3,7 @@
     .container-fluid
       = link_to "Chibineko", root_url, class: "logo"
       ul.nav.navbar-nav.navbar-right
-        li = link_to fa_icon("github-alt", text: t(".github_page")), "#", target: "blank"
+        li = link_to fa_icon("github-alt", text: t(".github_page")), "https://github.com/tabbyz/chibineko"
         - if user_signed_in?
           li.dropdown
             a href="#" class="dropdown-toggle" data-toggle="dropdown" data-container="body" role="button" aria-expanded="false"

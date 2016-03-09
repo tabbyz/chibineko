@@ -53,15 +53,15 @@
   section.row.section.support
     h2 = t(".support")
     ul
-      li = link_to fa_icon("envelope-o", text: "support@chibineko.jp"), "#"
-      li = link_to fa_icon("github-alt", text: "GitHub Issues"), "#"
-      li = link_to fa_icon("twitter", text: "Twitter"), "#"
+      li = mail_to "support@chibineko.jp", fa_icon("envelope-o", text: "Email"), encode: "hex"
+      li = link_to fa_icon("github-alt", text: "GitHub Issues"), "https://github.com/tabbyz/chibineko"
+      li = link_to fa_icon("twitter", text: "Twitter"), "https://twitter.com/chibinekojp"
 
   .row.footer
     ul.list-inline
       li = link_to t(".terms"), terms_path
-      li = link_to t(".releases"), "#"
+      li = link_to t(".releases"), "https://github.com/tabbyz/chibineko/releases"
       li = link_to t(".roadmap"), "#"
     span.powered-by
       | Powerd by
-      = link_to image_tag("company_logo.png"), "http://www.shiftinc.jp/", target: "blank"
+      = link_to image_tag("company_logo.png", width: "80px"), "http://www.shiftinc.jp/", target: "blank"
