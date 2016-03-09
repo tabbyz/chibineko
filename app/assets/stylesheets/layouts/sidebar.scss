@@ -4,6 +4,7 @@
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
+    height: 100%;
   }
 
   ul {
@@ -26,9 +27,8 @@
     }
 
     .home-btn, .add-team-btn {
-      height: 60px;
+      padding: 16px 0;
       text-align: center;
-      .fa { margin-top: 16px; }  // TODO
     }
 
     .home-btn {

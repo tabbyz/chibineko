@@ -2,6 +2,7 @@
   = link_to fa_icon("home 2x"), dashboard_path, class: "home-btn", data: { toggle: "tooltip", placement: "right", title: t("dashboard.index.title") }
 
   ul.hover-scroll
+    / li = link_to fa_icon("home 2x"), dashboard_path, class: "home-btn", data: { toggle: "tooltip", placement: "right", title: t("dashboard.index.title") }
     - current_user.teams.reorder("name").each do |team|
       li class="#{'active' if team == current_team}"
         = link_to team_path(team), class: "team-btn", title: team.name do

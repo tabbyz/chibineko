@@ -41,14 +41,18 @@ body {
   }
 }
 
+.ps-scrollbar-x-rail, .ps-scrollbar-y-rail {
+  z-index: 99;
+}
+
 .page-with-sidebar {
   display: -webkit-flex;
   display: flex;
   height: 100%;
 
   .hover-scroll {
-    // overflow: hidden;
-    // &:hover { overflow-y: scroll; }
+    overflow: hidden;
+    position: relative;
   }
 
   .root-sidebar {
