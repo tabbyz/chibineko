@@ -62,6 +62,5 @@
       li = link_to t(".terms"), terms_path
       li = link_to t(".releases"), "https://github.com/tabbyz/chibineko/releases"
       li = link_to t(".roadmap"), "#"
-    span.powered-by
-      | Powerd by
-      = link_to image_tag("company_logo.png", width: "80px"), "http://www.shiftinc.jp/", target: "blank"
+    span.copyright
+      = link_to "© 2015 SHIFT, Inc.", "http://www.shiftinc.jp/", target: "blank"

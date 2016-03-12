@@ -146,7 +146,7 @@ $(".tests.show").ready ->
     # Check item count
     tbody = $(this).parents("tbody")
     if tbody.find("tr").size() == 1
-      alert("You can not remove any more.")
+      alert(I18n.t("js.tests.edit_result_label.errors.too_short"))
       return
 
     # Remove item
@@ -162,7 +162,7 @@ $(".tests.show").ready ->
 
     # Check item count
     if tbody.find("tr").size() == 9
-      alert("You can not add any more.")
+      alert(I18n.t("js.tests.edit_result_label.errors.too_long"))
       return
 
     # Reset value

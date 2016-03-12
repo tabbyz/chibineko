@@ -14,6 +14,10 @@ ja:
       new:
         messages:
           unsaved_changes: "変更内容が保存されていません。"
+      edit_result_label:
+        errors:
+          too_short: "これ以上削除できません。"
+          too_long: "これ以上追加できません。"
       navbar:
         total: "合計"
     common:

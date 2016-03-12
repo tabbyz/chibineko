@@ -3,7 +3,7 @@ en:
     team_sidebar:
       edit_members:
         search_user: "Search user..."
-        add_user: "Add user to team"
+        add_user: "Add this user to the team"
         not_found: "User not found"
         unknown_error: "Unknown error"
     tests:
@@ -14,6 +14,10 @@ en:
       new:
         messages:
           unsaved_changes: "You have unsaved changes."
+      edit_result_label:
+        errors:
+          too_short: "You can not delete any more."
+          too_long: "You can not add any more."
       navbar:
         total: "Total"
     common:

@@ -67,8 +67,8 @@ en:
         project:
           invalid: "may only contain letters (a-z), numbers, and underscores."
       messages:
-        too_short: "is too short (minimum is %{count} characters)."
-        too_long: "is too long (maximum is %{count} characters)."
+        too_short: "does not meet our requirements. (At least %{count} characters long)."
+        too_long: "does not meet our requirements. (At most %{count} characters long)."
         taken: "has already been taken."
         invalid: "is invalid."
         confirmation: "doesn't match."
@@ -79,9 +79,9 @@ en:
 
   messages:
     delete_confirm: "Are you sure? You can't undo the operation."
-    public_test_html: "This test <strong>can be accessed by anyone who knows the URL</strong>. Use the <strong>team features</strong> If you need to limit the access."
-    created_by_guest_html: "Because this test was created by a guest user, some features such as <strong>editing and deleting of the test items are limited.</strong>"
-    please_association_html: "If you want to use all the features, please go to the <strong>association of the user</strong> logged in. "
+    public_test_html: "This test can be accessed by anyone who knows the URL. Use the team features If you need to limit the access."
+    created_by_guest_html: "Because this test was created by a guest user, some features such as editing and deleting of the test items are limited."
+    please_association_html: "To user all features, log in and correlate to the user."
     attach_current_user: "Correlate to the current user"
 
   layouts:
@@ -91,7 +91,7 @@ en:
       create_team: "Create a new team"
     dashboard_sidebar:
       your_test: "Your test"
-      coach_mark: "Team created here"
+      coach_mark: "Create a team HERE !"
     main_menu:
       account_settings: "Account settings"
       team_settings: "Team settings"
@@ -107,8 +107,7 @@ en:
       feature:
         title: "Feature"
         test_management_title: "Test Management"
-        test_management_body: "Chibineko supports your manual testing with its useful functions like test case creation, test execution, and progress management. Its simple design expands the usability in various situations."
-
+        test_management_body: "Chibineko supports your manual testing with its useful functions like test case creation, test execution, and progress management. Its simple design expands the usability in various situations."
         team_management_title: "Team"
         team_management_body: "With \"Team\" feature, you can share your test data among limited users. It enables you to secure your data information and manage test cases effectively."
         share_result_title: "Share"
@@ -127,7 +126,7 @@ en:
         new_test: "Create a new test"
       table_header:
         title: "Title"
-        updated_at: "Updated at"
+        updated_at: "Last update"
         team: "Team"
 
   teams:
@@ -152,7 +151,7 @@ en:
     index:
       title: "Edit team members"
       search_user: "Search Chibineko user:"
-      add_user: "Add user to team"
+      add_user: "Add this user to the team"
       delete_confirm: "Do you remove the user from the team members?"
 
   projects:
@@ -186,7 +185,7 @@ en:
         edit: "Edit test"
       title_placeholder: "Enter test title"
       markdown_header: "Test items"
-      markdown_placeholder: "Enter markdown text"
+      markdown_placeholder: "Itemize test cases"
       preview_header: "Preview"
     description:
       title: "Edit description"
@@ -205,7 +204,7 @@ en:
       edit_current_test: "Edit the current test"
       export_csv: "Export CSV"
       test_settings: "Test settings"
-      duplicate_test: "Replicate this test"
+      duplicate_test: "Duplicate this test"
       move_to: "Move to"
       customize_result_label: "Customize result labels"
       delete_test: "Delete this test"
@@ -218,8 +217,8 @@ en:
       blocked: "BLOCKED"
       na: "N/A"
     csv:
-      case: "Cases"
-      result: "Result"
+      case: "Test cases"
+      result: "Results"
       note: "Notes"
 
   user_settings:
@@ -233,7 +232,7 @@ en:
         current_value_html: "Your user name is <strong>%{username}</strong>"
       password:
         title: "Password"
-        change_password: "Change signin password."
+        change_password: "Change sign in password"
         current_password: "Current password"
         new_password: "New password"
         confirm_password: "Confirm new password"
@@ -241,7 +240,7 @@ en:
       timezone:
         title: "Time Zone"
         current_value_html: "Your current time zone: <strong>%{timezone}</strong>"
-        update: "Save the time zone"
+        update: "Save Time Zone"
       language:
         title: "Language"
         current_value_html: "Your current language: <strong>%{language}</strong>"

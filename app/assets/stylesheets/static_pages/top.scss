@@ -169,6 +169,14 @@
     padding-bottom: 17px;
     position: relative;
 
+    a {
+      color: #555;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     .list-inline {
       display: inline-block;
       margin-bottom: 0;
@@ -176,30 +184,18 @@
       li {
         padding-left: 10px;
         padding-right: 10px;
-
-        a {
-          color: #555;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
       }
     }
 
-    .powered-by {
+    .copyright {
       display: block;
       margin-top: 18px;
+      margin-right: 10px;
 
       @media (min-width: 768px) {
         position: absolute;
         top: 0;
         right: 14px;
-      }
-      
-      img {
-        margin-left: 4px;
-        margin-bottom: 6px;
       }
     }
   }
