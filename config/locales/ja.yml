@@ -124,10 +124,6 @@ ja:
       title: "ダッシュボード"
       navbar:
         new_test: "新しいテストを作成"
-      table_header:
-        title: "タイトル"
-        updated_at: "更新日時"
-        team: "チーム"
 
   teams:
     show:

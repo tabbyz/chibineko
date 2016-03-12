@@ -124,10 +124,6 @@ en:
       title: "Dashboard"
       navbar:
         new_test: "Create a new test"
-      table_header:
-        title: "Title"
-        updated_at: "Last update"
-        team: "Team"
 
   teams:
     show:
