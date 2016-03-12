@@ -13,6 +13,6 @@ class User < ActiveRecord::Base
          :confirmable
 
   def display_name
-    username || email
+    username || email.split("@").first
   end
 end
