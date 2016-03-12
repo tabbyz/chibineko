@@ -54,13 +54,12 @@
     h2 = t(".support")
     ul
       li = mail_to "support@chibineko.jp", fa_icon("envelope-o", text: "Email"), encode: "hex"
-      li = link_to fa_icon("github-alt", text: "GitHub Issues"), "https://github.com/tabbyz/chibineko"
+      li = link_to fa_icon("github-alt", text: "GitHub Issues"), "https://github.com/tabbyz/chibineko/issues"
       li = link_to fa_icon("twitter", text: "Twitter"), "https://twitter.com/chibinekojp"
 
   .row.footer
     ul.list-inline
       li = link_to t(".terms"), terms_path
       li = link_to t(".releases"), "https://github.com/tabbyz/chibineko/releases"
-      li = link_to t(".roadmap"), "#"
     span.copyright
       = link_to "© 2015 SHIFT, Inc.", "http://www.shiftinc.jp/", target: "blank"
