@@ -26,6 +26,7 @@ gem 'http_accept_language', '~> 2.0.0'
 gem 'browser-timezone-rails', github: 'kbaum/browser-timezone-rails'
 gem 'turnout', '~> 2.2', '>= 2.2.1'
 gem 'actionview-encoded_mail_to', '~> 1.0', '>= 1.0.7'
+gem 'google-analytics-rails', '~> 1.1'
 
 group :development, :test do
   gem 'byebug'

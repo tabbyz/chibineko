@@ -92,6 +92,7 @@ GEM
       json
       multi_json
       request_store (>= 1.0)
+    google-analytics-rails (1.1.0)
     http_accept_language (2.0.5)
     i18n (0.7.0)
     i18n-js (2.1.2)
@@ -233,6 +234,7 @@ DEPENDENCIES
   devise (~> 3.5.0)
   font-awesome-rails (~> 4.5.0)
   gon (~> 6.0)
+  google-analytics-rails (~> 1.1)
   http_accept_language (~> 2.0.0)
   i18n-js (~> 2.1.0)
   jbuilder (~> 2.0)
