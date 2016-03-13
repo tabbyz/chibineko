@@ -1,4 +1,6 @@
 .navbar {
+  background-color: #FFF;
+  
   > .container-fluid {
     margin-top: 7px;
   }
@@ -18,7 +20,6 @@
 }
 
 .navbar.navbar-with-sidebar {
-  background-color: #FFF;
   padding-left: 280px;
 
   .navbar-content {
