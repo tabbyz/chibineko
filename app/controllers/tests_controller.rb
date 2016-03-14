@@ -37,6 +37,8 @@ class TestsController < ApplicationController
   end
 
   def edit
+    forbidden_error unless @test.user  # Owner unknown
+    
     @test.set_markdown(true)
   end
 
