@@ -70,7 +70,11 @@ class TestsController < ApplicationController
     project = view_context.current_project
 
     @test.destroy
-    redirect_to team_project_path(team_name: team.name, project_name: project.name), notice: t("tests.messages.destroy")
+    if project
+      redirect_to team_project_path(team_name: team.name, project_name: project.name), notice: t("tests.messages.destroy")
+    else
+      redirect_to dashboard_path, notice: t("tests.messages.destroy")
+    end
   end
 
   def description
