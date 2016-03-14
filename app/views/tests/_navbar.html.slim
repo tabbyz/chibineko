@@ -1,8 +1,7 @@
 nav.navbar.navbar-fixed-top.navbar-with-sidebar
   .navbar-content
     - if action_name == "show"
-      - if @test.user
-        = link_to fa_icon("pencil", text: t(".edit_test")), edit_test_path(@test), class: "btn color-blue edit-test-btn", data: { toggle: "tooltip", placement: "bottom", title: t(".edit_current_test") }
+      = link_to fa_icon("pencil", text: t(".edit_test")), edit_test_path(@test), class: "btn color-blue edit-test-btn #{'disabled' unless @test.user}", data: { toggle: "tooltip", placement: "bottom", title: t(".edit_current_test") }
       
     - elsif action_name.in?(%w"new edit")
       .navbar-title
