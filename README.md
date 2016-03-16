@@ -108,5 +108,5 @@ git push heroku master
 
 
 ## License
-Released under the MIT license.
-© 2016 SHIFT, Inc.
+See [LICENSE](LICENSE).
+© SHIFT, Inc. All Rights Reserved.
