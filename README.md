@@ -1,11 +1,15 @@
 # Chibineko
+**Chibineko** is a simple test supporting tool specializing in the management of manual tests.  
+It is hosted on [https://chibineko.jp](https://chibineko.jp).
 
-## Overview
-Chibineko is the simplest test supporting tool.
+**Top page**
+![screenshot_top](https://cloud.githubusercontent.com/assets/15026812/13838533/3930fb0a-ec58-11e5-87d2-07a22a808347.png)
 
+**Execute a Test**
+![screenshot_execute_test](https://cloud.githubusercontent.com/assets/15026812/13838537/3ac1d7fa-ec58-11e5-8d04-5e0a50cfb08e.png)
 
-## Hosting Service
-[https://chibineko.jp](https://chibineko.jp)
+**Create a test**
+![screenshot_create_test](https://cloud.githubusercontent.com/assets/15026812/13838540/3cb37fd2-ec58-11e5-92b3-1aa43d3cb41e.png)
 
 
 ## Quick Start
@@ -108,5 +112,5 @@ git push heroku master
 
 
 ## License
-See [LICENSE](LICENSE).
+See [LICENSE](LICENSE).  
 © SHIFT, Inc. All Rights Reserved.
