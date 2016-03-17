@@ -2,13 +2,15 @@
 **Chibineko** is a simple test supporting tool specializing in the management of manual tests.  
 It is hosted on [https://chibineko.jp](https://chibineko.jp).
 
-**Top page**
+
+## Screenshot
+### Top page
 ![screenshot_top](https://cloud.githubusercontent.com/assets/15026812/13838533/3930fb0a-ec58-11e5-87d2-07a22a808347.png)
 
-**Execute a Test**
+### Execute a test
 ![screenshot_execute_test](https://cloud.githubusercontent.com/assets/15026812/13838537/3ac1d7fa-ec58-11e5-8d04-5e0a50cfb08e.png)
 
-**Create a test**
+### Create a test
 ![screenshot_create_test](https://cloud.githubusercontent.com/assets/15026812/13838540/3cb37fd2-ec58-11e5-92b3-1aa43d3cb41e.png)
 
 
