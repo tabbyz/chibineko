@@ -20,39 +20,39 @@ It is hosted on [https://chibineko.jp](https://chibineko.jp).
 Clone the repo
 
 ```console
-git clone git@github.com:tabbyz/chibineko.git
-cd chibineko
+$ git clone git@github.com:tabbyz/chibineko.git
+$ cd chibineko
 ```
 
 Create a app at Heroku
 
 ```console
-heroku create NAME_FOR_YOUR_APP
+$ heroku create NAME_FOR_YOUR_APP
 ```
 
 Push an app to Heroku
 
 ```console
-git push heroku master
+$ git push heroku master
 ```
 
 Initialization of database
 
 ```console
-heroku run rake db:migrate
-heroku run rake db:seed
+$ heroku run rake db:migrate
+$ heroku run rake db:seed
 ```
 
 Set the environment variable
 
 ```console
-heroku config:add SECRET_KEY_BASE=`rake secret`
+$ heroku config:add SECRET_KEY_BASE=`rake secret`
 ```
 
 Open your Chibineko and sign in with your credentials
 
 ```console
-heroku open
+$ heroku open
 ```
 
 Your username is `test@example.com` and your password is `test` as well.
@@ -65,7 +65,7 @@ You must have email settings to the user registration.
 Create a configuration file
 
 ```console
-cp config/mailer.yml.example config/mailer.yml
+$ cp config/mailer.yml.example config/mailer.yml
 ```
 
 ```yaml
@@ -94,14 +94,14 @@ config/mailer.yml  # Remove
 To commit the changes
 
 ```console
-git add .
-git commit -m "Configure Email"
+$ git add .
+$ git commit -m "Configure Email"
 ```
 
 Push an app to Heroku
 
 ```console
-git push heroku master
+$ git push heroku master
 ```
 
 
