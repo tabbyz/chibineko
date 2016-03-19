@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :authorize!, except: [:new, :create]
 
   def show
-    @tests = @project.tests
+    @tests = @project.tests.includes(:user)
   end
 
   def new

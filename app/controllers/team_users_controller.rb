@@ -3,7 +3,7 @@ class TeamUsersController < ApplicationController
 
   def index
     @team = Team.find_by(name: params[:team_name])
-    @team_users = @team.team_users
+    @team_users = @team.team_users.includes(:user)
     @team_user = TeamUser.new
   end
 
