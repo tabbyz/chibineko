@@ -20,6 +20,10 @@ en:
           too_long: "You can not add any more."
       navbar:
         total: "Total"
+    bootgrid:
+      loading: "Loading..."
+      no_results: "No results found."
+      search: "Search by title"
     common:
       collapse:
         expand: "edit"

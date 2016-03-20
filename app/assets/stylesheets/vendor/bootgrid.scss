@@ -1,0 +1,30 @@
+.bootgrid-header {
+  margin-top: 0;
+
+  .actionBar {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+
+    .search {
+      margin-right: 0;
+
+      .search-field {
+        width: 200px;
+
+        &:focus {
+          -webkit-transition: width .15s ease-out .1s;
+          -moz-transition: width .15s ease-out .1s;
+          transition: width .15s ease-out .1s;
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+.bootgrid-table {
+  .no-results {
+    padding: 30px;
+  }
+}

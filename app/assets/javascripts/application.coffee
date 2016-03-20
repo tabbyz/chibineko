@@ -11,7 +11,10 @@
 #= require ladda/ladda.min
 #= require ladda/ladda.jquery.min
 #= require jquery.overlay.min
+#= require jquery.bootgrid.min
 #= require perfect-scrollbar.jquery.min
+#= require moment
+#= require moment/ja
 #= require jquery.readyselector
 #= require i18n
 #= require i18n/translations
@@ -24,6 +27,27 @@ $(document).ready ->
   $(".best_in_place").best_in_place()
   $(".carousel").carousel()
   $(".hover-scroll").perfectScrollbar()
+  $(".data-table").bootgrid({
+      columnSelection: false,
+      rowCount: -1,
+      converters: {
+        date: {
+          from: (value) -> return moment(value)
+          to: (value) -> return moment(value).locale(I18n.locale).format("ll")
+        },
+      },
+      formatters: {
+        title: (column, row) -> return "<a href='/t/#{row.slug.trim()}'>#{row.title}</a>"
+      },
+      labels: {
+        loading: I18n.t("js.bootgrid.loading"),
+        noResults: I18n.t("js.bootgrid.no_results"),
+        search: I18n.t("js.bootgrid.search"),
+      },
+      templates: {
+        infos: ""
+      },
+    })
 
   $(document).on "shown.bs.modal", (e) ->
     $("[autofocus]", e.target).focus()

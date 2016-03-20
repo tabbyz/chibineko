@@ -4,6 +4,7 @@ ja:
   common:
     created_by: "作成者"
     updated_at: "更新日時"
+    updated_on: "更新日"
     dashboard: "ダッシュボード"
     team: "チーム"
     project: "プロジェクト"

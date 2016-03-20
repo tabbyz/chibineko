@@ -10,15 +10,17 @@
     = link_to fa_icon("plus", text: t(".navbar.new_test")), new_test_path, class: "btn btn-lg color-blue"
 
 - else
-  table.table.table-condensed.table-hover
+  table.table.table-condensed.table-hover.data-table style="table-layout:fixed;"
     thead
       tr
-        th style="width:60%;" = t("activerecord.attributes.test.title")
-        th style="width:20%; min-width:150px;" = t("common.updated_at")
-        th style="width:20%; min-width:150px;" = t("common.team")
+        th.hidden data-column-id="slug" data-visible="false" slug
+        th data-column-id="title" data-formatter="title" data-searchable="true" data-width="50%" = t("activerecord.attributes.test.title")
+        th data-column-id="team" data-searchable="false" = t("common.team")
+        th data-column-id="updated" data-converter="date" data-searchable="false" data-order="desc" = t("common.updated_on")
     tbody
       - @tests.reorder("updated_at DESC").each do |test|
         tr
-          td = link_to test.title, test, style: "display:block;"
-          td = l(test.updated_at, format: :short)
+          td.hidden = test.slug
+          td = link_to test.title, test
           td = test.project.try(:team).try(:name)
+          td = test.updated_at.strftime("%Y-%m-%d %H:%M:%S")

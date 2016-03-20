@@ -4,6 +4,7 @@ en:
   common:
     created_by: "Created by"
     updated_at: "Updated at"
+    updated_on: "Updated on"
     dashboard: "Dashboard"
     team: "Team"
     project: "Project"
