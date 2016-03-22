@@ -46,6 +46,7 @@
     }
 
     ul {
+      -webkit-flex: 1;
       flex: 1;
 
       li {
@@ -149,8 +150,9 @@
     }
 
     .sidebar-list {
-      padding: 0 20px;
+      -webkit-flex: 1;
       flex: 1;
+      padding: 0 20px;
 
       li {
         overflow-x: hidden;

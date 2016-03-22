@@ -66,6 +66,7 @@ body {
   }
 
   .contents {
+    -webkit-flex: 1;
     flex: 1;
     position: relative;
     padding: 70px 20px 20px;  // paddind-top = (navbar-height + 20px)"
