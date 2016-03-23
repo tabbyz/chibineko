@@ -23,12 +23,14 @@ html
           toastr["#{type}"]("#{f[1]}")
 
     - if controller_name.in?(%w"dashboard teams projects tests")
-      .page.page-with-sidebar
-        - if user_signed_in?
+      - if user_signed_in?
+        .page.page-with-sidebar
           = render "layouts/root_sidebar"
           = current_team ? render("layouts/team_sidebar") : render("layouts/dashboard_sidebar")
-        .contents.hover-scroll
-          == yield
+          .contents == yield
+      - else
+        .page
+          .contents == yield
     - else
       = render "layouts/navbar"
       .page

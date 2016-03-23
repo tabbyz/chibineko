@@ -4,7 +4,7 @@
   
     .test-title {
       position: absolute;
-      left: 20px;
+      left: 300px;
       right: 20px;
       top: 55px;
       height: 44px;
@@ -13,7 +13,7 @@
     .test-editor {
       position: absolute;
       top: 110px;
-      left: 20px;
+      left: 300px;
       right: 20px;
       bottom: 65px;
       border: 1px solid #DDD;
@@ -45,6 +45,7 @@
           box-shadow: none;
           -moz-box-shadow: none;
           -webkit-box-shadow: none;
+          overflow-x: hidden;
         }
       }
 

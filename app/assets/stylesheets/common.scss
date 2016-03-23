@@ -70,14 +70,7 @@
 }
 
 .empty-data {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  display: inline-block;
-  padding-bottom: 25px;
+  padding: 140px 0;
   text-align: center;
 
   .symbol {

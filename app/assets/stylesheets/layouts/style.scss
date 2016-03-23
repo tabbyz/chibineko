@@ -25,12 +25,6 @@ body {
 }
 
 .logo {
-  // background: url(/images/header_logo.png);
-  // height: 30px;
-  // width: 150px;
-  // float: left;
-  // margin-top: 7px;
-  // margin-left: 10px;
   display: inline-block;
   color: #555;
   font-size: 24px;
@@ -45,31 +39,38 @@ body {
   z-index: 99;
 }
 
-.page-with-sidebar {
-  display: -webkit-flex;
-  display: flex;
+.page {
   height: 100%;
 
-  .hover-scroll {
-    overflow: hidden;
+  .contents {
     position: relative;
+    padding: 20px;
+    min-height: 100%;
+  }
+}
+
+.page-with-sidebar {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
   }
 
   .root-sidebar {
+    left: 0;
     width: 60px;
     z-index: 40;
   }
 
   .team-sidebar {
+    left: 60px;  // Equal to root-sidebar width
     width: 220px;
     z-index: 30;
   }
 
   .contents {
-    -webkit-flex: 1;
-    flex: 1;
-    position: relative;
-    padding: 70px 20px 20px;  // paddind-top = (navbar-height + 20px)"
+    padding-top: 70px;
+    padding-left: 300px;
     z-index: 10;
 
     .navbar {
