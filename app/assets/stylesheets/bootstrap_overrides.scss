@@ -18,6 +18,13 @@ button.btn.ladda-button {
   }
 }
 
+.btn-link {
+  &:hover, &:focus {
+    text-decoration: none;
+    outline: 0;
+  }
+}
+
 .modal-xs, .modal-sm {
   margin: 100px auto;
 }

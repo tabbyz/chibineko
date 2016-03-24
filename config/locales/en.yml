@@ -190,6 +190,8 @@ en:
       title: "Edit description"
     testcase:
       note: "Notes"
+      collapse_all: "Collapse all"
+      expand_all: "Expand all"
     move:
       title: "Move to"
       unset_project: "No projects"

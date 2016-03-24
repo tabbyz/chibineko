@@ -205,3 +205,51 @@ $(".tests.show").ready ->
 
   $(document).on "ajax:error", ".best_in_place", () ->
     toastr.warning(I18n.t("js.tests.show.errors.conflict"), I18n.t("js.tests.show.errors.please_reload"))
+
+
+  $(document).on "click", ".js-collapse-btn", ->
+    heading = $(this).closest(".tr")
+    headingLv = heading.data("heading-level")
+    isCollapsed = heading.hasClass("collapsed")
+
+    tr = heading.next(".tr")
+    while tr.length == 1
+      if tr.hasClass("testcase")
+        if isCollapsed
+          tr.show()
+        else
+          tr.hide()
+        tr = tr.next(".tr")
+
+      else if tr.hasClass("heading")
+        if tr.data("heading-level") > headingLv
+          if isCollapsed
+            tr.removeClass("collapsed")
+          else
+            tr.addClass("collapsed")
+
+          tr = tr.next(".tr")
+        else
+          break
+
+    heading.toggleClass("collapsed")
+
+
+  $(document).on "click", ".js-collapse-all-btn", ->
+    for heading in $(".heading")
+      $(heading).addClass("collapsed")
+    for testcase in $(".testcase")
+      $(testcase).hide()
+
+    $(this).hide()
+    $(".js-expand-all-btn").show()
+
+
+  $(document).on "click", ".js-expand-all-btn", ->
+    for heading in $(".heading")
+      $(heading).removeClass("collapsed")
+    for testcase in $(".testcase")
+      $(testcase).show()
+
+    $(this).hide()
+    $(".js-collapse-all-btn").show()

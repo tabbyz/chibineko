@@ -33,7 +33,22 @@
     padding: 2px 2px 2px 48px;
     word-break: break-all;
 
-    .body { font-weight: bold; }
+    .expand-icon, .collapse-icon {
+      width: 8px;
+      color: #AAA;
+    }
+
+    .expand-icon {display: none; }
+    .collapse-icon { display: inline-block; }
+
+    &.collapsed {
+      .expand-icon { display: inline-block; }
+      .collapse-icon { display: none; }
+    }
+
+    .body {
+      font-weight: bold;
+    }
 
     &.heading-level-1 {
       font-size: 16px;
@@ -57,18 +72,6 @@
 
     &.heading-level-4 {
       padding-left: 38px;
-    }
-
-    .result {
-      text-align: right;
-
-      .result-bulk {
-        color: #555;
-        display: inline-block;
-        font-size: 12px;
-        font-weight: normal;
-        padding: 3px 6px;
-      }
     }
   }
 

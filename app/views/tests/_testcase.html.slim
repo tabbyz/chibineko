@@ -1,3 +1,9 @@
+.testcase-toolbar
+  button type="button" class="btn-link js-collapse-all-btn"
+    = fa_icon "caret-down", text: t(".collapse_all"), class: "collapse-icon"
+  button type="button" class="btn-link js-expand-all-btn" style="display:none;"
+    = fa_icon "caret-right", text: t(".expand_all"), class: "expand-icon"
+
 .testcase-list
   - case_id = 0
   - @test.testcase_groups.each do |group|
@@ -5,10 +11,11 @@
       - group.each do |c|
         - case c.type
         - when :heading
-          div class="tr heading heading-level-#{c.heading_level}"
-            .td.body = c.body
-            .td.result
-            .td.note
+          div class="tr heading heading-level-#{c.heading_level}" data-heading-level="#{c.heading_level}"
+            .td.body
+              = fa_icon "caret-down", class: "collapse-icon"
+              = fa_icon "caret-right", class: "expand-icon"
+              button type="button" class="btn-link js-collapse-btn" = c.body
         - when :testcase
           .tr.testcase
             .td.number = case_id += 1

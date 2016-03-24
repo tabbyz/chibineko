@@ -190,6 +190,8 @@ ja:
       title: "説明を編集"
     testcase:
       note: "メモ"
+      collapse_all: "折りたたむ"
+      expand_all: "すべて展開"
     move:
       title: "テストを移動"
       unset_project: "プロジェクト未設定"
