@@ -20,11 +20,15 @@ en:
           too_long: "You can not add any more."
       navbar:
         total: "Total"
+      toolbar:
+        selected: "selected"
     bootgrid:
       loading: "Loading..."
       no_results: "No results found."
       search: "Search by title"
     common:
+      messages:
+        delete_confirm: "Are you sure? You can't undo the operation."
       collapse:
         expand: "edit"
         close: "close"

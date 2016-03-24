@@ -22,6 +22,8 @@ ja:
       sign_up: "ユーザー登録"
       expand: "編集"
       close: "閉じる"
+      move: "移動"
+      delete: "削除"
 
   helpers:
     submit:

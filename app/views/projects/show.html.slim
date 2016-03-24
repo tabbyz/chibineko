@@ -6,13 +6,14 @@
   .empty-data
     = fa_icon("inbox", class: "symbol")
     h3 = t(".empty_message")
-
     = link_to fa_icon("plus", text: t("common.button.create_new_test")), new_test_path(team_name: current_team.try(:name), project_name: current_project.try(:name)), class: "btn btn-lg color-blue"
 
 - else
+  = render "tests/table_toolbar"
   table.table.table-condensed.table-hover.data-table style="table-layout:fixed;"
     thead
       tr
+        th.hidden data-column-id="id" data-type="numeric" data-identifier="true" data-visible="false" ID
         th.hidden data-column-id="slug" data-visible="false" slug
         th data-column-id="title" data-formatter="title" data-searchable="true" data-width="50%" = t("activerecord.attributes.test.title")
         th data-column-id="created" data-searchable="false" = t("common.created_by")
@@ -20,6 +21,7 @@
     tbody
       - @tests.reorder("updated_at DESC").try(:each) do |test|
         tr
+          td.hidden = test.id
           td.hidden = test.slug
           td = link_to test.title, test
           td = test.user.display_name

@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :authorize!, except: [:index, :new, :create]
+  before_action :authorize!, except: [:index, :new, :create, :bulk_move, :bulk_destroy]
 
   def index
     @tests = Test.all
@@ -99,6 +99,32 @@ class TestsController < ApplicationController
 
   def move
     @teams = current_user.teams
+  end
+
+  def bulk_move
+    if params[:project].blank?
+      project_id = nil  # Unset project
+    else
+      return unless project = Project.find(params[:project])  # Project not found
+      return unless project.team.authorized?(current_user)  # Forbidden error
+      project_id = project.id  # Move to project
+    end
+
+    params[:tests].each do |i|
+      test = Test.find(i)
+      next if test.project.nil? && test.user != current_user
+      next unless test.authorized?(current_user)
+      test.update_column(:project_id, project_id)
+    end
+  end
+
+  def bulk_destroy
+    params[:tests].each do |i|
+      test = Test.find(i)
+      next if test.project.nil? && test.user != current_user
+      next unless test.authorized?(current_user)
+      test.destroy
+    end
   end
 
   def user_association

@@ -22,6 +22,8 @@ en:
       sign_up: "Sign up"
       expand: "edit"
       close: "close"
+      move: "Move"
+      delete: "Delete"
 
   helpers:
     submit:

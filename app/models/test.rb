@@ -13,6 +13,14 @@ class Test < ActiveRecord::Base
     slug
   end
 
+  def authorized?(user)
+    if project = self.project
+      project.team.authorized?(user)
+    else
+      true
+    end
+  end
+
   def result_labels_or_default
     labels = I18n.t("tests.result_labels")
     result_labels || {

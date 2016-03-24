@@ -16,6 +16,11 @@ Rails.application.routes.draw do
       patch 'user_association'
     end
 
+    collection do
+      patch 'bulk_move'
+      patch 'bulk_destroy'
+    end
+
     resources :testcases, path: 'cases', only: ['update']
   end
 

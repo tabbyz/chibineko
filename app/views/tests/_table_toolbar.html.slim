@@ -1,0 +1,13 @@
+.table-toolbar
+  span.selected-count
+  ul.nav.navbar-nav.navbar-right
+    li = link_to fa_icon("trash-o", text: t("common.button.delete")), "#", class: "btn text-red bulk-destroy-btn"
+    li.dropdown
+      a.btn data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+        = fa_icon "external-link", text: t("common.button.move")
+      ul.dropdown-menu
+        li = link_to t("tests.move.unset_project"), "#", class: "bulk-move-btn"
+        - current_user.teams.includes(:projects).each do |team|
+          li.dropdown-header = team.name
+          - team.projects.each do |project|
+            li = link_to project.name, "#", class: "bulk-move-btn", data: { project_id: project.id }

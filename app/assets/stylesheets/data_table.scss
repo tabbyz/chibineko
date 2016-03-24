@@ -1,0 +1,15 @@
+.actionBar .table-toolbar {
+  display: inline-block;
+  float: right;
+
+  .selected-count {
+    display: inline-block;
+    padding: 7px 10px;
+    margin-right: 10px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 6px 10px;
+  }
+}
