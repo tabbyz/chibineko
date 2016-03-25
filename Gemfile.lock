@@ -108,6 +108,9 @@ GEM
     json (1.8.3)
     jstz-rails3-plus (1.0.5)
       railties (>= 3.1)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -239,6 +242,7 @@ DEPENDENCIES
   i18n-js (~> 2.1.0)
   jbuilder (~> 2.4, >= 2.4.1)
   jquery-rails
+  kaminari (~> 0.16.3)
   letter_opener_web
   momentjs-rails (~> 2.11)
   pg
