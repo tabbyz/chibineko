@@ -34,6 +34,9 @@ group :development, :test do
   gem 'web-console', '~> 3.0'
   gem 'spring'
   gem 'bullet'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
