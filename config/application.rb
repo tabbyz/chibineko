@@ -34,5 +34,7 @@ module Chibineko
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.initialize_on_precompile = true
+
+    config.web_console.development_only = false
   end
 end
