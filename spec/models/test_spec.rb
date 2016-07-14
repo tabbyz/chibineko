@@ -14,11 +14,11 @@ RSpec.describe Test, type: :model do
   }
 
   describe '#result_labels_or_default' do
-    it 'returns rabels' do
+    it 'returns labels' do
       expect(test.result_labels_or_default).to eq(labels)
     end
 
-    it 'memoize rabels' do
+    it 'memoize labels' do
       labels = I18n.t("tests.result_labels")
       expected_labels = {
         labels[:memoized_key] => "memoized_value"
