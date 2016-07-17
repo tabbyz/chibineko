@@ -1,0 +1,6 @@
+machine:
+  ruby:
+    version: 2.3.0
+database:
+  pre:
+    - cp config/mailer.yml.example config/mailer.yml
