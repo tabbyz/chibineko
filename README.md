@@ -1,5 +1,5 @@
 # Chibineko
-[![CircleCI](https://circleci.com/gh/tabbyz/chibineko-ci.svg?style=shield)](https://circleci.com/gh/tabbyz/chibineko-ci)
+[![CircleCI](https://circleci.com/gh/tabbyz/chibineko.svg?style=shield)](https://circleci.com/gh/tabbyz/chibineko)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 **Chibineko** is a simple test supporting tool specializing in the management of manual tests.  
