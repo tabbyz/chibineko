@@ -4,6 +4,7 @@ class Testcase < ActiveRecord::Base
   validates :result, length: { maximum: 255 }
   validates :note, length: { maximum: 1024 }
   default_scope { order("id ASC") }
+  has_many :test_result
   
   def type
     case self.heading_level
