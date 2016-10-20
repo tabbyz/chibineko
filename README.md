@@ -1,3 +1,9 @@
+# このリポジトリについて
+
+このリポジトリは @ni3shi9p が個人的な勉強ため、兼 個人的な利用のために https://github.com/tabbyz/chibineko から fork し、カスタマイズしているものです。
+以下の README は全て tabbyz/chibineko そのままを利用しています。
+ライセンス等は元お tabbyz/chibineko に従います。
+
 # Chibineko
 [![CircleCI](https://circleci.com/gh/tabbyz/chibineko.svg?style=shield)](https://circleci.com/gh/tabbyz/chibineko)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
