@@ -1,15 +1,31 @@
-class TestResult < ActiveRecord::Base
+class Testresult < ActiveRecord::Base
   belongs_to :testcase
   validates :result, length: { maximum: 255 }
   validates :note, length: { maximum: 1024 }
-  validates :environment, length: { maximum: 256 }
+  validates :environment, length: { maximum: 255 }
+  default_scope { order("id ASC") }
 
-  def result
-    super || self.testcase.test.result_label_texts.first  # Default value
+  def type
+    case self.heading_level
+    when -1
+      :blank
+    when 0
+      :testcase
+    else
+      :heading
+    end
   end
 
+  def environment
+    self.environment = "default"
+  end
+
+  def result
+    super || self.test.result_label_texts.first  # Default value
+  end
+  
   def result_color
-    self.testcase.test.result_labels_or_default[self.result] || "white"  # Default value
+    self.test.result_labels_or_default[self.result] || "white"  # Default value
   end
 
   class << self

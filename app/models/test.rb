@@ -2,6 +2,7 @@ class Test < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
   has_many :testcases, dependent: :destroy
+  has_many :testresults, dependent: :destroy
   after_initialize :set_slug
   serialize :result_labels
   validates :title, presence: true, length: { maximum: 255 }
@@ -35,9 +36,27 @@ class Test < ActiveRecord::Base
   def result_label_texts
     result_labels_or_default.keys
   end
-
   def result_label_colors
     result_labels_or_default.values
+  end
+
+  def test_environments_or_default
+    environments = I18n.t("tests.environments")
+    test_environemts || {
+      environments[:mac_safari] => "indigo",
+      environments[:mac_firefox] => "blue",
+      environments[:mac_chrome] => "cyan",
+      environments[:win_7_ie] => "teal",
+      environments[:win_8_firefox] => "green",
+      environments[:win_10_chrome] => "lightgreen",
+    }
+  end
+
+  def test_environment_texts
+    test_environments_or_default.keys
+  end
+  def test_environment_colors
+    test_environments_or_default.values
   end
 
   def testcase_groups
@@ -53,8 +72,29 @@ class Test < ActiveRecord::Base
       end
     end
     groups << buff if buff.size
+
+    require pry; binding.pry
+
     groups
   end
+
+  def testresult_groups(testcase_id)
+    groups = []
+    buff = []
+
+    testresults = self.testresults
+    testresults.each_with_index do |r, i|
+      buff << r
+      if testresults[i + 1].try(:heading_level) == 1
+        groups << buff
+        buff = []
+      end
+    end
+    groups << buff if buff.size
+    groups
+  end
+
+
 
   def set_markdown(with_result = false)
     array = []
@@ -83,12 +123,18 @@ class Test < ActiveRecord::Base
 
   def make_testcase
     self.testcases.delete_all
+    self.testresults.delete_all
 
     self.markdown.each_line do |line|
       level  = Testcase.heading_level(line)
       body   = Testcase.body(line)
       result = Testcase.result(line)
       note   = Testcase.note(line)
+
+      Testresult.result(line)
+      Testresult.note(line)
+
+      self.testresults.create(heading_level: level, result: result, note: note)
       self.testcases.create(heading_level: level, body: body, result: result, note: note)
     end
   end

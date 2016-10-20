@@ -3,8 +3,8 @@ class Testcase < ActiveRecord::Base
   validates :body, length: { maximum: 1024 }
   validates :result, length: { maximum: 255 }
   validates :note, length: { maximum: 1024 }
+  has_mane :testresults, dependent: :destroy
   default_scope { order("id ASC") }
-  has_many :test_result
   
   def type
     case self.heading_level
@@ -18,7 +18,8 @@ class Testcase < ActiveRecord::Base
   end
 
   def result
-    super || self.test.result_label_texts.first  # Default value
+    testresults = self.testresults
+    kk
   end
 
   def result_color
