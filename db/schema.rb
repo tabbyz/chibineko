@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319072222) do
+ActiveRecord::Schema.define(version: 20161020012455) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name",       null: false
@@ -56,15 +56,27 @@ ActiveRecord::Schema.define(version: 20160319072222) do
 
   add_index "testcases", ["result", "test_id"], name: "index_testcases_on_result_and_test_id"
 
+  create_table "testresults", force: :cascade do |t|
+    t.integer  "heading_level"
+    t.string   "result"
+    t.text     "note"
+    t.string   "environment"
+    t.integer  "test_id"
+    t.integer  "testcase_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "tests", force: :cascade do |t|
-    t.string   "slug",          null: false
+    t.string   "slug",              null: false
     t.string   "title"
     t.text     "description"
     t.text     "result_labels"
     t.integer  "user_id"
     t.integer  "project_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.text     "test_environments"
   end
 
   add_index "tests", ["created_at"], name: "index_tests_on_created_at"

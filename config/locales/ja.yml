@@ -221,6 +221,14 @@ ja:
       case: "テスト項目"
       result: "結果"
       note: "備考"
+    environments:
+      mac_safari: "Mac Safari"
+      mac_chrome: "Mac Chrome"
+      mac_firefox: "Mac Firefox"
+      win_7_ie: "Windows 7 IE"
+      win_8_firefox: "Windows 8.1 Firefox"
+      win_10_chrome: "Windows 10 Chrome"
+
 
   user_settings:
     modal:

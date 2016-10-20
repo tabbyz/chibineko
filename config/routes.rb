@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
 
     resources :testcases, path: 'cases', only: ['update']
+    resources :testresults, path: 'results', only: ['update']
   end
 
   resources :teams, param: 'name', except: ['index'] do
