@@ -42,6 +42,8 @@ end
 group :development do
   gem 'sqlite3'
   gem "letter_opener_web"
+  gem "pry"
+  gem "pry-doc"
 end
 
 group :production do

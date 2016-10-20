@@ -17,7 +17,7 @@ class Testcase < ActiveRecord::Base
   end
 
   def result
-    super || self.test.result_label_texts.first  # Default value
+    super || self.test.result_label_texts.first
   end
 
   def result_color
