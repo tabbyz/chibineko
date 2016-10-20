@@ -1,20 +1,9 @@
 class Testresult < ActiveRecord::Base
-  belongs_to :testcase
+  belongs_to :test
   validates :result, length: { maximum: 255 }
   validates :note, length: { maximum: 1024 }
   validates :environment, length: { maximum: 255 }
   default_scope { order("id ASC") }
-
-  def type
-    case self.heading_level
-    when -1
-      :blank
-    when 0
-      :testcase
-    else
-      :heading
-    end
-  end
 
   def environment
     self.environment = "default"

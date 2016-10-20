@@ -20,28 +20,15 @@
           .tr.testcase
             .td.number = case_id += 1
             .td.body = c.body
-            .td.result
-              .btn-group.result-btn-group
-                = button_tag c.result, type: "button", class: "btn result-btn color-#{c.result_color}", data: { "case-id" => c.id }
-                = button_tag type: "button", class: "btn dropdown-toggle color-#{c.result_color}", data: { toggle: "dropdown" } do
-                  span.caret
-                  span.sr-only Toggle Dropdown
-                ul.dropdown-menu.pull-right role="menu"
-                  - @test.result_label_texts.each do |label|
-                    li
-                      p.result-item = label
-            .td.note = best_in_place c, :note, url: test_testcase_path(test_slug: @test.slug, id: c.id), place_holder: t(".note"), html_attrs: { maxlength: 1024 }, data: { toggle: "tooltip", placement: "top", "original-title" => c.note }
-            - @test.testresult_groups.each do |r_group|
-              .testresult-group
-                - r_group.each do |r|
-                .td.result
-                  .btn-group.result-btn-group
-                    = button_tag r.result, type: "button", class: "btn result-btn color-#{r.result_color}", data: { "case-id" => r.id}
-                    = button_tag type: "button", class: "btn dropdown-toggle color-#{r/result_color}", data: { toggle: "dropdown" } do
-                      span.caret
-                      span.sr-only Toggle Dropdown
-                    ul.dropdown-menu.pull-right role="menu"
-                      - @test.result_label_texts.each do |label| 
-                        li
-                          p.result-item = label
-
+            - @test.testresult_groups(c.id).each do |r|
+              .td.result
+                .btn-group.result-btn-group
+                  = button_tag r.result, type: "button", class: "btn result-btn color-#{r.result_color}", data: { "case-id" => r.id }
+                  = button_tag type: "button", class: "btn dropdown-toggle color-#{r.result_color}", data: { toggle: "dropdown" } do
+                    span.caret
+                    span.sr-only Toggle Dropdown
+                  ul.dropdown-menu.pull-right role="menu"
+                    - @test.result_label_texts.each do |label| 
+                      li
+                        p.result-item = label
+              .td.note = best_in_place r, :note, url: test_testresult_path(test_slug: @test.slug, id: r.id), place_holder: t(".note"), html_attrs: { maxlength: 1024 }, data: { toggle: "tooltip", placement: "top", "original-title" => r.note }

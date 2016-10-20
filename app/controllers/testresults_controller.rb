@@ -13,15 +13,15 @@ class TestresultsController < ApplicationController
   private
     def set_testresult
       test = Test.find_by(slug: params[:test_slug])
-      if test.testresult.exists?(id: params[:id])
-        @testresult = test.testresult.find(params[:id])
+      if test.testresults.exists?(id: params[:id])
+        @testresult = test.testresults.find(params[:id])
       else
         render json: nil, status: :unprocessable_entity, notice: "Unknown error"
       end
     end
 
-    def testcase_params
-      params.require(:testcase).permit(:result, :note)
+    def testresult_params
+      params.require(:testresult).permit(:result, :note)
     end
 
 end

@@ -96,11 +96,11 @@ $(".tests.show").ready ->
 
   ajaxPostResult = (caseId, result) ->
     $.ajax
-      url: "#{gon.test.slug}/cases/#{caseId}"
+      url: "#{gon.test.slug}/results/#{caseId}"
       type: 'PATCH'
       dataType: 'json'
       data: $.param({
-        testcase: { result: result }
+        testresult: { result: result }
       })
       error: (jqXHR, textStatus, errorThrown) ->
         toastr.warning(I18n.t("js.tests.show.errors.conflict"), I18n.t("js.tests.show.errors.please_reload"))

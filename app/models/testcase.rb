@@ -3,7 +3,6 @@ class Testcase < ActiveRecord::Base
   validates :body, length: { maximum: 1024 }
   validates :result, length: { maximum: 255 }
   validates :note, length: { maximum: 1024 }
-  has_mane :testresults, dependent: :destroy
   default_scope { order("id ASC") }
   
   def type
@@ -18,8 +17,7 @@ class Testcase < ActiveRecord::Base
   end
 
   def result
-    testresults = self.testresults
-    kk
+    super || self.test.result_label_texts.first
   end
 
   def result_color

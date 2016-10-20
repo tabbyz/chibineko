@@ -40,16 +40,9 @@ class Test < ActiveRecord::Base
     result_labels_or_default.values
   end
 
-  def test_environments_or_default
-    environments = I18n.t("tests.environments")
-    test_environemts || {
-      environments[:mac_safari] => "indigo",
-      environments[:mac_firefox] => "blue",
-      environments[:mac_chrome] => "cyan",
-      environments[:win_7_ie] => "teal",
-      environments[:win_8_firefox] => "green",
-      environments[:win_10_chrome] => "lightgreen",
-    }
+  def test_environments
+    environments = [ "mac", "win" ]
+    environments
   end
 
   def test_environment_texts
@@ -72,26 +65,11 @@ class Test < ActiveRecord::Base
       end
     end
     groups << buff if buff.size
-
-    require pry; binding.pry
-
     groups
   end
 
   def testresult_groups(testcase_id)
-    groups = []
-    buff = []
-
-    testresults = self.testresults
-    testresults.each_with_index do |r, i|
-      buff << r
-      if testresults[i + 1].try(:heading_level) == 1
-        groups << buff
-        buff = []
-      end
-    end
-    groups << buff if buff.size
-    groups
+    self.testresults.select {|tr| tr.testcase_id == testcase_id} 
   end
 
 
@@ -128,14 +106,13 @@ class Test < ActiveRecord::Base
     self.markdown.each_line do |line|
       level  = Testcase.heading_level(line)
       body   = Testcase.body(line)
-      result = Testcase.result(line)
-      note   = Testcase.note(line)
+      result = Testresult.result(line)
+      note = Testresult.note(line)
 
-      Testresult.result(line)
-      Testresult.note(line)
-
-      self.testresults.create(heading_level: level, result: result, note: note)
       self.testcases.create(heading_level: level, body: body, result: result, note: note)
+      self.test_environments.each do |env|
+        self.testresults.create(heading_level: level, result: result, note: note, testcase_id: self.testcases.last.id, environment: env)
+      end
     end
   end
 
