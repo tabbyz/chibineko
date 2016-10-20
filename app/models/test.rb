@@ -86,10 +86,12 @@ class Test < ActiveRecord::Base
       when :testcase
         buff = t.body
         if with_result
-          if t.result && t.result != self.result_label_texts.first
-            buff += ", [#{t.result}]"
-            unless t.note.blank?
-              buff += ", #{t.note}"
+          self.testresult_groups(t.id).each do |tr|
+            if tr.result && tr.result != self.result_label_texts.first
+              buff += ", [#{tr.result}]"
+              unless t.note.blank?
+                buff += ", #{tr.note}"
+              end
             end
           end
         end
