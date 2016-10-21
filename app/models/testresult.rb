@@ -22,17 +22,19 @@ class Testresult < ActiveRecord::Base
       text.try(:strip!)
       return nil if text.blank?
 
-      text =~ /,(?:\s)?\[(.*)\]/
-      result = $1
+      #text =~ /,(?:\s)?<<(.*)>>/
+      #result = $1
+      #results = text.scan(/<<[^<|>]*>>/).delete("<>")
+      text.scan(/<[^<>]*>/).map { |item| item.delete("<>") }
     end
 
     def note(text)
       text.try(:strip!)
       return nil if text.blank?
 
-      text =~ /,(?:\s)?\[(?:.*)\],(.*)/
-      note = $1
-      note.strip if note
+      #text =~ /,(?:\s)?<<(?:.*)>>,(.*)/
+      #note = $1
+      text.scan(/{[^{}]}/).map { |item| item.delete("{}") }
     end
   end
 

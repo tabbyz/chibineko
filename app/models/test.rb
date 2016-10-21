@@ -84,13 +84,13 @@ class Test < ActiveRecord::Base
       when :heading
         buff = ("#" * t.heading_level) + " " + t.body
       when :testcase
-        buff = t.body
+        buff = "[#{t.body}]"
         if with_result
           self.testresult_groups(t.id).each do |tr|
             if tr.result && tr.result != self.result_label_texts.first
-              buff += ", [#{tr.result}]"
-              unless t.note.blank?
-                buff += ", #{tr.note}"
+              buff += ", <#{tr.result}>"
+              unless tr.note.blank?
+                buff += ", {#{tr.note}}"
               end
             end
           end
@@ -108,11 +108,13 @@ class Test < ActiveRecord::Base
     self.markdown.each_line do |line|
       level  = Testcase.heading_level(line)
       body   = Testcase.body(line)
-      result = Testresult.result(line)
-      note = Testresult.note(line)
+      results = Testresult.result(line)
+      notes = Testresult.note(line)
 
-      self.testcases.create(heading_level: level, body: body, result: result, note: note)
+      self.testcases.create(heading_level: level, body: body)
       self.test_environments.each do |env|
+        result = results.empty? ? nil : results.shift
+        note = notes.empty? ? nil : notes.shift
         self.testresults.create(heading_level: level, result: result, note: note, testcase_id: self.testcases.last.id, environment: env)
       end
     end

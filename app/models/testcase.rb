@@ -43,8 +43,10 @@ class Testcase < ActiveRecord::Base
       level = self.heading_level(text)
 
       if level == 0
-        text =~ /(.*)(?:,\s\[.*\])/
+        #text =~ /(.*)(?:,\s\[.*\])/
+        text =~ /(\[.*\])/
         body = $1 || text
+        body.delete("[]")
       else
         body = text[level..-1]
         body.strip
