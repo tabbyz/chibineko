@@ -17,7 +17,7 @@ class Testcase < ActiveRecord::Base
   end
 
   def result
-    super || self.test.result_label_texts.first  # Default value
+    super || self.test.result_label_texts.first
   end
 
   def result_color
@@ -43,8 +43,10 @@ class Testcase < ActiveRecord::Base
       level = self.heading_level(text)
 
       if level == 0
-        text =~ /(.*)(?:,\s\[.*\])/
+        #text =~ /(.*)(?:,\s\[.*\])/
+        text =~ /(\[.*\])/
         body = $1 || text
+        body.delete("[]")
       else
         body = text[level..-1]
         body.strip

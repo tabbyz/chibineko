@@ -2,6 +2,7 @@ class Test < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
   has_many :testcases, dependent: :destroy
+  has_many :testresults, dependent: :destroy
   after_initialize :set_slug
   serialize :result_labels
   validates :title, presence: true, length: { maximum: 255 }
@@ -35,9 +36,20 @@ class Test < ActiveRecord::Base
   def result_label_texts
     result_labels_or_default.keys
   end
-
   def result_label_colors
     result_labels_or_default.values
+  end
+
+  def test_environments
+    environments = [ "mac", "win" ]
+    environments
+  end
+
+  def test_environment_texts
+    test_environments_or_default.keys
+  end
+  def test_environment_colors
+    test_environments_or_default.values
   end
 
   def testcase_groups
@@ -56,6 +68,12 @@ class Test < ActiveRecord::Base
     groups
   end
 
+  def testresult_groups(testcase_id)
+    self.testresults.select {|tr| tr.testcase_id == testcase_id} 
+  end
+
+
+
   def set_markdown(with_result = false)
     array = []
     self.testcases.each do |t|
@@ -66,12 +84,14 @@ class Test < ActiveRecord::Base
       when :heading
         buff = ("#" * t.heading_level) + " " + t.body
       when :testcase
-        buff = t.body
+        buff = "[#{t.body}]"
         if with_result
-          if t.result && t.result != self.result_label_texts.first
-            buff += ", [#{t.result}]"
-            unless t.note.blank?
-              buff += ", #{t.note}"
+          self.testresult_groups(t.id).each do |tr|
+            if tr.result && tr.result != self.result_label_texts.first
+              buff += ", <#{tr.result}>"
+              unless tr.note.blank?
+                buff += ", {#{tr.note}}"
+              end
             end
           end
         end
@@ -83,13 +103,20 @@ class Test < ActiveRecord::Base
 
   def make_testcase
     self.testcases.delete_all
+    self.testresults.delete_all
 
     self.markdown.each_line do |line|
       level  = Testcase.heading_level(line)
       body   = Testcase.body(line)
-      result = Testcase.result(line)
-      note   = Testcase.note(line)
-      self.testcases.create(heading_level: level, body: body, result: result, note: note)
+      results = Testresult.result(line)
+      notes = Testresult.note(line)
+
+      self.testcases.create(heading_level: level, body: body)
+      self.test_environments.each do |env|
+        result = results.empty? ? nil : results.shift
+        note = notes.empty? ? nil : notes.shift
+        self.testresults.create(heading_level: level, result: result, note: note, testcase_id: self.testcases.last.id, environment: env)
+      end
     end
   end
 
